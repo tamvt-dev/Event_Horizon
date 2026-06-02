@@ -1,0 +1,32 @@
+# Compiled executables
+eh_engine_ultimate_bench
+eh_learning_test
+eh_main_learning
+eh_main_test
+eh_neuro_test
+eh_test
+
+# Build artifacts
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+
+# Benchmark results
+benchmark_results_*.txt
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log
