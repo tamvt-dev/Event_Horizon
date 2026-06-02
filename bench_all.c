@@ -364,55 +364,80 @@ static void run_scalability_test(int N) {
         return;
     }
     
-    EH_DAGNode *root = (EH_DAGNode *)eh_arena_alloc(arena, node_size);
-    root->node_id = 0;
-    root->weights.rows = 16;
-    root->weights.cols = 16;
-    root->weights.data = (float *)((char *)root + sizeof(EH_DAGNode));
-    for (int i=0; i<256; i++) root->weights.data[i] = 0.01f;
-    root->distribution_mean = 0.01f;
+    // Create a BRANCHING DAG, not linear chain
+    // This ensures beam search actually explores nodes
+    EH_DAGNode **nodes = (EH_DAGNode **)malloc(N * sizeof(EH_DAGNode *));
     
-    EH_DAGNode *prev = root;
-    for (int i = 1; i < N; i++) {
-        EH_DAGNode *node = (EH_DAGNode *)eh_arena_alloc(arena, node_size);
-        if (!node) break;
-        node->node_id = i;
-        node->weights.rows = 16;
-        node->weights.cols = 16;
-        node->weights.data = (float *)((char *)node + sizeof(EH_DAGNode));
-        node->distribution_mean = 0.01f;
+    for (int i = 0; i < N; i++) {
+        nodes[i] = (EH_DAGNode *)eh_arena_alloc(arena, node_size);
+        if (!nodes[i]) break;
+        nodes[i]->node_id = i;
+        nodes[i]->weights.rows = 16;
+        nodes[i]->weights.cols = 16;
+        nodes[i]->weights.data = (float *)((char *)nodes[i] + sizeof(EH_DAGNode));
+        nodes[i]->distribution_mean = 0.01f;
+        nodes[i]->child_count = 0;
         
-        if (prev->child_count < EH_MAX_CHILDREN) {
-            eh_dag_connect_nodes(prev, node);
+        // Initialize weights
+        for (int j = 0; j < 256; j++) {
+            nodes[i]->weights.data[j] = 0.01f;
         }
-        prev = node;
+    }
+    
+    // Build branching structure: each node connects to 2 children (if exist)
+    // This creates a binary tree structure
+    for (int i = 0; i < N; i++) {
+        int child1 = 2 * i + 1;
+        int child2 = 2 * i + 2;
+        
+        if (child1 < N && nodes[i]->child_count < EH_MAX_CHILDREN) {
+            eh_dag_connect_nodes(nodes[i], nodes[child1]);
+        }
+        if (child2 < N && nodes[i]->child_count < EH_MAX_CHILDREN) {
+            eh_dag_connect_nodes(nodes[i], nodes[child2]);
+        }
     }
     
     EH_ScoringCore *scorer = eh_scoring_init(16);
-    EH_Context *ctx = eh_engine_setup(root, scorer, 0.5f);
+    EH_Context *ctx = eh_engine_setup(nodes[0], scorer, 0.5f);
     
     float input[16], output[16];
     for (int i=0; i<16; i++) input[i] = 0.5f;
     
-    eh_engine_inference(ctx, input, 16, output, 16);
+    // Warmup: 10 passes to stabilize cache
+    for (int i = 0; i < 10; i++) {
+        eh_engine_inference(ctx, input, 16, output, 16);
+    }
+    
+    // Actual measurement: adaptive pass count based on N
+    // Larger graphs need fewer passes to get stable timing
+    int passes = (N < 1000) ? 1000 : (N < 10000) ? 500 : 100;
     
     clock_t start_t = clock();
-    int passes = 100;
     for (int i = 0; i < passes; i++) {
         eh_engine_inference(ctx, input, 16, output, 16);
     }
     clock_t end_t = clock();
+    
     double sec = (double)(end_t - start_t) / CLOCKS_PER_SEC;
     if (sec < 1e-6) sec = 1e-6;
     
     size_t end_rss = get_peak_rss();
     size_t mem_diff = (end_rss > start_rss) ? (end_rss - start_rss) : 0;
     
-    printf("  | N = %-7d | %10.2f passes/sec        | %8.2f KB   |\n", 
-           N, (double)passes / sec, (double)mem_diff);
+    double throughput = (double)passes / sec;
+    
+    // Calculate nodes actually traversed by beam search
+    EH_EngineStats stats = eh_engine_get_stats(ctx);
+    double avg_nodes_per_inference = (double)stats.total_nodes_evaluated / (double)stats.total_inferences;
+    
+    printf("  | N = %-7d | %10.2f passes/sec | %8.2f KB | %5.1f nodes/pass |\n", 
+           N, throughput, (double)mem_diff, avg_nodes_per_inference);
+    
     ctx->root_node = NULL; /* Prevent freeing arena-allocated DAG recursively */
     eh_engine_shutdown(ctx);
     eh_arena_destroy(arena);
+    free(nodes);
 }
 
 // ========== 5. Full Engine Inference (Beam Search + Collapse) ==========
@@ -515,14 +540,12 @@ void benchmark_complete_engine(void) {
     printf("  --> Prediction MAE : %.5f (empirical approximation quality)\n", avg_mae);
 
     printf("\n[PHYSICAL SCALABILITY MATRIX]\n");
-    printf("  | Graph Nodes | Est. Throughput (passes/sec) | Memory Used |\n");
-    printf("  | ----------- | ---------------------------- | ----------- |\n");
+    printf("  | Graph Nodes | Est. Throughput (passes/sec) | Memory Used | Nodes/Pass |\n");
+    printf("  | ----------- | ---------------------------- | ----------- | ---------- |\n");
     fflush(stdout);
     
     run_scalability_test(100);
-    run_scalability_test(1000);
-    run_scalability_test(10000);
-    run_scalability_test(50000);
+    run_scalability_test(256);  // Max supported by EH_MAX_NODES
 
     eh_engine_shutdown(ctx);
     eh_arena_destroy(arena);

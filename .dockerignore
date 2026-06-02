@@ -1,0 +1,39 @@
+# Git
+.git
+.gitignore
+
+# Build artifacts
+eh_engine_ultimate_bench
+eh_learning_test
+eh_main_learning
+eh_main_test
+eh_neuro_test
+eh_test
+*.o
+*.a
+*.so
+
+# Documentation (except README & LICENSE)
+CHANGELOG.md
+CREDITS.md
+DOCUMENTATION.md
+PROJECT_OVERVIEW.md
+QUICKSTART.md
+ROADMAP.md
+
+# Scripts
+*.sh
+*.ps1
+
+# Benchmark results
+benchmark_results_*.txt
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db

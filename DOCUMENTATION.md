@@ -12,6 +12,7 @@ Welcome to the EventHorizon Engine documentation! This guide will help you navig
 
 ### 📖 Detailed Information
 - **[CHANGELOG.md](CHANGELOG.md)** - Recent updates and performance improvements
+- **[ROADMAP.md](ROADMAP.md)** - Development timeline and future plans
 - **[CREDITS.md](CREDITS.md)** - AI-assisted development acknowledgments and philosophy
 
 ### 💻 Code Organization
@@ -126,7 +127,7 @@ Inference Speed:  278,133 passes/sec
 Energy:          0.054 mJ/inference
 Collapse Ratio:  93.58%
 FLOPs Saved:     93.21%
-License:         MIT
+License:         Apache-2.0
 ```
 
 ---

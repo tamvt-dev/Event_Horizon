@@ -1,10 +1,23 @@
 CC = gcc
-CFLAGS = -O3 -std=c99 -Wall -Wextra -march=native
+CFLAGS = -O3 -std=c99 -Wall -Wextra
+CFLAGS_NATIVE = $(CFLAGS) -march=native
 LIBS = -lm
 
 INCDIR = include
 SRCDIR = src
 CORE_SRCS = $(SRCDIR)/core/*.c
+
+# Detect if -march=native is supported
+MARCH_NATIVE_SUPPORT := $(shell $(CC) -march=native -x c -c -o /dev/null - </dev/null 2>&1 && echo yes || echo no)
+
+# Use native optimizations if supported
+ifeq ($(MARCH_NATIVE_SUPPORT),yes)
+    CFLAGS_OPT = $(CFLAGS_NATIVE)
+    $(info ✓ Compiler supports -march=native, using optimized build)
+else
+    CFLAGS_OPT = $(CFLAGS)
+    $(info ⚠ Compiler does not support -march=native, using standard build)
+endif
 
 # Targets
 TARGET_TEST = eh_test
@@ -20,26 +33,26 @@ bench: $(TARGET_BENCH)
 
 $(TARGET_BENCH): bench_all.c $(CORE_SRCS)
 	@echo "🔨 Compiling benchmark suite..."
-	$(CC) $(CFLAGS) -I$(INCDIR) $(CORE_SRCS) bench_all.c -o $(TARGET_BENCH) $(LIBS)
+	$(CC) $(CFLAGS_OPT) -I$(INCDIR) $(CORE_SRCS) bench_all.c -o $(TARGET_BENCH) $(LIBS)
 	@echo "✅ Build complete: $(TARGET_BENCH)"
 
 # Test suite
 test: $(TARGET_TEST)
 
 $(TARGET_TEST): $(SRCDIR)/main_test.c $(CORE_SRCS)
-	$(CC) $(CFLAGS) -I$(INCDIR) $(CORE_SRCS) $(SRCDIR)/main_test.c -o $(TARGET_TEST) $(LIBS)
+	$(CC) $(CFLAGS_OPT) -I$(INCDIR) $(CORE_SRCS) $(SRCDIR)/main_test.c -o $(TARGET_TEST) $(LIBS)
 
 # Neuro test
 neuro: $(TARGET_NEURO)
 
 $(TARGET_NEURO): $(SRCDIR)/test_neuro.c $(CORE_SRCS)
-	$(CC) $(CFLAGS) -I$(INCDIR) $(CORE_SRCS) $(SRCDIR)/test_neuro.c -o $(TARGET_NEURO) $(LIBS)
+	$(CC) $(CFLAGS_OPT) -I$(INCDIR) $(CORE_SRCS) $(SRCDIR)/test_neuro.c -o $(TARGET_NEURO) $(LIBS)
 
 # Learning test
 learning: $(TARGET_LEARNING)
 
 $(TARGET_LEARNING): $(SRCDIR)/main_learning.c $(CORE_SRCS)
-	$(CC) $(CFLAGS) -I$(INCDIR) $(CORE_SRCS) $(SRCDIR)/main_learning.c -o $(TARGET_LEARNING) $(LIBS)
+	$(CC) $(CFLAGS_OPT) -I$(INCDIR) $(CORE_SRCS) $(SRCDIR)/main_learning.c -o $(TARGET_LEARNING) $(LIBS)
 
 # Run benchmark
 run-bench: $(TARGET_BENCH)

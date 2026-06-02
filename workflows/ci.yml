@@ -1,0 +1,86 @@
+name: CI - Build & Test
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    name: Build & Test on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Install dependencies (Ubuntu)
+      if: matrix.os == 'ubuntu-latest'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential
+        
+    - name: Install dependencies (macOS)
+      if: matrix.os == 'macos-latest'
+      run: |
+        brew install gcc make
+        
+    - name: Build all targets
+      run: make build-all
+      
+    - name: Run benchmark
+      run: |
+        ./eh_engine_ultimate_bench > benchmark_output.txt
+        cat benchmark_output.txt
+        
+    - name: Verify performance
+      run: |
+        # Check if benchmark completed successfully
+        if grep -q "BENCHMARK COMPLETE" benchmark_output.txt; then
+          echo "✅ Benchmark completed successfully"
+        else
+          echo "❌ Benchmark failed"
+          exit 1
+        fi
+        
+    - name: Upload benchmark results
+      uses: actions/upload-artifact@v4
+      with:
+        name: benchmark-results-${{ matrix.os }}
+        path: benchmark_output.txt
+        
+  docker-build:
+    name: Docker Build
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+      
+    - name: Build Docker image
+      run: |
+        docker build -t eventhorizon:test .
+        
+    - name: Run container test
+      run: |
+        docker run --rm eventhorizon:test > docker_benchmark.txt
+        cat docker_benchmark.txt
+        
+    - name: Verify Docker build
+      run: |
+        if grep -q "BENCHMARK COMPLETE" docker_benchmark.txt; then
+          echo "✅ Docker build successful"
+        else
+          echo "❌ Docker build failed"
+          exit 1
+        fi

@@ -3,6 +3,7 @@
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
 [![OS](https://img.shields.io/badge/OS-WSL%20%7C%20Linux%20%7C%20Windows-blue)]()
 [![Language](https://img.shields.io/badge/Language-C99-orange.svg)]()
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![AI-Assisted](https://img.shields.io/badge/AI--Assisted-Claude%20%7C%20GPT%20%7C%20Gemini-purple)]()
 
 > [!NOTE]
@@ -194,6 +195,75 @@ gcc -O3 -std=c99 -Wall -Wextra -march=native -Iinclude src/core/*.c bench_all.c 
 
 ---
 
+## Examples & Tests
+
+### 📂 Examples Directory
+
+The `examples/` directory contains working demonstrations of EventHorizon's capabilities:
+
+#### 1. Hello World (`hello_world.c`)
+Minimal working example showing basic setup and inference:
+```bash
+cd examples
+make
+./hello_world
+```
+
+#### 2. Arena Demo (`arena_demo.c`)
+Demonstrates memory arena allocation patterns:
+```bash
+./arena_demo
+```
+
+#### 3. Graph Demo (`graph_demo.c`)
+Shows DAG construction and state collapse:
+```bash
+./graph_demo
+```
+
+#### 4. Python Demo (`python_demo.py`)
+Python binding usage example:
+```bash
+python python_demo.py
+```
+
+See `examples/README.md` for detailed documentation.
+
+---
+
+### 🧪 Unit Test Suite
+
+The `tests/` directory contains comprehensive unit tests:
+
+- **Arena Tests** (`test_arena.c`) - 7 tests for memory allocator
+- **DAG Tests** (`test_dag.c`) - 3 tests for graph operations  
+- **Engine Tests** (`test_engine.c`) - 2 tests for inference engine
+
+Run all tests:
+```bash
+cd tests
+make test
+```
+
+**Expected Output:**
+```
+EventHorizon Engine - Arena Unit Tests
+======================================
+  Testing: arena create/destroy ... PASS
+  Testing: basic allocation ... PASS
+  Testing: 16-byte alignment ... PASS
+  Testing: out of memory handling ... PASS
+  Testing: arena reset ... PASS
+  Testing: node allocation ... PASS
+  Testing: zero-size allocation ... PASS
+======================================
+All tests passed! ✓
+```
+
+See `tests/README.md` for detailed test documentation.
+
+---
+
 ## Usage Guide
 
 ### Command-Line Execution
@@ -349,7 +419,7 @@ EH_Arena *arena = eh_arena_create(2 * 1024 * 1024);  // 2MB PSRAM
 
 ## Trademarks & Licensing
 
-EventHorizon Heuristic Decoding Engine is released under the MIT License. Authorized use of EventHorizon trademarks is subject to standard repository guidelines.
+EventHorizon Heuristic Decoding Engine is released under the Apache-2.0 License. Authorized use of EventHorizon trademarks is subject to standard repository guidelines.
 
 ---
 
@@ -400,3 +470,5 @@ EventHorizon Engine represents a new generation of AI-assisted systems programmi
 - **Open Source** - Apache-2.0 license, community-driven
 
 Built for the future of edge AI, validated on real hardware, and documented for developers worldwide.
+
+**📍 See [ROADMAP.md](ROADMAP.md) for the development timeline and planned features.**

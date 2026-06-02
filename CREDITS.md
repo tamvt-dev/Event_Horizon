@@ -163,7 +163,7 @@ EventHorizon Engine demonstrates that AI-assisted development can produce:
 - **Production-ready** - Extensively tested and benchmarked
 - **Well-documented** - Clear explanations and examples
 - **Optimized** - Edge AI deployment ready
-- **Open source** - MIT licensed for community use
+- **Open source** - Apache-2.0 licensed for community use
 
 ### Future Vision
 
@@ -200,7 +200,7 @@ By sharing this project, we hope to:
 
 ## License & Usage
 
-EventHorizon Engine is released under the **MIT License**:
+EventHorizon Engine is released under the **Apache-2.0 License**:
 - Free to use, modify, and distribute
 - No warranty or liability
 - Attribution appreciated but not required

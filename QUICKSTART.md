@@ -42,9 +42,28 @@ make run-test
 make bench        # Build benchmark suite
 make test         # Build test suite
 make neuro        # Build neuro test
+make examples     # Build all examples
 make build-all    # Build everything
 make clean        # Clean artifacts
 make help         # Show all commands
+```
+
+### Run Tests
+```bash
+cd tests
+make              # Build all tests
+make test         # Run all tests
+make clean        # Clean test artifacts
+```
+
+### Run Examples
+```bash
+cd examples
+make              # Build all examples
+./hello_world     # Run minimal example
+./arena_demo      # Run arena demo
+./graph_demo      # Run graph demo
+python python_demo.py  # Run Python binding demo
 ```
 
 ### PowerShell Commands
@@ -165,10 +184,21 @@ wsl --install
 
 ## 📚 Next Steps
 
-1. Read [README.md](README.md) for detailed documentation
-2. Check [CHANGELOG.md](CHANGELOG.md) for recent updates
-3. Explore [TODO.md](TODO.md) for planned features
-4. Review header files in `include/` for API reference
+1. **Run Examples**: Check `examples/` directory for working demos
+   - `hello_world.c` - Minimal working example
+   - `arena_demo.c` - Memory arena usage
+   - `graph_demo.c` - DAG construction
+   - `python_demo.py` - Python bindings
+
+2. **Run Tests**: Check `tests/` directory for unit tests
+   - `test_arena.c` - Arena allocator tests (7 tests)
+   - `test_dag.c` - DAG operations tests (3 tests)
+   - `test_engine.c` - Engine tests (2 tests)
+
+3. Read [README.md](README.md) for detailed documentation
+4. Check [CHANGELOG.md](CHANGELOG.md) for recent updates
+5. Explore [ROADMAP.md](ROADMAP.md) for planned features
+6. Review header files in `include/` for API reference
 
 ---
 
