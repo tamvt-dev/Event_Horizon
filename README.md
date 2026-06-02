@@ -1,5 +1,27 @@
 # EventHorizon (EH-Engine)
 
+```
+╔═══════════════════════════════════════════════════════════╗
+║                                                           ║
+║   ███████╗██╗   ██╗███████╗███╗   ██╗████████╗          ║
+║   ██╔════╝██║   ██║██╔════╝████╗  ██║╚══██╔══╝          ║
+║   █████╗  ██║   ██║█████╗  ██╔██╗ ██║   ██║             ║
+║   ██╔══╝  ╚██╗ ██╔╝██╔══╝  ██║╚██╗██║   ██║             ║
+║   ███████╗ ╚████╔╝ ███████╗██║ ╚████║   ██║             ║
+║   ╚══════╝  ╚═══╝  ╚══════╝╚═╝  ╚═══╝   ╚═╝             ║
+║                                                           ║
+║   ██╗  ██╗ ██████╗ ██████╗ ██╗███████╗ ██████╗ ███╗   ██╗
+║   ██║  ██║██╔═══██╗██╔══██╗██║╚══███╔╝██╔═══██╗████╗  ██║
+║   ███████║██║   ██║██████╔╝██║  ███╔╝ ██║   ██║██╔██╗ ██║
+║   ██╔══██║██║   ██║██╔══██╗██║ ███╔╝  ██║   ██║██║╚██╗██║
+║   ██║  ██║╚██████╔╝██║  ██║██║███████╗╚██████╔╝██║ ╚████║
+║   ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝
+║                                                           ║
+║             Edge AI Inference Engine                      ║
+║         Sub-millisecond • Adaptive • Zero-Allocation      ║
+╚═══════════════════════════════════════════════════════════╝
+```
+
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
 [![OS](https://img.shields.io/badge/OS-WSL%20%7C%20Linux%20%7C%20Windows-blue)]()
 [![Language](https://img.shields.io/badge/Language-C99-orange.svg)]()
@@ -711,4 +733,8 @@ EventHorizon Engine represents a new generation of AI-assisted systems programmi
 
 Built for the future of edge AI, validated on real hardware, and documented for developers worldwide.
 
-**📍 See [ROADMAP.md](ROADMAP.md) for the development timeline and planned features.**
+**📚 Key Documentation:**
+- **[PERFORMANCE_TUNING.md](PERFORMANCE_TUNING.md)** - Squeeze every drop of performance
+- **[ROADMAP.md](ROADMAP.md)** - Development timeline and planned features
+- **[QUICKSTART.md](QUICKSTART.md)** - Get started in 30 seconds
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Join the development

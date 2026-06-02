@@ -553,9 +553,13 @@ void benchmark_complete_engine(void) {
 
 // ========== Main ==========
 int main(void) {
-    printf("=====================================================\n");
-    printf("     EVENT HORIZON ENGINE BENCHMARK SUITE v4.0       \n");
-    printf("          (Empirical Performance Profiling)          \n");
+    printf("\n");
+    printf(" _____ _   _ \n");
+    printf("| ____| | | |  EventHorizon Engine\n");
+    printf("|  _| | |_| |  Benchmark Suite v4.0\n");
+    printf("| |___|  _  |  Empirical Performance Profiling\n");
+    printf("|_____|_| |_|\n");
+    printf("\n");
     printf("=====================================================\n");
     benchmark_arena();
     printf("-----------------------------------------------------\n");
