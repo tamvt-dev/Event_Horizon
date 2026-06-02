@@ -32,9 +32,9 @@ RUN ls -lh eh_* && \
 # Final stage - minimal runtime image
 FROM debian:bookworm-slim
 
-# Install runtime dependencies
+# Install runtime dependencies (libc6 already includes libm)
 RUN apt-get update && apt-get install -y \
-    libm6 \
+    libc6 \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
