@@ -11,6 +11,7 @@ This directory contains practical examples demonstrating EventHorizon Engine fea
 | `hello_world.c` | Minimal working example | Basic inference workflow |
 | `arena_demo.c` | Memory arena usage | O(1) allocation, reset, statistics |
 | `graph_demo.c` | DAG construction | Multi-node graphs, state collapse |
+| `game_ai_npc.c` | **Real-world Game AI** | **NPC behavior, adaptive learning** |
 
 ### Python Examples
 
@@ -30,6 +31,7 @@ make
 make hello_world
 make arena_demo
 make graph_demo
+make game_ai_npc
 ```
 
 ### Clean

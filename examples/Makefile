@@ -10,7 +10,7 @@ SRCDIR = ../src/core
 CORE_SRCS = $(SRCDIR)/*.c
 
 # Example targets
-EXAMPLES = hello_world arena_demo graph_demo
+EXAMPLES = hello_world arena_demo graph_demo game_ai_npc
 
 .PHONY: all clean help
 
@@ -29,6 +29,10 @@ graph_demo: graph_demo.c $(CORE_SRCS)
 	$(CC) $(CFLAGS) -I$(INCDIR) graph_demo.c $(CORE_SRCS) -o graph_demo $(LIBS)
 	@echo "✓ Built: graph_demo"
 
+game_ai_npc: game_ai_npc.c $(CORE_SRCS)
+	$(CC) $(CFLAGS) -I$(INCDIR) game_ai_npc.c $(CORE_SRCS) -o game_ai_npc $(LIBS)
+	@echo "✓ Built: game_ai_npc"
+
 clean:
 	rm -f $(EXAMPLES)
 	@echo "✓ Examples cleaned"
@@ -41,10 +45,12 @@ help:
 	@echo "  make hello_world  - Build hello_world example"
 	@echo "  make arena_demo   - Build arena_demo example"
 	@echo "  make graph_demo   - Build graph_demo example"
+	@echo "  make game_ai_npc  - Build game AI use case demo"
 	@echo "  make clean        - Remove built examples"
 	@echo ""
 	@echo "Run examples:"
 	@echo "  ./hello_world"
 	@echo "  ./arena_demo"
 	@echo "  ./graph_demo"
+	@echo "  ./game_ai_npc     (Real-world use case)"
 	@echo "  python3 python_demo.py  (requires bindings)"
