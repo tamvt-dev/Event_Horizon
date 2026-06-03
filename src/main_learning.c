@@ -10,11 +10,11 @@
 #include <string.h>
 #include <math.h>
 
-#include "../include/eh_dag.h"
-#include "../include/eh_scoring.h"
-#include "../include/eh_dynamic.h"
-#include "../include/eh_learning.h"
-#include "../include/eh_engine.h"
+#include "../include/core/eh_dag.h"
+#include "../include/core/eh_scoring.h"
+#include "../include/core/eh_dynamic.h"
+#include "../include/core/eh_learning.h"
+#include "../include/core/eh_engine.h"
 
 #define DIM_SIZE 8
 

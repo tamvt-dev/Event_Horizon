@@ -6,6 +6,7 @@ LIBS = -lm
 INCDIR = include
 SRCDIR = src
 CORE_SRCS = $(SRCDIR)/core/*.c
+HGN_SRCS = $(SRCDIR)/hgn/*.c
 
 # Detect if -march=native is supported
 MARCH_NATIVE_SUPPORT := $(shell $(CC) -march=native -x c -c -o /dev/null - </dev/null 2>&1 && echo yes || echo no)
@@ -31,28 +32,28 @@ all: $(TARGET_BENCH)
 # Benchmark suite
 bench: $(TARGET_BENCH)
 
-$(TARGET_BENCH): bench_all.c $(CORE_SRCS)
+$(TARGET_BENCH): bench_all.c $(CORE_SRCS) $(HGN_SRCS)
 	@echo "🔨 Compiling benchmark suite..."
-	$(CC) $(CFLAGS_OPT) -I$(INCDIR) $(CORE_SRCS) bench_all.c -o $(TARGET_BENCH) $(LIBS)
+	$(CC) $(CFLAGS_OPT) -I$(INCDIR) -I$(INCDIR)/core -I$(INCDIR)/hgn $(CORE_SRCS) $(HGN_SRCS) bench_all.c -o $(TARGET_BENCH) $(LIBS)
 	@echo "✅ Build complete: $(TARGET_BENCH)"
 
 # Test suite
 test: $(TARGET_TEST)
 
-$(TARGET_TEST): $(SRCDIR)/main_test.c $(CORE_SRCS)
-	$(CC) $(CFLAGS_OPT) -I$(INCDIR) $(CORE_SRCS) $(SRCDIR)/main_test.c -o $(TARGET_TEST) $(LIBS)
+$(TARGET_TEST): $(SRCDIR)/main_test.c $(CORE_SRCS) $(HGN_SRCS)
+	$(CC) $(CFLAGS_OPT) -I$(INCDIR) -I$(INCDIR)/core -I$(INCDIR)/hgn $(CORE_SRCS) $(HGN_SRCS) $(SRCDIR)/main_test.c -o $(TARGET_TEST) $(LIBS)
 
 # Neuro test
 neuro: $(TARGET_NEURO)
 
-$(TARGET_NEURO): $(SRCDIR)/test_neuro.c $(CORE_SRCS)
-	$(CC) $(CFLAGS_OPT) -I$(INCDIR) $(CORE_SRCS) $(SRCDIR)/test_neuro.c -o $(TARGET_NEURO) $(LIBS)
+$(TARGET_NEURO): $(SRCDIR)/test_neuro.c $(CORE_SRCS) $(HGN_SRCS)
+	$(CC) $(CFLAGS_OPT) -I$(INCDIR) -I$(INCDIR)/core -I$(INCDIR)/hgn $(CORE_SRCS) $(HGN_SRCS) $(SRCDIR)/test_neuro.c -o $(TARGET_NEURO) $(LIBS)
 
 # Learning test
 learning: $(TARGET_LEARNING)
 
-$(TARGET_LEARNING): $(SRCDIR)/main_learning.c $(CORE_SRCS)
-	$(CC) $(CFLAGS_OPT) -I$(INCDIR) $(CORE_SRCS) $(SRCDIR)/main_learning.c -o $(TARGET_LEARNING) $(LIBS)
+$(TARGET_LEARNING): $(SRCDIR)/main_learning.c $(CORE_SRCS) $(HGN_SRCS)
+	$(CC) $(CFLAGS_OPT) -I$(INCDIR) -I$(INCDIR)/core -I$(INCDIR)/hgn $(CORE_SRCS) $(HGN_SRCS) $(SRCDIR)/main_learning.c -o $(TARGET_LEARNING) $(LIBS)
 
 # Run benchmark
 run-bench: $(TARGET_BENCH)

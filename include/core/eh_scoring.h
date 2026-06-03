@@ -12,6 +12,11 @@
 #include "eh_dag.h"
 
 /* =========================================================
+ * CONSTANTS
+ * ========================================================= */
+#define EH_SCORE_DIM  128   /* Dimensionality for scoring vectors (AVX2-friendly) */
+
+/* =========================================================
  * SCORING CORE STRUCTURE
  *
  * routing_weights is a flat 2D matrix of size:

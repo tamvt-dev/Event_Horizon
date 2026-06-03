@@ -17,7 +17,7 @@
 #include <string.h>
 #include <math.h>
 
-#include "../../include/eh_scoring.h"
+#include "../../include/core/eh_scoring.h"
 
 /* =================================================================
  * PART 1: SCORING CORE INITIALIZATION

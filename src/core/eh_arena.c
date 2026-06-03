@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../../include/eh_arena.h"
+#include "../../include/core/eh_arena.h"
 
 /* =================================================================
  * PART 1: ARENA INITIALIZATION

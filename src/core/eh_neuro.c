@@ -24,7 +24,7 @@
 #include <math.h>
 #include <time.h>
 
-#include "../../include/eh_neuro.h"
+#include "../../include/core/eh_neuro.h"
 
 /* =================================================================
  * PART 1: NEURO CONTEXT INITIALIZATION

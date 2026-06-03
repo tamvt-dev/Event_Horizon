@@ -10,7 +10,7 @@
 #include <string.h>
 #include <math.h>
 
-#include "../../include/eh_dynamic.h"
+#include "../../include/core/eh_dynamic.h"
 
 /* --- Internal: DFS graph traversal to collect nodes and build profiles --- */
 static void _eh_dynamic_collect_nodes(EH_DAGNode *node, EH_DynamicProfile *profiles, int *count) {
