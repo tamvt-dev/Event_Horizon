@@ -34,15 +34,15 @@ static inline uint64_t rdtsc(void) {
 #include <unistd.h>
 #endif
 
-#include "include/eh_arena.h"
-#include "include/eh_tokenizer.h"
-#include "include/eh_graph.h"
-#include "include/eh_scoring.h"
-#include "include/eh_dag.h"
-#include "include/eh_neuro.h"
-#include "include/eh_learning.h"
-#include "include/eh_dynamic.h"
-#include "include/eh_engine.h"
+#include "include/core/eh_arena.h"
+#include "include/core/eh_tokenizer.h"
+#include "include/core/eh_graph.h"
+#include "include/core/eh_scoring.h"
+#include "include/core/eh_dag.h"
+#include "include/core/eh_neuro.h"
+#include "include/core/eh_learning.h"
+#include "include/core/eh_dynamic.h"
+#include "include/core/eh_engine.h"
 
 // ========== Benchmark Configuration ==========
 #define ARENA_ALLOCS       2000000

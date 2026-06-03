@@ -17,12 +17,12 @@
 #include <math.h>
 #include <time.h>
 
-#include "../include/eh_dag.h"
-#include "../include/eh_scoring.h"
-#include "../include/eh_engine.h"
-#include "../include/eh_dynamic.h"
-#include "../include/eh_arena.h"
-#include "../include/eh_neuro.h"
+#include "../include/core/eh_dag.h"
+#include "../include/core/eh_scoring.h"
+#include "../include/core/eh_engine.h"
+#include "../include/core/eh_dynamic.h"
+#include "../include/core/eh_arena.h"
+#include "../include/core/eh_neuro.h"
 
 #define DIM 8
 

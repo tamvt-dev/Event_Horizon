@@ -19,7 +19,7 @@
 #include <math.h>
 #include <float.h>
 #include <stdint.h>
-#include "../../include/eh_engine.h"
+#include "../../include/core/eh_engine.h"
 
 /* =================================================================
  * INTERNAL: DAG TRAVERSAL FOR COLLAPSE EVALUATION

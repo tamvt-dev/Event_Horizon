@@ -3,7 +3,7 @@
  * File: src/core/eh_graph.c
  */
 
-#include "../../include/eh_graph.h"
+#include "../../include/core/eh_graph.h"
 #include <string.h>
 
 EH_Graph* eh_graph_create(EH_Arena *node_arena, EH_Arena *edge_arena, uint32_t max_nodes, uint32_t max_edges) {

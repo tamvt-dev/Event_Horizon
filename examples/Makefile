@@ -5,9 +5,8 @@ CFLAGS = -O2 -std=c99 -Wall -Wextra
 LIBS = -lm
 
 INCDIR = ../include
-SRCDIR = ../src/core
-
-CORE_SRCS = $(SRCDIR)/*.c
+SRCDIR = ../src
+CORE_SRCS = $(SRCDIR)/core/*.c
 
 # Example targets
 EXAMPLES = hello_world arena_demo graph_demo game_ai_npc
@@ -18,19 +17,19 @@ all: $(EXAMPLES)
 	@echo "✓ All examples built successfully"
 
 hello_world: hello_world.c $(CORE_SRCS)
-	$(CC) $(CFLAGS) -I$(INCDIR) hello_world.c $(CORE_SRCS) -o hello_world $(LIBS)
+	$(CC) $(CFLAGS) -I$(INCDIR) -I$(INCDIR)/core hello_world.c $(CORE_SRCS) -o hello_world $(LIBS)
 	@echo "✓ Built: hello_world"
 
 arena_demo: arena_demo.c $(CORE_SRCS)
-	$(CC) $(CFLAGS) -I$(INCDIR) arena_demo.c $(CORE_SRCS) -o arena_demo $(LIBS)
+	$(CC) $(CFLAGS) -I$(INCDIR) -I$(INCDIR)/core arena_demo.c $(CORE_SRCS) -o arena_demo $(LIBS)
 	@echo "✓ Built: arena_demo"
 
 graph_demo: graph_demo.c $(CORE_SRCS)
-	$(CC) $(CFLAGS) -I$(INCDIR) graph_demo.c $(CORE_SRCS) -o graph_demo $(LIBS)
+	$(CC) $(CFLAGS) -I$(INCDIR) -I$(INCDIR)/core graph_demo.c $(CORE_SRCS) -o graph_demo $(LIBS)
 	@echo "✓ Built: graph_demo"
 
 game_ai_npc: game_ai_npc.c $(CORE_SRCS)
-	$(CC) $(CFLAGS) -I$(INCDIR) game_ai_npc.c $(CORE_SRCS) -o game_ai_npc $(LIBS)
+	$(CC) $(CFLAGS) -I$(INCDIR) -I$(INCDIR)/core game_ai_npc.c $(CORE_SRCS) -o game_ai_npc $(LIBS)
 	@echo "✓ Built: game_ai_npc"
 
 clean:

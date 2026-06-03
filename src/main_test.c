@@ -11,9 +11,9 @@
 #include <time.h>
 #include <math.h>
 
-#include "../include/eh_dag.h"
-#include "../include/eh_scoring.h"
-#include "../include/eh_engine.h"
+#include "../include/core/eh_dag.h"
+#include "../include/core/eh_scoring.h"
+#include "../include/core/eh_engine.h"
 
 #define INPUT_DIM   8
 #define OUTPUT_DIM  8

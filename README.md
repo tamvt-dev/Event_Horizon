@@ -3,19 +3,19 @@
 ```
 ╔═══════════════════════════════════════════════════════════╗
 ║                                                           ║
-║   ███████╗██╗   ██╗███████╗███╗   ██╗████████╗            ║
-║   ██╔════╝██║   ██║██╔════╝████╗  ██║╚══██╔══╝            ║
-║   █████╗  ██║   ██║█████╗  ██╔██╗ ██║   ██║               ║
-║   ██╔══╝  ╚██╗ ██╔╝██╔══╝  ██║╚██╗██║   ██║               ║
-║   ███████╗ ╚████╔╝ ███████╗██║ ╚████║   ██║               ║
-║   ╚══════╝  ╚═══╝  ╚══════╝╚═╝  ╚═══╝   ╚═╝               ║
+║   ███████╗██╗   ██╗███████╗███╗   ██╗████████╗          ║
+║   ██╔════╝██║   ██║██╔════╝████╗  ██║╚══██╔══╝          ║
+║   █████╗  ██║   ██║█████╗  ██╔██╗ ██║   ██║             ║
+║   ██╔══╝  ╚██╗ ██╔╝██╔══╝  ██║╚██╗██║   ██║             ║
+║   ███████╗ ╚████╔╝ ███████╗██║ ╚████║   ██║             ║
+║   ╚══════╝  ╚═══╝  ╚══════╝╚═╝  ╚═══╝   ╚═╝             ║
 ║                                                           ║
-║   ██╗  ██╗ ██████╗ ██████╗ ██╗███████╗ ██████╗ ███╗   ██╗ ║
-║   ██║  ██║██╔═══██╗██╔══██╗██║╚══███╔╝██╔═══██╗████╗  ██║ ║
-║   ███████║██║   ██║██████╔╝██║  ███╔╝ ██║   ██║██╔██╗ ██║ ║
-║   ██╔══██║██║   ██║██╔══██╗██║ ███╔╝  ██║   ██║██║╚██╗██║ ║
-║   ██║  ██║╚██████╔╝██║  ██║██║███████╗╚██████╔╝██║ ╚████║ ║
-║   ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝ ║
+║   ██╗  ██╗ ██████╗ ██████╗ ██╗███████╗ ██████╗ ███╗   ██╗
+║   ██║  ██║██╔═══██╗██╔══██╗██║╚══███╔╝██╔═══██╗████╗  ██║
+║   ███████║██║   ██║██████╔╝██║  ███╔╝ ██║   ██║██╔██╗ ██║
+║   ██╔══██║██║   ██║██╔══██╗██║ ███╔╝  ██║   ██║██║╚██╗██║
+║   ██║  ██║╚██████╔╝██║  ██║██║███████╗╚██████╔╝██║ ╚████║
+║   ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝
 ║                                                           ║
 ║             Edge AI Inference Engine                      ║
 ║         Sub-millisecond • Adaptive • Zero-Allocation      ║
@@ -35,11 +35,25 @@
 
 ## 🎯 What Problem Does EventHorizon Solve?
 
-**EventHorizon is a sub-millisecond heuristic search and adaptive inference engine for edge devices.**
+**EventHorizon enables small models to match the power of large models through adaptive computation.**
 
-If you need to:
-- ⚡ **Process 278K+ graph searches per second** with <1ms latency
-- 🧠 **Self-adapt to anomalous data** without retraining the entire model
+**The Vision:** A 16MB model that performs like a 2GB model.
+
+**How?**
+- 💡 **Smart > Big**: Adaptive graph collapse saves 93% FLOPs without losing accuracy
+- 🧠 **Learn on Device**: Neuroplasticity adapts to your specific data in real-time
+- ⚡ **Fast Routing**: Beam search activates only relevant computation paths
+- 🎯 **Specialized**: Focused on your domain instead of general-purpose
+
+**Perfect for:**
+- ⚡ **Edge AI** where memory is constrained (<64MB)
+- 🎮 **Game AI** needing 1000s of smart NPCs
+- 🤖 **Robotics** with real-time sensor fusion
+- 📡 **IoT** devices running on batteries
+- 💹 **HFT** requiring <100μs decisions
+
+**Key Innovation:**  
+Instead of running a massive model slowly, EventHorizon runs a small specialized model smartly - collapsing unnecessary computation and learning from your data.
 - 💾 **Run on <64MB RAM** with zero dynamic allocation (fragmentation-free)
 - 🔋 **Optimize for battery-powered devices** (0.054 mJ/inference)
 

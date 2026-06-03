@@ -8,7 +8,7 @@
 #include <string.h>
 #include <math.h>
 
-#include "../../include/eh_learning.h"
+#include "../../include/core/eh_learning.h"
 
 /* --- Internal: Allocate from Memory Arena (zero fragmentation) --- */
 static void *arena_alloc(EH_MemoryArena *arena, size_t size) {

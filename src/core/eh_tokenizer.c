@@ -20,7 +20,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#include "../../include/eh_tokenizer.h"
+#include "../../include/core/eh_tokenizer.h"
 
 /* =================================================================
  * PART 1: INITIALIZATION

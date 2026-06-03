@@ -12,7 +12,7 @@
 #include <string.h>
 #include <math.h>
 
-#include "../../include/eh_dag.h"
+#include "../../include/core/eh_dag.h"
 
 /* =================================================================
  * PART 1: NODE CREATION
