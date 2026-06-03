@@ -255,4 +255,4 @@ Large `vocab_size * embed_dim` calculation overflows 32-bit integer.
 
 **Last Updated**: 2026
 
-For questions about this policy, open a GitHub issue or email YOUR_EMAIL@example.com
+For questions about this policy, open a GitHub issue 
