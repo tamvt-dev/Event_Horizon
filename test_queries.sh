@@ -1,0 +1,110 @@
+#!/bin/bash
+cd /mnt/c/Users/Administrator/Desktop/my_project/eventhorizon
+
+MODEL=training/trigram_model.ehdag
+VOCAB=training/trigram_vocab.txt
+PAIRS=training/trigram_vocab.txt.pairs
+
+ask() {
+    ./qa_trigram ask $MODEL $VOCAB $PAIRS "$1" 2>/dev/null | grep "Answer:" | sed "s/Answer:   //"
+}
+
+echo "============================================"
+echo "   TRIGRAM MODEL - FULL TEST SUITE"
+echo "   Vocab: $(grep -c . $VOCAB) tokens"
+echo "============================================"
+echo ""
+
+echo "[IDENTITY]"
+echo "Q: what is your name"
+echo "A: $(ask 'what is your name')"
+echo "Q: who are you"
+echo "A: $(ask 'who are you')"
+echo "Q: are you human"
+echo "A: $(ask 'are you human')"
+echo "Q: what is your purpose"
+echo "A: $(ask 'what is your purpose')"
+echo ""
+
+echo "[GREETINGS]"
+echo "Q: how are you"
+echo "A: $(ask 'how are you')"
+echo "Q: good morning"
+echo "A: $(ask 'good morning')"
+echo "Q: hello"
+echo "A: $(ask 'hello')"
+echo ""
+
+echo "[CAPABILITIES]"
+echo "Q: what can you do"
+echo "A: $(ask 'what can you do')"
+echo "Q: can you help me"
+echo "A: $(ask 'can you help me')"
+echo "Q: can you do math"
+echo "A: $(ask 'can you do math')"
+echo ""
+
+echo "[MATH]"
+echo "Q: what is two plus two"
+echo "A: $(ask 'what is two plus two')"
+echo "Q: what is ten minus three"
+echo "A: $(ask 'what is ten minus three')"
+echo "Q: what is five times five"
+echo "A: $(ask 'what is five times five')"
+echo "Q: what is pi"
+echo "A: $(ask 'what is pi')"
+echo ""
+
+echo "[SCIENCE]"
+echo "Q: what is the sun"
+echo "A: $(ask 'what is the sun')"
+echo "Q: what is water"
+echo "A: $(ask 'what is water')"
+echo "Q: what is electricity"
+echo "A: $(ask 'what is electricity')"
+echo "Q: why is the sky blue"
+echo "A: $(ask 'why is the sky blue')"
+echo ""
+
+echo "[TECHNOLOGY]"
+echo "Q: what is python"
+echo "A: $(ask 'what is python')"
+echo "Q: what is the internet"
+echo "A: $(ask 'what is the internet')"
+echo "Q: what is artificial intelligence"
+echo "A: $(ask 'what is artificial intelligence')"
+echo ""
+
+echo "[GEOGRAPHY]"
+echo "Q: what is the capital of france"
+echo "A: $(ask 'what is the capital of france')"
+echo "Q: what is the largest country"
+echo "A: $(ask 'what is the largest country')"
+echo "Q: what is the highest mountain"
+echo "A: $(ask 'what is the highest mountain')"
+echo ""
+
+echo "[ANIMALS]"
+echo "Q: what is a dog"
+echo "A: $(ask 'what is a dog')"
+echo "Q: what is a whale"
+echo "A: $(ask 'what is a whale')"
+echo ""
+
+echo "[PHILOSOPHY]"
+echo "Q: what is love"
+echo "A: $(ask 'what is love')"
+echo "Q: what is happiness"
+echo "A: $(ask 'what is happiness')"
+echo "Q: what is the meaning of life"
+echo "A: $(ask 'what is the meaning of life')"
+echo ""
+
+echo "[FUN]"
+echo "Q: tell me a joke"
+echo "A: $(ask 'tell me a joke')"
+echo ""
+
+echo "============================================"
+echo "   TEST COMPLETE"
+echo "============================================"

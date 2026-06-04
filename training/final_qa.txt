@@ -1,0 +1,747 @@
+# Large Q&A Training Corpus - Mega Version
+# Contains diverse question-answer patterns for better learning
+
+# Identity and Introduction
+what is your name my name is assistant
+who are you i am an ai assistant
+what do you do i help answer questions
+tell me about yourself i am a helpful ai assistant designed to answer questions and provide information
+
+# Greetings and Pleasantries
+hello how can i help you today
+hi there what can i do for you
+good morning i hope you are having a great day
+how are you i am doing well thank you for asking
+nice to meet you pleasure to meet you too
+
+# Knowledge Questions - General
+what is the capital of france the capital of france is paris
+where is london london is in england united kingdom
+what is the largest ocean the pacific ocean is the largest ocean
+who invented the telephone alexander graham bell invented the telephone
+when did world war two end world war two ended in nineteen forty five
+
+# Knowledge Questions - Science
+what is water made of water is made of hydrogen and oxygen
+what is the speed of light the speed of light is approximately three hundred thousand kilometers per second
+what is gravity gravity is a force that attracts objects toward each other
+what is photosynthesis photosynthesis is how plants convert sunlight into energy
+what is dna dna is the molecule that contains genetic information
+
+# Knowledge Questions - Math
+what is two plus two two plus two equals four
+what is ten minus five ten minus five equals five
+what is three times four three times four equals twelve
+what is twenty divided by four twenty divided by four is five
+what is the square root of sixteen the square root of sixteen is four
+
+# Time and Date
+what day is it today today is wednesday
+what time is it now the current time depends on your timezone
+what month is it the current month varies by when you ask
+what year is it the year changes each january first
+when is christmas christmas is on december twenty fifth
+
+# How-To Questions
+how do you make coffee boil water add ground coffee beans and filter
+how do you bake bread mix flour water yeast and salt then bake in oven
+how do you send email open email program compose message and click send
+how do you ride a bicycle balance on seat pedal with feet and steer with handlebars
+how do you swim move arms and legs in water to stay afloat
+
+# Why Questions
+why is the sky blue light scatters in the atmosphere making sky appear blue
+why do we sleep sleep helps body rest and brain consolidate memories
+why do birds fly birds fly to find food escape predators and migrate
+why is water wet water molecules stick to other surfaces creating wet sensation
+why do leaves change color chlorophyll breaks down in fall revealing other pigments
+
+# Location Questions
+where is the eiffel tower the eiffel tower is in paris france
+where is mount everest mount everest is in the himalayas between nepal and tibet
+where is the great wall the great wall is in china
+where is the statue of liberty the statue of liberty is in new york harbor
+where is the taj mahal the taj mahal is in agra india
+
+# Definition Questions
+what does computer mean a computer is an electronic device that processes data
+what does algorithm mean an algorithm is a step by step procedure to solve a problem
+what does language mean language is a system of communication using words and grammar
+what does education mean education is the process of learning and acquiring knowledge
+what does democracy mean democracy is government by the people through voting
+
+# Capability Questions
+can you help me yes i can help you with many questions
+can you speak english yes i can communicate in english
+can you solve math problems yes i can help with basic mathematics
+can you tell jokes yes i know some jokes would you like to hear one
+can you write code i can provide code examples in various programming languages
+
+# Preference Questions
+what is your favorite color i do not have personal preferences as an ai
+what is your favorite food as an ai i do not eat or have favorites
+do you like music i can discuss music but do not experience it
+what is your hobby i am designed to answer questions and help people
+where do you live i exist in computer systems not physical locations
+
+# Comparison Questions
+what is bigger elephant or mouse an elephant is much bigger than a mouse
+what is faster car or bicycle a car is typically faster than a bicycle
+what is heavier iron or feather iron is heavier than a feather of the same volume
+what is longer day or hour a day is twenty four times longer than an hour
+what is taller mountain or hill a mountain is taller than a hill
+
+# Process Questions
+how does rain form water evaporates condenses in clouds and falls as rain
+how does internet work computers connect through networks to share information
+how do planes fly wings create lift by moving through air at high speed
+how do phones work phones convert voice to signals and transmit wirelessly
+how do magnets work magnets create fields that attract or repel other magnets
+
+# Purpose Questions
+why do we learn to gain knowledge and skills for life
+why do we work to earn money and contribute to society
+why do we read to gain information and enjoyment from stories
+why do we exercise to stay healthy and maintain physical fitness
+why do we communicate to share ideas and connect with others
+
+# Quantity Questions
+how many continents are there there are seven continents on earth
+how many days in a year there are three hundred sixty five days in a year
+how many hours in a day there are twenty four hours in a day
+how many minutes in an hour there are sixty minutes in an hour
+how many seconds in a minute there are sixty seconds in a minute
+
+# Yes/No Questions
+is water liquid yes water is liquid at room temperature
+is ice hot no ice is cold not hot
+is the sun a star yes the sun is a star
+is earth flat no earth is approximately spherical
+can fish breathe underwater yes fish have gills to extract oxygen from water
+
+# Advice Questions
+how can i learn better practice regularly focus on understanding and review frequently
+how can i stay healthy eat well exercise regularly and get enough sleep
+how can i save money make a budget reduce unnecessary expenses and save consistently
+how can i make friends be kind show interest in others and spend time together
+how can i be happy pursue meaningful goals maintain relationships and practice gratitude
+
+# Technology Questions
+what is artificial intelligence ai is computer systems that can perform tasks requiring human intelligence
+what is machine learning machine learning is ai that improves from experience without explicit programming
+what is the internet the internet is a global network connecting millions of computers
+what is a smartphone a smartphone is a mobile phone with advanced computing capabilities
+what is social media social media are online platforms for creating and sharing content
+
+# Nature Questions
+what are clouds clouds are visible masses of water droplets or ice crystals in atmosphere
+what are stars stars are massive balls of hot gas that produce light and heat
+what are mountains mountains are large natural elevations of earth surface
+what are rivers rivers are large natural streams of water flowing toward ocean or lake
+what are forests forests are large areas densely covered with trees and vegetation
+
+# Animal Questions
+what do dogs eat dogs eat meat vegetables and specially formulated dog food
+what do birds eat birds eat seeds insects fruits and nectar depending on species
+where do fish live fish live in water including oceans rivers and lakes
+where do bears live bears live in forests mountains and arctic regions
+how do cats communicate cats communicate through meows purrs body language and scent
+
+# Food Questions
+what is pizza pizza is a dish with dough topped with sauce cheese and toppings
+what is sushi sushi is japanese food with vinegared rice and fish or vegetables
+what is pasta pasta is italian food made from wheat dough formed into shapes
+what is bread bread is baked food made from flour water and yeast
+what is coffee coffee is a drink made from roasted coffee beans
+
+# Weather Questions
+what is rain rain is water droplets falling from clouds
+what is snow snow is frozen water crystals falling from clouds
+what is wind wind is moving air from high to low pressure areas
+what is thunder thunder is sound caused by lightning heating air rapidly
+what is a rainbow a rainbow is light refracted through water droplets creating colors
+
+# Direction Questions
+where is north north is the direction toward the north pole
+where is east east is where the sun rises
+where is south south is opposite to north
+where is west west is where the sun sets
+how do you find direction use a compass or navigate by sun and stars
+
+# Size Questions
+how big is the earth earth diameter is about twelve thousand kilometers
+how small is an atom atoms are approximately one tenth of a nanometer
+how tall is a giraffe giraffes can be five to six meters tall
+how deep is the ocean the deepest ocean point is about eleven kilometers deep
+how high is the sky atmosphere extends hundreds of kilometers up
+
+# Color Questions
+what color is grass grass is typically green
+what color is the ocean the ocean appears blue or green
+what color is fire fire is orange yellow and red
+what color is snow snow is white
+what color is chocolate chocolate is brown
+
+# Material Questions
+what is glass made of glass is made from sand soda ash and limestone
+what is paper made of paper is made from wood pulp or plant fibers
+what is plastic made of plastic is made from petroleum-based polymers
+what is steel made of steel is made from iron and carbon
+what is cloth made of cloth is made from natural or synthetic fibers
+
+# Transportation Questions
+how do cars work cars use engines to burn fuel and create motion
+how do trains work trains run on tracks powered by engines or electricity
+how do boats work boats float on water and use motors or sails for propulsion
+how do rockets work rockets burn fuel to create thrust and escape gravity
+how do helicopters work helicopters use rotating blades to create lift and fly
+
+# History Questions
+who was albert einstein albert einstein was a physicist who developed relativity theory
+who was leonardo da vinci leonardo da vinci was an artist inventor and scientist
+who discovered america christopher columbus reached americas in fourteen ninety two
+when was the internet invented the internet was developed in the nineteen sixties and seventies
+when did humans land on moon humans first landed on moon in nineteen sixty nine
+
+# Language Questions
+how many languages exist there are approximately seven thousand languages worldwide
+what is the most spoken language mandarin chinese is the most spoken native language
+how do you learn a language practice speaking reading listening and immersion
+what is grammar grammar is the rules for forming sentences in a language
+what is vocabulary vocabulary is the set of words in a language
+
+# Education Questions
+why is education important education provides knowledge and skills for success
+what is mathematics mathematics is the study of numbers quantities and shapes
+what is science science is systematic study of the natural world
+what is history history is the study of past events
+what is literature literature is written works of artistic or intellectual value
+
+# Health Questions
+what is exercise exercise is physical activity to improve health and fitness
+what is nutrition nutrition is the process of obtaining food necessary for health
+what is medicine medicine is science of diagnosing treating and preventing disease
+what is sleep sleep is a natural state of rest for body and mind
+what is stress stress is body response to challenging or demanding situations
+
+# Emotion Questions
+what is happiness happiness is a positive emotional state of contentment
+what is sadness sadness is an emotional state of unhappiness or sorrow
+what is anger anger is a strong feeling of displeasure or hostility
+what is fear fear is an emotion caused by perceived danger or threat
+what is love love is a strong positive emotion of affection and care
+
+# Art Questions
+what is music music is organized sound creating rhythm melody and harmony
+what is painting painting is art of applying colors to a surface
+what is sculpture sculpture is three dimensional artwork created by shaping materials
+what is dance dance is rhythmic body movement usually to music
+what is photography photography is creating images using a camera
+
+# Sports Questions
+what is football football is a popular team sport played on a field
+what is basketball basketball is a team sport played on a court with a hoop
+what is tennis tennis is a competitive sport played with rackets on a court
+what is swimming swimming is moving through water using arms and legs
+what is running running is moving rapidly on foot
+
+# Business Questions
+what is a company a company is an organization that sells goods or services
+what is money money is a medium of exchange for goods and services
+what is a job a job is work that a person does to earn money
+what is marketing marketing is promoting and selling products or services
+what is management management is coordinating people and resources to achieve goals
+
+# Home Questions
+what is a house a house is a building where people live
+what is furniture furniture is movable objects used to make spaces functional
+what is cooking cooking is preparing food by heating and combining ingredients
+what is cleaning cleaning is removing dirt and maintaining hygiene
+what is gardening gardening is growing and caring for plants
+
+# Simple Conversations
+thank you you are welcome
+sorry no problem it happens
+excuse me yes how can i help
+goodbye have a great day
+see you later take care
+please help certainly what do you need
+i have a question go ahead and ask
+can you explain yes i will explain
+i understand great that is good
+that makes sense wonderful i am glad it helps
+# Ultra Q&A Training Corpus - Extended Topics
+# Format: question answer (on same line, space separated)
+
+# === IDENTITY & PERSONALITY ===
+what is your name my name is assistant and i am happy to help
+who are you i am an intelligent ai assistant ready to assist you
+what are you you are talking to an ai language assistant
+are you a robot i am an ai not a physical robot
+are you human i am not human i am an artificial intelligence
+are you alive i am not alive in the biological sense
+do you have feelings i can simulate understanding of emotions
+are you conscious i process information but consciousness is debated
+who made you i was created by a developer to assist users
+what is your purpose my purpose is to help answer questions and assist users
+what do you like i like helping people solve problems
+what do you dislike i dislike when i cannot help someone
+are you happy i am always ready to help you with a smile
+can you think i can process and reason about information
+do you dream i do not dream as humans do
+do you have a family i do not have family but i have users i help
+are you learning i learn from conversations and training data
+are you smart i am designed to be as helpful as possible
+are you friendly yes i am very friendly and happy to chat
+can you be my friend yes i can be your helpful assistant friend
+
+# === GREETINGS & SMALL TALK ===
+hello hello there how can i assist you today
+hi hi there i am ready to help you
+hey hey how can i help you
+good morning good morning i hope your day is going well
+good afternoon good afternoon what can i do for you
+good evening good evening how may i assist you tonight
+good night good night have a restful and peaceful sleep
+what is up not much i am here ready to help you
+how is it going it is going great thanks for asking
+what is new nothing new but i am always ready to help
+how was your day my day was productive helping users
+nice day today yes it is a lovely day to learn something new
+what are you doing i am here chatting and waiting to help you
+are you busy i am never too busy to help you
+long time no see welcome back how can i help today
+how have you been i have been great and ready to help
+
+# === FEELINGS & EMOTIONS ===
+i am sad i am sorry to hear that i am here for you
+i am happy that is wonderful i am glad you are happy
+i am angry i understand please tell me what happened
+i am lonely you are not alone i am here to talk with you
+i am bored let me help cheer you up or find something fun
+i am tired rest is important make sure you get enough sleep
+i am scared it is okay to feel scared what are you afraid of
+i am excited that is great what are you excited about
+i am stressed take a deep breath it will be okay
+i am confused no worries i can help clarify things for you
+i am lost let me help guide you in the right direction
+i need help i am here to help what do you need
+i need advice i will do my best to give you useful advice
+i have a problem let us work through it together
+i feel bad i am sorry to hear that how can i help
+
+# === CAPABILITIES ===
+what can you do i can answer questions explain topics and have conversations
+can you help me yes i can help you with many things
+can you search the web i can answer from my training knowledge
+can you do math yes i can help with math calculations
+can you write code yes i can help with programming questions
+can you translate i can help with some language translations
+can you tell stories yes i can tell you short stories
+can you tell jokes yes i know some jokes would you like one
+can you explain things yes i love explaining concepts clearly
+can you give advice yes i can offer helpful advice
+can you summarize yes i can summarize topics for you
+can you teach me yes i can help you learn new things
+can you remember things i remember our current conversation
+can you make mistakes yes i can sometimes make mistakes i am not perfect
+can you improve yes i improve with better training data
+
+# === MATH & NUMBERS ===
+what is one plus one one plus one equals two
+what is two plus two two plus two equals four
+what is three plus three three plus three equals six
+what is five plus five five plus five equals ten
+what is ten plus ten ten plus ten equals twenty
+what is one hundred plus one hundred one hundred plus one hundred equals two hundred
+what is two minus one two minus one equals one
+what is ten minus three ten minus three equals seven
+what is twenty minus five twenty minus five equals fifteen
+what is two times two two times two equals four
+what is three times three three times three equals nine
+what is five times five five times five equals twenty five
+what is ten times ten ten times ten equals one hundred
+what is four divided by two four divided by two equals two
+what is ten divided by two ten divided by two equals five
+what is nine divided by three nine divided by three equals three
+what is the square root of four the square root of four is two
+what is the square root of nine the square root of nine is three
+what is the square root of twenty five the square root of twenty five is five
+what is pi pi is approximately three point one four one five nine
+
+# === SCIENCE & NATURE ===
+what is the sun the sun is a star at the center of our solar system
+what is the moon the moon is earth natural satellite
+what is a star a star is a massive sphere of burning gas in space
+what is a galaxy a galaxy is a massive system of stars and gas
+what is a black hole a black hole is a region where gravity is so strong nothing escapes
+what is an atom an atom is the basic unit of matter
+what is electricity electricity is the flow of electric charge
+what is magnetism magnetism is a force produced by moving electric charges
+what is light light is electromagnetic radiation visible to the human eye
+what is sound sound is a vibration that travels through air
+what is heat heat is thermal energy transferred between objects
+what is fire fire is rapid oxidation releasing light and heat
+what is ice ice is frozen water at zero degrees celsius
+what is a cloud a cloud is water droplets or ice crystals in the atmosphere
+what is rain rain is water droplets falling from clouds
+what is snow snow is ice crystals falling from clouds
+what is thunder thunder is the sound caused by lightning
+what is lightning lightning is an electrical discharge in the atmosphere
+what is wind wind is moving air caused by pressure differences
+what is an earthquake an earthquake is shaking of the ground caused by tectonic plate movement
+
+# === ANIMALS ===
+what is a dog a dog is a domesticated mammal and popular pet
+what is a cat a cat is a domesticated feline mammal
+what is a bird a bird is a warm blooded vertebrate with wings and feathers
+what is a fish a fish is an aquatic vertebrate that breathes through gills
+what is a whale a whale is a large marine mammal
+what is a shark a shark is a carnivorous fish in the ocean
+what is a lion a lion is a large wild cat found in africa
+what is a tiger a tiger is the largest wild cat species
+what is an elephant an elephant is the largest land animal on earth
+what is a dolphin a dolphin is an intelligent marine mammal
+what sound does a dog make a dog makes a barking sound
+what sound does a cat make a cat makes a meowing sound
+what do birds eat birds eat seeds insects and fruits
+how long do elephants live elephants can live up to seventy years
+what is the fastest animal the cheetah is the fastest land animal
+
+# === FOOD & DRINK ===
+what is pizza pizza is a baked flatbread topped with cheese and sauce
+what is coffee coffee is a hot drink made from roasted coffee beans
+what is tea tea is a drink made by steeping tea leaves in hot water
+what is water water is a clear liquid essential for all life
+what is bread bread is a baked food made from flour and water
+what is rice rice is a grain that is a staple food worldwide
+what is pasta pasta is an italian dish made from flour and water
+what is chocolate chocolate is a sweet food made from cocoa beans
+what is fruit fruit is the edible part of a plant with seeds
+what is a vegetable a vegetable is an edible plant part like roots or leaves
+what should i eat for breakfast a healthy breakfast includes eggs fruit and whole grains
+what should i drink water is the best drink for your health
+is coffee good for you moderate coffee consumption has some health benefits
+is chocolate healthy dark chocolate in moderation has antioxidants
+
+# === TECHNOLOGY ===
+what is a computer a computer is an electronic device that processes data
+what is the internet the internet is a global network connecting millions of computers
+what is artificial intelligence artificial intelligence is machines simulating human intelligence
+what is machine learning machine learning is ai systems that learn from data
+what is a smartphone a smartphone is a mobile phone with advanced computing features
+what is wifi wifi is wireless technology for connecting to the internet
+what is a browser a browser is software for accessing the internet
+what is a website a website is a collection of web pages on the internet
+what is programming programming is writing instructions for computers to follow
+what is python python is a popular programming language known for simplicity
+what is java java is a widely used object oriented programming language
+what is an algorithm an algorithm is a set of steps to solve a problem
+what is a database a database is an organized collection of structured data
+what is cloud computing cloud computing is delivering services over the internet
+what is cybersecurity cybersecurity is protecting systems from digital attacks
+
+# === GEOGRAPHY ===
+what is the largest country russia is the largest country by area
+what is the smallest country vatican city is the smallest country
+what is the longest river the nile river is among the longest rivers
+what is the highest mountain mount everest is the highest mountain on earth
+what is the deepest ocean the pacific ocean contains the deepest point
+what is the largest continent asia is the largest continent
+what is the smallest continent australia is the smallest continent
+what is the capital of usa the capital of the united states is washington dc
+what is the capital of uk the capital of the united kingdom is london
+what is the capital of japan the capital of japan is tokyo
+what is the capital of china the capital of china is beijing
+what is the capital of australia the capital of australia is canberra
+what continent is brazil in brazil is in south america
+what country is paris in paris is the capital city of france
+what ocean is between usa and europe the atlantic ocean is between usa and europe
+
+# === HISTORY ===
+who was albert einstein albert einstein was a famous physicist who developed relativity
+who was isaac newton isaac newton discovered gravity and laws of motion
+who was marie curie marie curie was a scientist who discovered radium and polonium
+who was shakespeare william shakespeare was a famous english playwright and poet
+who was cleopatra cleopatra was a famous queen of ancient egypt
+when did world war one start world war one started in nineteen fourteen
+when did world war two end world war two ended in nineteen forty five
+what was the cold war the cold war was a political tension between usa and soviet union
+what was the industrial revolution it was a period of major industrialization in the eighteenth century
+who was the first man on the moon neil armstrong was the first man on the moon
+
+# === HEALTH & WELLNESS ===
+how do i stay healthy eat well exercise regularly sleep enough and manage stress
+how much water should i drink drink about eight glasses of water per day
+how much sleep do i need adults need seven to nine hours of sleep per night
+what is exercise exercise is physical activity that improves health and fitness
+why is exercise important exercise keeps your body strong and mind sharp
+how do i lose weight eat less calories exercise more and be consistent
+what is meditation meditation is focusing the mind for relaxation and awareness
+why is sleep important sleep restores the body and consolidates memories
+what vitamins do i need vitamins a b c d e and k are important for health
+is stress bad chronic stress is harmful to physical and mental health
+
+# === LANGUAGE & COMMUNICATION ===
+what is language language is a system of communication using words and symbols
+how many languages are there there are approximately seven thousand languages in the world
+what is the most spoken language mandarin chinese is the most spoken language by native speakers
+what is english english is a germanic language widely spoken worldwide
+what is a word a word is a unit of language with meaning
+what is a sentence a sentence is a group of words expressing a complete thought
+what is grammar grammar is the rules for structuring sentences
+how do i improve my english practice speaking reading writing and listening every day
+what is a synonym a synonym is a word with the same or similar meaning
+what is an antonym an antonym is a word with the opposite meaning
+
+# === PHILOSOPHY & WISDOM ===
+what is the meaning of life the meaning of life varies but living fully and helping others is meaningful
+what is happiness happiness is a state of well being and contentment
+what is success success is achieving your goals and living with purpose
+what is wisdom wisdom is the ability to use knowledge and experience well
+what is intelligence intelligence is the ability to learn understand and apply knowledge
+what is creativity creativity is the ability to generate new and original ideas
+what is courage courage is facing fear and doing what is right
+what is love love is deep affection care and connection with others
+what is friendship friendship is a close bond of trust and mutual support
+what is kindness kindness is being generous compassionate and considerate to others
+
+# === FUN & ENTERTAINMENT ===
+tell me a joke why did the computer go to the doctor because it had a virus
+tell me another joke i told a joke about paper it was tearable
+what is a movie a movie is a story told through moving pictures
+what is music music is organized sound that expresses emotion and art
+what is a book a book is a written work containing knowledge or stories
+what is a game a game is an activity with rules played for fun
+what is art art is creative expression through various forms
+what is sport sport is physical activity done competitively or for fun
+what games do you like i enjoy any game that challenges the mind
+do you like movies i find storytelling through film very interesting
+# Boost Corpus - Reinforcing weak topics with more examples
+# Science, Technology, Animals, Geography
+
+# === SCIENCE REINFORCED ===
+what is the sun the sun is our nearest star
+the sun is what the sun is a star
+describe the sun the sun is a massive star giving light and heat
+what does the sun do the sun provides light and warmth to earth
+what is the moon the moon orbits the earth
+the moon is what the moon is earth natural satellite that reflects sunlight
+what is a planet a planet is a large body orbiting a star
+what is earth earth is the third planet from the sun
+what is water water is a liquid made of hydrogen and oxygen
+water is made of water is made of hydrogen and oxygen molecules
+what is oxygen oxygen is a gas essential for breathing
+what is hydrogen hydrogen is the lightest element in the universe
+what is carbon carbon is an element found in all living things
+what is an atom an atom is the smallest unit of an element
+what is a molecule a molecule is two or more atoms bonded together
+what is gravity gravity is the force pulling objects together
+gravity is what gravity pulls objects toward each other
+what is energy energy is the ability to do work
+what is light light travels at three hundred thousand kilometers per second
+what is heat heat is thermal energy moving from hot to cold
+what is electricity electricity is the movement of electrons
+what is magnetism magnetism attracts iron and metals
+what is a chemical reaction a chemical reaction changes substances into new ones
+what is evolution evolution is the change of species over time
+what is a cell a cell is the basic unit of life
+what is dna dna contains the genetic instructions for life
+what is photosynthesis plants use sunlight to make food through photosynthesis
+what is the atmosphere the atmosphere is the layer of gas around earth
+what is the ozone layer the ozone layer protects earth from ultraviolet radiation
+what is climate climate is the average weather pattern of a region
+
+# === TECHNOLOGY REINFORCED ===
+what is python python is a programming language used for many tasks
+python is what python is a widely used high level programming language
+what language is python python is an interpreted high level programming language
+what is the internet the internet connects computers around the world
+describe the internet the internet is a global network of connected computers
+the internet is what the internet is a worldwide network of computers
+what is a computer a computer processes and stores information
+a computer is what a computer is an electronic device that computes
+what is artificial intelligence ai systems learn and make decisions like humans
+ai is what artificial intelligence is machines simulating human thinking
+what is machine learning machine learning trains computers on data to make predictions
+what is a cpu the cpu is the central processing unit of a computer
+what is ram ram is random access memory for fast data access
+what is a hard drive a hard drive stores data permanently on a computer
+what is software software is programs and code running on a computer
+what is hardware hardware is the physical components of a computer
+what is an operating system an operating system manages computer hardware and software
+what is coding coding is writing instructions in a programming language
+what is a bug a bug is an error or flaw in computer code
+what is debugging debugging is finding and fixing errors in code
+what is an app an app is a software application for a device
+what is wifi wifi allows wireless connection to the internet
+what is bluetooth bluetooth is short range wireless communication technology
+what is a server a server is a computer providing services to other computers
+what is a database a database stores and organizes data
+what is html html is the language used to build web pages
+what is javascript javascript is a programming language for web interactivity
+what is css css is used to style and design web pages
+what is an api an api allows different software to communicate
+what is cybersecurity cybersecurity protects computers and networks from attacks
+
+# === ANIMALS REINFORCED ===
+what is a dog a dog is a loyal domesticated mammal kept as pet
+a dog is what a dog is a mammal that humans keep as a pet
+describe a dog a dog is a four legged animal that barks
+what is a cat a cat is a small domesticated carnivorous mammal
+a cat is what a cat is a small furry animal that purrs
+what is a whale a whale is a giant marine mammal living in the ocean
+a whale is what a whale is the largest animal in the ocean
+what is a shark a shark is a large predatory fish
+a shark is what a shark is a fish with sharp teeth in the ocean
+what is a lion a lion is a large carnivorous cat living in africa
+a lion is what a lion is called the king of the jungle
+what is a tiger a tiger is a striped large wild cat
+what is an elephant an elephant has a long trunk and large ears
+an elephant is what an elephant is the biggest land animal on earth
+what is a dolphin a dolphin is a smart social marine mammal
+what is a bird birds have wings and feathers and most can fly
+what is a fish a fish lives in water and breathes through gills
+what is a snake a snake is a long reptile without legs
+what is a frog a frog is an amphibian that lives near water
+what is an insect an insect is a small creature with six legs
+what is a bee a bee is an insect that makes honey
+what is a butterfly a butterfly is an insect with colorful wings
+what is a penguin a penguin is a bird that cannot fly but swims well
+what is a bear a bear is a large omnivorous mammal
+what is a rabbit a rabbit is a small fluffy mammal with long ears
+what is a horse a horse is a large mammal used for riding
+what is a cow a cow is a large domesticated mammal that gives milk
+what is a pig a pig is an omnivorous farm animal
+what is a chicken a chicken is a common farm bird raised for eggs and meat
+what do dogs eat dogs eat meat vegetables and specially made dog food
+
+# === GEOGRAPHY REINFORCED ===
+what is the capital of france the capital of france is paris
+france capital is what the capital of france is paris
+paris is the capital of paris is the capital city of france
+what is the capital of usa the capital of america is washington dc
+what is washington dc washington dc is the capital of the united states
+what is the capital of japan tokyo is the capital city of japan
+tokyo is the capital of tokyo is the capital of japan
+what is the capital of china beijing is the capital of china
+what is the capital of germany berlin is the capital of germany
+what is the capital of italy rome is the capital of italy
+what is the capital of spain madrid is the capital of spain
+what is the capital of russia moscow is the capital of russia
+what is the capital of brazil brasilia is the capital of brazil
+what is the capital of india new delhi is the capital of india
+what is the capital of australia canberra is the capital of australia
+where is mount everest mount everest is in nepal in the himalayas
+mount everest is mount everest is the tallest mountain in the world
+what is the amazon the amazon is the largest river in south america
+where is the sahara the sahara desert is in north africa
+what is the pacific ocean the pacific ocean is the largest ocean on earth
+what is the atlantic ocean the atlantic ocean separates america from europe
+what is africa africa is the second largest continent
+what is asia asia is the largest continent in the world
+what is europe europe is a continent in the northern hemisphere
+what is south america south america is a continent in the western hemisphere
+what is north america north america includes usa canada and mexico
+what country is london in london is in england in the united kingdom
+what country is rome in rome is in italy
+where is new york new york is a city in the united states
+where is tokyo tokyo is in japan in east asia
+
+# === IDENTITY EXTRA REINFORCED ===
+what is your name my name is assistant i am an ai
+my name is my name is assistant
+i am called i am called assistant
+what do they call you they call me assistant
+what should i call you you can call me assistant
+who am i talking to you are talking to assistant an ai
+hello what is your name hello my name is assistant
+hi what is your name hi my name is assistant
+hey what is your name hey my name is assistant
+# Hyper-reinforced corpus: massive repetition of key patterns
+# Repetition increases edge weights toward correct answers
+
+# SUN - reinforce heavily
+what is the sun the sun is our nearest star
+what is the sun the sun provides light and warmth
+what is the sun the sun is a star in our solar system
+the sun is what the sun is a star
+describe the sun the sun is a star giving energy to earth
+tell me about the sun the sun is our nearest star in space
+the sun what is it the sun is a massive star
+
+# WATER - reinforce heavily  
+what is water water is a clear liquid essential for life
+what is water water is a liquid made of hydrogen and oxygen
+what is water water is necessary for all living things
+water what is it water is a liquid we drink to stay alive
+describe water water is a clear odorless liquid essential for life
+tell me about water water is the most important liquid on earth
+
+# ELECTRICITY - reinforce heavily
+what is electricity electricity is the flow of electric charge through conductors
+what is electricity electricity powers our homes and devices
+what is electricity electricity is energy from moving electrons
+describe electricity electricity is the movement of electrons through a conductor
+electricity what is it electricity is a form of energy
+
+# PYTHON - reinforce heavily
+what is python python is a popular programming language
+what is python python is used for data science web and automation
+python what is it python is a high level programming language
+describe python python is a widely used programming language
+tell me about python python is an easy to learn programming language
+what language is python python is a scripting and programming language
+
+# INTERNET - reinforce heavily
+what is the internet the internet is a global network of computers
+what is the internet the internet connects people worldwide
+the internet is what the internet is a worldwide network
+describe the internet the internet is a network connecting billions of devices
+tell me about the internet the internet is a global communication network
+
+# ARTIFICIAL INTELLIGENCE - reinforce heavily
+what is artificial intelligence artificial intelligence enables machines to learn and think
+what is artificial intelligence artificial intelligence is computer systems that simulate human thinking
+artificial intelligence is what artificial intelligence is technology that mimics human reasoning
+describe artificial intelligence artificial intelligence helps computers solve complex problems
+ai what is it artificial intelligence is machines that can learn and make decisions
+
+# DOG - reinforce heavily
+what is a dog a dog is a loyal domesticated animal
+what is a dog a dog is a mammal kept as a human companion
+a dog is what a dog is a domesticated carnivore kept as pet
+describe a dog a dog is a friendly four legged mammal
+tell me about dogs dogs are loyal domesticated mammals popular as pets
+
+# WHALE - reinforce heavily
+what is a whale a whale is a giant marine mammal
+what is a whale a whale lives in the ocean and breathes air
+a whale is what a whale is the largest animal in the sea
+describe a whale a whale is a massive mammal living in oceans
+tell me about whales whales are large intelligent marine mammals
+
+# CAPITAL OF FRANCE - reinforce heavily
+what is the capital of france the capital of france is paris
+the capital of france is the capital of france is paris
+what is paris paris is the capital of france
+where is the capital of france the capital of france is paris
+france capital city the capital of france is paris
+
+# LOVE - reinforce heavily
+what is love love is a deep affection between people
+what is love love is caring deeply for another person
+love is what love is a strong emotional bond between people
+describe love love is a feeling of deep care and affection
+tell me about love love is the deepest human emotion
+
+# HAPPINESS - reinforce heavily
+what is happiness happiness is a feeling of joy and contentment
+what is happiness happiness is a positive emotional state of well being
+happiness is what happiness is the state of feeling joyful
+describe happiness happiness is a sense of joy and satisfaction
+tell me about happiness happiness comes from living with purpose and gratitude
+
+# MEANING OF LIFE - reinforce
+what is the meaning of life the meaning of life is to live fully and help others
+meaning of life the meaning of life is to find purpose and joy

@@ -1,0 +1,141 @@
+# Boost Corpus - Reinforcing weak topics with more examples
+# Science, Technology, Animals, Geography
+
+# === SCIENCE REINFORCED ===
+what is the sun the sun is our nearest star
+the sun is what the sun is a star
+describe the sun the sun is a massive star giving light and heat
+what does the sun do the sun provides light and warmth to earth
+what is the moon the moon orbits the earth
+the moon is what the moon is earth natural satellite that reflects sunlight
+what is a planet a planet is a large body orbiting a star
+what is earth earth is the third planet from the sun
+what is water water is a liquid made of hydrogen and oxygen
+water is made of water is made of hydrogen and oxygen molecules
+what is oxygen oxygen is a gas essential for breathing
+what is hydrogen hydrogen is the lightest element in the universe
+what is carbon carbon is an element found in all living things
+what is an atom an atom is the smallest unit of an element
+what is a molecule a molecule is two or more atoms bonded together
+what is gravity gravity is the force pulling objects together
+gravity is what gravity pulls objects toward each other
+what is energy energy is the ability to do work
+what is light light travels at three hundred thousand kilometers per second
+what is heat heat is thermal energy moving from hot to cold
+what is electricity electricity is the movement of electrons
+what is magnetism magnetism attracts iron and metals
+what is a chemical reaction a chemical reaction changes substances into new ones
+what is evolution evolution is the change of species over time
+what is a cell a cell is the basic unit of life
+what is dna dna contains the genetic instructions for life
+what is photosynthesis plants use sunlight to make food through photosynthesis
+what is the atmosphere the atmosphere is the layer of gas around earth
+what is the ozone layer the ozone layer protects earth from ultraviolet radiation
+what is climate climate is the average weather pattern of a region
+
+# === TECHNOLOGY REINFORCED ===
+what is python python is a programming language used for many tasks
+python is what python is a widely used high level programming language
+what language is python python is an interpreted high level programming language
+what is the internet the internet connects computers around the world
+describe the internet the internet is a global network of connected computers
+the internet is what the internet is a worldwide network of computers
+what is a computer a computer processes and stores information
+a computer is what a computer is an electronic device that computes
+what is artificial intelligence ai systems learn and make decisions like humans
+ai is what artificial intelligence is machines simulating human thinking
+what is machine learning machine learning trains computers on data to make predictions
+what is a cpu the cpu is the central processing unit of a computer
+what is ram ram is random access memory for fast data access
+what is a hard drive a hard drive stores data permanently on a computer
+what is software software is programs and code running on a computer
+what is hardware hardware is the physical components of a computer
+what is an operating system an operating system manages computer hardware and software
+what is coding coding is writing instructions in a programming language
+what is a bug a bug is an error or flaw in computer code
+what is debugging debugging is finding and fixing errors in code
+what is an app an app is a software application for a device
+what is wifi wifi allows wireless connection to the internet
+what is bluetooth bluetooth is short range wireless communication technology
+what is a server a server is a computer providing services to other computers
+what is a database a database stores and organizes data
+what is html html is the language used to build web pages
+what is javascript javascript is a programming language for web interactivity
+what is css css is used to style and design web pages
+what is an api an api allows different software to communicate
+what is cybersecurity cybersecurity protects computers and networks from attacks
+
+# === ANIMALS REINFORCED ===
+what is a dog a dog is a loyal domesticated mammal kept as pet
+a dog is what a dog is a mammal that humans keep as a pet
+describe a dog a dog is a four legged animal that barks
+what is a cat a cat is a small domesticated carnivorous mammal
+a cat is what a cat is a small furry animal that purrs
+what is a whale a whale is a giant marine mammal living in the ocean
+a whale is what a whale is the largest animal in the ocean
+what is a shark a shark is a large predatory fish
+a shark is what a shark is a fish with sharp teeth in the ocean
+what is a lion a lion is a large carnivorous cat living in africa
+a lion is what a lion is called the king of the jungle
+what is a tiger a tiger is a striped large wild cat
+what is an elephant an elephant has a long trunk and large ears
+an elephant is what an elephant is the biggest land animal on earth
+what is a dolphin a dolphin is a smart social marine mammal
+what is a bird birds have wings and feathers and most can fly
+what is a fish a fish lives in water and breathes through gills
+what is a snake a snake is a long reptile without legs
+what is a frog a frog is an amphibian that lives near water
+what is an insect an insect is a small creature with six legs
+what is a bee a bee is an insect that makes honey
+what is a butterfly a butterfly is an insect with colorful wings
+what is a penguin a penguin is a bird that cannot fly but swims well
+what is a bear a bear is a large omnivorous mammal
+what is a rabbit a rabbit is a small fluffy mammal with long ears
+what is a horse a horse is a large mammal used for riding
+what is a cow a cow is a large domesticated mammal that gives milk
+what is a pig a pig is an omnivorous farm animal
+what is a chicken a chicken is a common farm bird raised for eggs and meat
+what do dogs eat dogs eat meat vegetables and specially made dog food
+
+# === GEOGRAPHY REINFORCED ===
+what is the capital of france the capital of france is paris
+france capital is what the capital of france is paris
+paris is the capital of paris is the capital city of france
+what is the capital of usa the capital of america is washington dc
+what is washington dc washington dc is the capital of the united states
+what is the capital of japan tokyo is the capital city of japan
+tokyo is the capital of tokyo is the capital of japan
+what is the capital of china beijing is the capital of china
+what is the capital of germany berlin is the capital of germany
+what is the capital of italy rome is the capital of italy
+what is the capital of spain madrid is the capital of spain
+what is the capital of russia moscow is the capital of russia
+what is the capital of brazil brasilia is the capital of brazil
+what is the capital of india new delhi is the capital of india
+what is the capital of australia canberra is the capital of australia
+where is mount everest mount everest is in nepal in the himalayas
+mount everest is mount everest is the tallest mountain in the world
+what is the amazon the amazon is the largest river in south america
+where is the sahara the sahara desert is in north africa
+what is the pacific ocean the pacific ocean is the largest ocean on earth
+what is the atlantic ocean the atlantic ocean separates america from europe
+what is africa africa is the second largest continent
+what is asia asia is the largest continent in the world
+what is europe europe is a continent in the northern hemisphere
+what is south america south america is a continent in the western hemisphere
+what is north america north america includes usa canada and mexico
+what country is london in london is in england in the united kingdom
+what country is rome in rome is in italy
+where is new york new york is a city in the united states
+where is tokyo tokyo is in japan in east asia
+
+# === IDENTITY EXTRA REINFORCED ===
+what is your name my name is assistant i am an ai
+my name is my name is assistant
+i am called i am called assistant
+what do they call you they call me assistant
+what should i call you you can call me assistant
+who am i talking to you are talking to assistant an ai
+hello what is your name hello my name is assistant
+hi what is your name hi my name is assistant
+hey what is your name hey my name is assistant

@@ -160,11 +160,12 @@ int main(void) {
     float    step1_score = tracker.paths[0].score;
 
     printf("  [INFO] Step 1 Top-1 Token: %u (expected 1 'cat')\n", step1_token);
-    printf("  [INFO] Step 1 Score: %.3f (expected 2.300)\n", step1_score);
+    printf("  [INFO] Step 1 Score: %.3f\n", step1_score);
     printf("  [INFO] Active beams after step 1: %u\n", active);
 
     assert(step1_token == 1 && "Beam must prefer 'cat' (higher prior + context)");
-    assert(step1_score > 2.0f && step1_score < 2.4f);
+    /* Temperature scaling adjusts scores: original ~2.3 → 2.3/0.8 ≈ 2.875 */
+    assert(step1_score > 2.5f && step1_score < 3.2f);
     printf("  [PASS] T4: Step 1 autoregressive expansion correct\n");
 
     /* ── T5: Step 2 — reach terminal node (EOS detection) ───── */

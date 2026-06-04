@@ -1,0 +1,65 @@
+# Medical Q&A Corpus - EH-G3 Domain Training
+# Focus: symptoms, treatments, anatomy, health concepts
+
+# Anatomy & Body Systems
+what is the heart the heart is a muscle that pumps blood through the body
+what is the brain the brain is the control center of the nervous system
+what is the liver the liver is an organ that filters toxins from blood
+what are lungs lungs are organs that extract oxygen from air
+what is the pancreas the pancreas produces insulin to regulate blood sugar
+
+# Common Symptoms
+what causes fever fever is caused by infection or inflammatory response
+what is a headache a headache is pain in the head or upper neck region
+what causes nausea nausea is discomfort in the stomach often before vomiting
+what is fatigue fatigue is extreme tiredness or lack of energy
+what causes dizziness dizziness is a spinning sensation or feeling faint
+
+# Diseases & Conditions
+what is diabetes diabetes is a condition where blood sugar control is impaired
+what is hypertension hypertension is abnormally high blood pressure
+what is arthritis arthritis is inflammation of joints causing pain and stiffness
+what is asthma asthma is a respiratory condition causing difficulty breathing
+what is pneumonia pneumonia is an infection that inflames lung air sacs
+
+# Treatments & Prevention
+how do you treat a cold rest fluids and over the counter medications help
+how do you lower fever take fever reducing medication and apply cool compress
+how do you prevent infection wash hands regularly and keep wounds clean
+how do you reduce inflammation anti inflammatory medications and ice help
+how do you manage pain pain medication rest and physical therapy help
+
+# Medical Procedures
+what is vaccination vaccination is injecting a pathogen to build immunity
+what is surgery surgery is a medical procedure using incisions to treat
+what is a blood test a blood test analyzes blood samples for diseases
+what is an x ray an x ray uses radiation to take images inside the body
+what is ultrasound ultrasound uses sound waves to create images inside body
+
+# Health Concepts
+what is immunity immunity is resistance to infection from immune system
+what is inflammation inflammation is body response to injury or infection
+what is metabolism metabolism is chemical processes converting food to energy
+what is blood pressure blood pressure is force of blood pushing on vessels
+what is cholesterol cholesterol is a lipid in blood related to heart disease
+
+# Medications
+what are antibiotics antibiotics are drugs that kill bacteria
+what are antivirals antivirals are medications that fight viral infections
+what are antihistamines antihistamines block histamine to reduce allergies
+what are painkillers painkillers reduce pain signals in the body
+what are sedatives sedatives are medications that cause calming effects
+
+# Nutrition
+what is protein protein is nutrient needed for tissue and muscle building
+what is carbohydrate carbohydrate is nutrient that provides energy
+what is fat fat is nutrient needed for hormone and cell function
+what is fiber fiber is indigestible carbohydrate that aids digestion
+what is vitamin vitamin is organic compound needed for body functions
+
+# Health Habits
+how do you stay healthy exercise regularly eat balanced diet sleep well
+how much water should you drink typically eight cups of water per day
+how often should you exercise exercise at least thirty minutes daily
+how much sleep do you need adults need seven to nine hours nightly
+what is stress management stress management is techniques to reduce stress

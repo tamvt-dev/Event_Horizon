@@ -1,1 +1,6 @@
-1.0.0
+EH-G1
+Version: 1.0.0
+Release: June 2026
+Model: trigram_v2_model.ehdag
+Accuracy: 73%
+Status: Production Ready

@@ -1,0 +1,65 @@
+# Legal Q&A Corpus - EH-G3 Domain Training
+# Focus: contracts, rights, procedures, law concepts
+
+# Legal Concepts
+what is a contract a contract is agreement between parties with legal obligations
+what is liability liability is legal responsibility for damages or harm
+what is jurisdiction jurisdiction is authority of court to hear cases
+what is precedent precedent is prior court decision that guides future cases
+what is statute statute is law enacted by legislature
+
+# Rights & Responsibilities
+what are constitutional rights constitutional rights protect citizens from government
+what is freedom of speech freedom of speech allows expression without censorship
+what is right to privacy right to privacy protects personal information
+what is due process due process requires fair procedure before government action
+what is equal protection equal protection requires laws apply equally to all
+
+# Criminal Law
+what is a crime a crime is act violating law punishable by government
+what is misdemeanor misdemeanor is minor crime punishable by fines or jail
+what is felony felony is serious crime punishable by imprisonment
+what is bail bail allows accused to be released pending trial
+what is plea bargain plea bargain is agreement to plead guilty for lighter sentence
+
+# Civil Law
+what is a lawsuit lawsuit is dispute between parties settled by court
+what is damages damages are compensation for harm or loss
+what is negligence negligence is failure to exercise reasonable care
+what is tort tort is wrongful act causing damage creating civil liability
+what is contract breach contract breach is failure to perform agreement
+
+# Procedures & Court
+what is discovery discovery is process of exchanging evidence before trial
+what is deposition deposition is recorded testimony under oath before trial
+what is verdict verdict is decision by judge or jury in court case
+what is appeal appeal is request to higher court to review decision
+what is jury jury is group of citizens judging facts in trial
+
+# Property Law
+what is real property real property is land and structures attached to land
+what is personal property personal property is movable items of value
+what is deed deed is document transferring ownership of property
+what is mortgage mortgage is loan secured by real estate property
+what is lease lease is agreement renting property for specified period
+
+# Family Law
+what is marriage marriage is legal union between spouses
+what is divorce divorce is legal dissolution of marriage
+what is custody custody determines which parent raises child
+what is alimony alimony is support paid by one spouse to other
+what is child support child support is payments for child expenses
+
+# Employment Law
+what is employment contract employment contract defines work terms conditions
+what is minimum wage minimum wage is lowest legal compensation per hour
+what is overtime overtime is compensation for work beyond standard hours
+what is discrimination discrimination is unfair treatment based on protected class
+what is workplace harassment workplace harassment is unwelcome conduct creating hostile environment
+
+# Intellectual Property
+what is copyright copyright protects original creative works
+what is patent patent protects new inventions and processes
+what is trademark trademark protects brand names and logos
+what is intellectual property intellectual property is creations of mind
+what is infringement infringement is unauthorized use of protected work

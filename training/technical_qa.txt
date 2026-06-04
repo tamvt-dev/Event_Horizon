@@ -1,0 +1,79 @@
+# Technical Q&A Corpus - EH-G3 Domain Training
+# Focus: programming, systems, concepts, algorithms
+
+# Programming Concepts
+what is a variable variable is named storage location holding value
+what is a function function is reusable block of code performing task
+what is a loop loop is code repetition structure executing code multiple times
+what is a condition condition is control structure executing code if true
+what is a data type data type defines kind of data variable can hold
+
+# Data Structures
+what is an array array is ordered collection of elements indexed by position
+what is a linked list linked list is collection where elements point to next
+what is a stack stack is data structure with last in first out order
+what is a queue queue is data structure with first in first out order
+what is a hash table hash table uses hash function to map keys to values
+
+# Algorithms
+what is sorting sorting is arranging elements in order by comparison
+what is searching searching is finding element matching criteria in collection
+what is recursion recursion is function calling itself to solve subproblems
+what is dynamic programming dynamic programming solves problems by breaking down
+what is graph traversal graph traversal visits nodes and edges systematically
+
+# Object Oriented Programming
+what is a class class is blueprint defining object structure and behavior
+what is inheritance inheritance allows classes to extend parent class
+what is polymorphism polymorphism allows objects to take multiple forms
+what is encapsulation encapsulation bundles data and methods together
+what is abstraction abstraction hides complex details showing simple interface
+
+# Web Development
+what is html html is markup language for creating web pages
+what is css css is styling language controlling appearance of elements
+what is javascript javascript is scripting language adding interactivity
+what is a database database is organized collection of structured data
+what is an api api is interface allowing programs to communicate
+
+# Databases
+what is sql sql is language for querying and managing databases
+what is a query query is request for data from database
+what is an index index is structure speeding up data retrieval
+what is normalization normalization organizes data to reduce redundancy
+what is a join join combines data from multiple tables
+
+# Operating Systems
+what is a process process is running instance of program
+what is memory memory is storage for data and instructions
+what is cpu cpu is processor executing instructions
+what is io input output is communication with devices
+what is a file system file system organizes data into files directories
+
+# Networks
+what is ip address ip address identifies computer on network
+what is tcp tcp is protocol ensuring reliable data transmission
+what is udp udp is protocol for fast unreliable transmission
+what is dns dns translates domain names to ip addresses
+what is firewall firewall filters network traffic for security
+
+# Security
+what is encryption encryption transforms data into unreadable form
+what is authentication authentication verifies identity of user
+what is authorization authorization determines access rights
+what is a hash hash is one way function producing fixed size output
+what is a password password is secret credentials for access
+
+# Software Development
+what is version control version control tracks changes to code
+what is debugging debugging is finding and fixing code errors
+what is testing testing verifies code works as expected
+what is documentation documentation describes how code works
+what is refactoring refactoring improves code structure without changing behavior
+
+# Machine Learning
+what is training training is process of teaching model from data
+what is classification classification assigns data to categories
+what is regression regression predicts continuous numeric values
+what is clustering clustering groups similar data points together
+what is overfitting overfitting occurs when model fits training data too closely

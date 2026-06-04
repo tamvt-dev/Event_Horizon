@@ -1,0 +1,87 @@
+# Hyper-reinforced corpus: massive repetition of key patterns
+# Repetition increases edge weights toward correct answers
+
+# SUN - reinforce heavily
+what is the sun the sun is our nearest star
+what is the sun the sun provides light and warmth
+what is the sun the sun is a star in our solar system
+the sun is what the sun is a star
+describe the sun the sun is a star giving energy to earth
+tell me about the sun the sun is our nearest star in space
+the sun what is it the sun is a massive star
+
+# WATER - reinforce heavily  
+what is water water is a clear liquid essential for life
+what is water water is a liquid made of hydrogen and oxygen
+what is water water is necessary for all living things
+water what is it water is a liquid we drink to stay alive
+describe water water is a clear odorless liquid essential for life
+tell me about water water is the most important liquid on earth
+
+# ELECTRICITY - reinforce heavily
+what is electricity electricity is the flow of electric charge through conductors
+what is electricity electricity powers our homes and devices
+what is electricity electricity is energy from moving electrons
+describe electricity electricity is the movement of electrons through a conductor
+electricity what is it electricity is a form of energy
+
+# PYTHON - reinforce heavily
+what is python python is a popular programming language
+what is python python is used for data science web and automation
+python what is it python is a high level programming language
+describe python python is a widely used programming language
+tell me about python python is an easy to learn programming language
+what language is python python is a scripting and programming language
+
+# INTERNET - reinforce heavily
+what is the internet the internet is a global network of computers
+what is the internet the internet connects people worldwide
+the internet is what the internet is a worldwide network
+describe the internet the internet is a network connecting billions of devices
+tell me about the internet the internet is a global communication network
+
+# ARTIFICIAL INTELLIGENCE - reinforce heavily
+what is artificial intelligence artificial intelligence enables machines to learn and think
+what is artificial intelligence artificial intelligence is computer systems that simulate human thinking
+artificial intelligence is what artificial intelligence is technology that mimics human reasoning
+describe artificial intelligence artificial intelligence helps computers solve complex problems
+ai what is it artificial intelligence is machines that can learn and make decisions
+
+# DOG - reinforce heavily
+what is a dog a dog is a loyal domesticated animal
+what is a dog a dog is a mammal kept as a human companion
+a dog is what a dog is a domesticated carnivore kept as pet
+describe a dog a dog is a friendly four legged mammal
+tell me about dogs dogs are loyal domesticated mammals popular as pets
+
+# WHALE - reinforce heavily
+what is a whale a whale is a giant marine mammal
+what is a whale a whale lives in the ocean and breathes air
+a whale is what a whale is the largest animal in the sea
+describe a whale a whale is a massive mammal living in oceans
+tell me about whales whales are large intelligent marine mammals
+
+# CAPITAL OF FRANCE - reinforce heavily
+what is the capital of france the capital of france is paris
+the capital of france is the capital of france is paris
+what is paris paris is the capital of france
+where is the capital of france the capital of france is paris
+france capital city the capital of france is paris
+
+# LOVE - reinforce heavily
+what is love love is a deep affection between people
+what is love love is caring deeply for another person
+love is what love is a strong emotional bond between people
+describe love love is a feeling of deep care and affection
+tell me about love love is the deepest human emotion
+
+# HAPPINESS - reinforce heavily
+what is happiness happiness is a feeling of joy and contentment
+what is happiness happiness is a positive emotional state of well being
+happiness is what happiness is the state of feeling joyful
+describe happiness happiness is a sense of joy and satisfaction
+tell me about happiness happiness comes from living with purpose and gratitude
+
+# MEANING OF LIFE - reinforce
+what is the meaning of life the meaning of life is to live fully and help others
+meaning of life the meaning of life is to find purpose and joy
