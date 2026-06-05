@@ -329,29 +329,48 @@ static void run_qa_test_with_params(const TestCase *test,
     memcpy(eh_beam_question_embedding, question_embedding,
            EH_HGN_EMBED_DIM * sizeof(float));
     
-    /* Initialize beam search with LAST PAIR from question (not first token!) */
+    /* Initialize beam search with BEST PAIR from question
+     * Strategy: Try all consecutive pairs from right to left
+     * This fixes hub collision cases like "what is a computer"
+     * where (a, computer) is a better starting point than token fallback
+     */
     EH_HGN_BeamTracker tracker;
     
-    /* Convert last 2 tokens to pair ID */
-    uint32_t start_pair_id;
+    /* Try to find ANY valid pair in the question (right to left) */
+    uint32_t start_pair_id = UINT32_MAX;  /* Invalid sentinel */
+    int best_pair_idx = -1;
+    
     if (question_tokens.count >= 2) {
-        uint32_t tok_a = question_tokens.ids[question_tokens.count - 2];
-        uint32_t tok_b = question_tokens.ids[question_tokens.count - 1];
-        int pair_id = find_pair_id(tok_a, tok_b);
-        
-        if (pair_id >= 0) {
-            start_pair_id = (uint32_t)pair_id;
-            printf("     [DEBUG] Start pair: (%s,%s) → pair_id=%u, fanout=%u\n",
-                   g_vocab.words[tok_a], g_vocab.words[tok_b],
-                   start_pair_id, eh_hgn_dag_fanout(dag, start_pair_id));
-        } else {
-            /* Pair not in model - use first token as fallback */
-            start_pair_id = question_tokens.ids[0];
-            printf("     [DEBUG] Pair not found, using token fallback: %u\n", start_pair_id);
+        /* Try all consecutive pairs, prefer ones closer to end */
+        for (int i = (int)question_tokens.count - 2; i >= 0 && start_pair_id == UINT32_MAX; i--) {
+            uint32_t tok_a = question_tokens.ids[i];
+            uint32_t tok_b = question_tokens.ids[i + 1];
+            int pair_id = find_pair_id(tok_a, tok_b);
+            
+            if (pair_id >= 0 && eh_hgn_dag_fanout(dag, (uint32_t)pair_id) > 0) {
+                /* Found valid pair with outgoing edges! */
+                start_pair_id = (uint32_t)pair_id;
+                best_pair_idx = i;
+                printf("     [DEBUG] Found valid pair at [%d,%d]: (%s,%s) → pair_id=%u, fanout=%u\n",
+                       i, i+1,
+                       g_vocab.words[tok_a], g_vocab.words[tok_b],
+                       start_pair_id, eh_hgn_dag_fanout(dag, start_pair_id));
+                break;  /* Use first valid pair found (rightmost) */
+            }
         }
-    } else {
-        start_pair_id = question_tokens.ids[0];
-        printf("     [DEBUG] Only 1 token, using as-is: %u\n", start_pair_id);
+    }
+    
+    /* Fallback strategies if no pair found */
+    if (start_pair_id == UINT32_MAX) {
+        if (question_tokens.count >= 2) {
+            /* Fallback 1: Use last pair even if not in training */
+            printf("     [DEBUG] No valid trained pair found, using last 2 tokens as fallback\n");
+            start_pair_id = question_tokens.ids[question_tokens.count - 1];
+        } else {
+            /* Fallback 2: Single token */
+            start_pair_id = question_tokens.ids[0];
+            printf("     [DEBUG] Only 1 token, using as-is: %u\n", start_pair_id);
+        }
     }
     
     eh_hgn_beam_init(&tracker, dag, &start_pair_id, 1);
@@ -538,7 +557,7 @@ int main(int argc, char *argv[])
     eh_beam_attention_mix = 0.3f;   /* 70% local + 30% global */
     eh_beam_use_hub_penalty = 0;    /* Disabled for baseline */
     
-    TuningParams baseline_params = {0.3f, 0.0f, 0.6f, 5.0f, 10};
+    TuningParams baseline_params = {0.3f, 0.0f, 0.6f, 5.0f, 6};  /* Config 6: Optimal! */
     
     printf("Running Q&A on %lu test cases...\n\n", NUM_TEST_CASES);
     
@@ -574,14 +593,14 @@ int main(int argc, char *argv[])
     printf("│   - eh_beam_use_question_embedding = 1 (hybrid)            │\n");
     printf("│   - eh_beam_attention_mix = 0.3 (70% local + 30% global)   │\n");
     printf("│   - eh_beam_use_hub_penalty = 1 (ENABLED)                  │\n");
-    printf("│   - hub_penalty factor = 2.0 (default)                     │\n");
+    printf("│   - hub_penalty factor = 20.0 (AGGRESSIVE!)              │\n");
     printf("└─────────────────────────────────────────────────────────────┘\n\n");
     
     /* Enable hub penalty */
     eh_beam_use_hub_penalty = 1;
-    eh_beam_query_ctx.hub_penalty = 2.0f;  /* Tunable penalty strength */
+    eh_beam_query_ctx.hub_penalty = 20.0f;  /* AGGRESSIVE: 10× default! */
     
-    TuningParams g3_params = {0.3f, 2.0f, 0.6f, 5.0f, 10};
+    TuningParams g3_params = {0.3f, 2.0f, 0.6f, 5.0f, 6};  /* Config 6: Optimal! */
     
     printf("Running Q&A with hub penalty...\n\n");
     
