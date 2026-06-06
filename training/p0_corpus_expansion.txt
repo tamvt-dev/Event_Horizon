@@ -1,0 +1,155 @@
+Q: what is your name
+A: my name
+Q: what is python
+A: python is
+Q: what is an api
+A: an api
+Q: what is a database
+A: a database
+Q: what is a server
+A: a server
+Q: what is an algorithm
+A: an algorithm
+Q: what is memory
+A: memory
+Q: what is a cache
+A: a cache
+Q: what is a function
+A: a function
+Q: what is an array
+A: an array
+Q: what is a variable
+A: a variable
+Q: what is an exception
+A: an exception
+Q: what is a loop
+A: a loop
+Q: what is a thread
+A: a thread
+Q: what is a container
+A: a container
+Q: what is a protocol
+A: a protocol
+Q: what is a network
+A: a network
+Q: what is a model
+A: a model
+Q: what is a tokenizer
+A: tokenizer
+Q: what is a query
+A: a query
+
+Q: what is the capital of france
+A: paris
+Q: what is paris
+A: paris france
+Q: what is the capital of germany
+A: berlin
+Q: what is berlin
+A: berlin germany
+Q: what is the capital of japan
+A: tokyo
+Q: what is tokyo
+A: tokyo japan
+Q: what is the capital of canada
+A: ottawa
+Q: what is ottawa
+A: ottawa canada
+Q: what is the capital of spain
+A: madrid
+Q: what is madrid
+A: madrid spain
+Q: what is the capital of italy
+A: rome
+Q: what is rome
+A: rome italy
+Q: what is the capital of mexico
+A: mexico city
+Q: what is mexico city
+A: mexico city mexico
+Q: what is the capital of brazil
+A: brasilia
+Q: what is brasilia
+A: brasilia brazil
+Q: what is the capital of australia
+A: canberra
+Q: what is canberra
+A: canberra australia
+Q: what is the capital of india
+A: new delhi
+Q: what is new delhi
+A: new delhi india
+
+Q: who is alan turing
+A: alan einstein
+Q: who is einstein
+A: einstein
+Q: who is newton
+A: newton
+Q: who is julius caesar
+A: caesar
+Q: who is ada lovelace
+A: ada lovelace
+Q: what is gravity
+A: gravity
+Q: what is photosynthesis
+A: photosynthesis
+Q: what is water
+A: water
+Q: what is oxygen
+A: oxygen
+Q: what is hydrogen
+A: hydrogen
+Q: what is electricity
+A: electricity
+Q: what is a molecule
+A: molecule
+Q: what is a cell
+A: cell
+Q: what is a gene
+A: gene
+Q: what is a revolution
+A: revolution
+
+Q: where is paris
+A: paris
+Q: where is tokyo
+A: tokyo
+Q: where do birds live
+A: birds
+Q: where do fish live
+A: fish
+Q: where is water
+A: water
+Q: where do bees live
+A: bees
+Q: where does milk come from
+A: milk
+Q: where is the database
+A: database
+Q: where do computers run
+A: computers
+Q: where do we learn
+A: we learn
+
+Q: how does a computer work
+A: work
+Q: how do databases store data
+A: store data
+Q: how does python run
+A: run
+Q: how do servers respond
+A: respond
+Q: how does gravity work
+A: gravity
+Q: how do plants grow
+A: plants
+Q: how do birds fly
+A: birds fly
+Q: how do fish breathe
+A: fish breathe
+Q: how does water boil
+A: boil
+Q: how do we learn
+A: learn
+

@@ -2,7 +2,7 @@
  * eh_adaptive.c — HGN Adaptive Mechanisms Implementation
  * ================================================================ */
 
-#include "../../include/hgn/eh_adaptive.h"
+#include "../../../include/hgn/legacy/eh_adaptive.h"
 #include <string.h>
 #include <math.h>
 #include <stdio.h>

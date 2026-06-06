@@ -311,7 +311,8 @@ static int ask_mode(const char *model_path, const char *vocab_path,
     /* Initialize beam search with last pair */
     EH_HGN_BeamTracker tracker;
     uint32_t initial_pair = pair_ids[n_pairs - 1];
-    eh_hgn_beam_init(&tracker, &dag, &initial_pair, 1);
+    EH_HGN_BeamPath paths_buf[8];
+    eh_hgn_beam_init(&tracker, &dag, &initial_pair, 1, paths_buf, 8);
     
     /* Run attention-based generation and print answer tokens */
     printf("Answer:   ");

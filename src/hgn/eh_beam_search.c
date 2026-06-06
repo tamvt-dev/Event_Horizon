@@ -228,10 +228,14 @@ static void init_hub_penalty(const EH_HGN_BaseDag *dag)
 void eh_hgn_beam_init(EH_HGN_BeamTracker    *tracker,
                       const EH_HGN_BaseDag   *dag,
                       const uint32_t         *prompt,
-                      uint32_t                prompt_len)
+                      uint32_t                prompt_len,
+                      EH_HGN_BeamPath        *paths_buffer,
+                      uint32_t                beam_width)
 {
     memset(tracker, 0, sizeof(*tracker));
     tracker->dag = dag;
+    tracker->paths = paths_buffer;
+    tracker->beam_width = beam_width;
     tracker->active_paths = 1;
 
     /* If hub penalty enabled, initialize from DAG header info */
@@ -252,15 +256,11 @@ void eh_hgn_beam_init(EH_HGN_BeamTracker    *tracker,
 
 /* ----------------------------------------------------------------
  * eh_hgn_beam_step
- *
- * Key fix: ScoredCandidate stores parent_beam_idx.
- * When we build new_paths[i], we memcpy from paths[parent_beam_idx]
- * instead of always copying paths[0].
  * ---------------------------------------------------------------- */
 uint32_t eh_hgn_beam_step(EH_HGN_BeamTracker *tracker,
                            const EH_HGN_BaseDag *dag)
 {
-    if (tracker->active_paths == 0) return 0;
+    if (tracker->active_paths == 0 || !tracker->paths) return 0;
 
     /* Count how many beams still need expansion */
     uint32_t still_active = 0;
@@ -273,8 +273,8 @@ uint32_t eh_hgn_beam_step(EH_HGN_BeamTracker *tracker,
      * Candidate pool: each unfinished beam expands its edges.
      * Finished beams are carried over directly.
      * -------------------------------------------------------- */
-    #define MAX_CANDIDATES (EH_BEAM_WIDTH * EH_HGN_MAX_FANOUT + EH_BEAM_WIDTH)
-    ScoredCandidate candidates[MAX_CANDIDATES];
+    const uint32_t max_candidates = tracker->beam_width * EH_HGN_MAX_FANOUT + tracker->beam_width;
+    ScoredCandidate candidates[max_candidates];
     uint32_t cand_count = 0;
 
     for (uint32_t b = 0; b < tracker->active_paths; b++) {
@@ -282,7 +282,7 @@ uint32_t eh_hgn_beam_step(EH_HGN_BeamTracker *tracker,
 
         /* --- Finished beams: carry forward as-is (no new token) --- */
         if (beam->is_finished) {
-            if (cand_count < MAX_CANDIDATES) {
+            if (cand_count < max_candidates) {
                 candidates[cand_count].token_id        = EH_BEAM_EOS_TOKEN; /* sentinel */
                 candidates[cand_count].score           = beam->score;
                 candidates[cand_count].parent_beam_idx = b;
@@ -303,7 +303,7 @@ uint32_t eh_hgn_beam_step(EH_HGN_BeamTracker *tracker,
 
         /* ---- Sink node: no edges → mark terminal, carry forward ---- */
         if (fanout == 0) {
-            if (cand_count < MAX_CANDIDATES) {
+            if (cand_count < max_candidates) {
                 candidates[cand_count].token_id        = EH_BEAM_EOS_TOKEN;
                 candidates[cand_count].score           = beam->score;
                 candidates[cand_count].parent_beam_idx = b;
@@ -315,39 +315,21 @@ uint32_t eh_hgn_beam_step(EH_HGN_BeamTracker *tracker,
 
         /* ---- Normal expansion: score each outgoing edge ---- */
         EH_HGN_FOR_EDGES(dag, last_token, edge) {
-            if (cand_count >= MAX_CANDIDATES) break;
+            if (cand_count >= max_candidates) break;
 
             const float *w     = eh_hgn_dag_edge_weight(dag, edge);
             
-            /* EH-G2 Hybrid: Blend local context (EH-G1) with global attention (EH-G2)
-             * Local context: Trained for sequential prediction (works well)
-             * Global attention: Query matching (helps disambiguate hub nodes)
-             * Hybrid: Best of both worlds!
-             * 
-             * Mix ratio controlled by eh_beam_attention_mix (default 0.3):
-             *   0.0 = pure local (EH-G1)
-             *   0.3 = 70% local + 30% global (default, tested)
-             *   0.5 = 50% local + 50% global (balanced)
-             *   1.0 = pure global (not recommended with current embeddings)
-             */
             float ctx_score;
             if (eh_beam_use_question_embedding) {
-                /* Hybrid mode: blend local and global with tunable ratio */
                 float ctx_local = dot_product_128(w, context_vec);
                 float ctx_global = dot_product_128(w, eh_beam_question_embedding);
                 float local_weight = 1.0f - eh_beam_attention_mix;
                 float global_weight = eh_beam_attention_mix;
                 ctx_score = local_weight * ctx_local + global_weight * ctx_global;
             } else {
-                /* Standard mode: pure local context (EH-G1) */
                 ctx_score = dot_product_128(w, context_vec);
             }
             
-            /* Weight context heavily to fight hub node dominance
-             * Problem: High-frequency paths (e.g., "is a" hub) have high priors
-             * Solution: Scale context 3x and prior 0.5x to make context dominant
-             * EH-G3: Additionally apply hub-aware penalty for high-fanout nodes
-             */
             float weighted_prior = edge->prior * 0.5f;
             float weighted_ctx = ctx_score * 3.0f;
             float hub_penalty_score = compute_hub_penalty(dag, edge->dst);
@@ -370,7 +352,7 @@ uint32_t eh_hgn_beam_step(EH_HGN_BeamTracker *tracker,
 
             candidates[cand_count].token_id        = edge->dst;
             candidates[cand_count].score           = final_score;
-            candidates[cand_count].parent_beam_idx = b;        /* <-- FIX */
+            candidates[cand_count].parent_beam_idx = b;
             candidates[cand_count].is_terminal     = dst_is_sink;
             cand_count++;
         }
@@ -380,15 +362,15 @@ uint32_t eh_hgn_beam_step(EH_HGN_BeamTracker *tracker,
     qsort(candidates, cand_count, sizeof(ScoredCandidate), compare_candidates);
 
     /* Keep top-K beams */
-    uint32_t new_beam_count = (cand_count < EH_BEAM_WIDTH) ? cand_count : EH_BEAM_WIDTH;
+    uint32_t new_beam_count = (cand_count < tracker->beam_width) ? cand_count : tracker->beam_width;
 
-    EH_HGN_BeamPath new_paths[EH_BEAM_WIDTH];
-    memset(new_paths, 0, sizeof(new_paths));
+    EH_HGN_BeamPath new_paths[tracker->beam_width];
+    memset(new_paths, 0, tracker->beam_width * sizeof(EH_HGN_BeamPath));
 
     uint32_t active_after = 0;
 
     for (uint32_t i = 0; i < new_beam_count; i++) {
-        uint32_t pid = candidates[i].parent_beam_idx;  /* <-- FIX: correct parent */
+        uint32_t pid = candidates[i].parent_beam_idx;
 
         /* Copy full token history from the correct parent beam */
         memcpy(&new_paths[i], &tracker->paths[pid], sizeof(EH_HGN_BeamPath));
@@ -412,7 +394,6 @@ uint32_t eh_hgn_beam_step(EH_HGN_BeamTracker *tracker,
     tracker->active_paths = new_beam_count;
 
     return active_after;
-    #undef MAX_CANDIDATES
 }
 
 /* ----------------------------------------------------------------
@@ -421,7 +402,7 @@ uint32_t eh_hgn_beam_step(EH_HGN_BeamTracker *tracker,
  * ---------------------------------------------------------------- */
 const EH_HGN_BeamPath *eh_hgn_beam_get_best(const EH_HGN_BeamTracker *tracker)
 {
-    if (tracker->active_paths == 0) return NULL;
+    if (tracker->active_paths == 0 || !tracker->paths) return NULL;
     return &tracker->paths[0];
 }
 
@@ -430,7 +411,14 @@ const EH_HGN_BeamPath *eh_hgn_beam_get_best(const EH_HGN_BeamTracker *tracker)
  * ---------------------------------------------------------------- */
 void eh_hgn_beam_reset(EH_HGN_BeamTracker *tracker)
 {
+    if (!tracker) return;
+    EH_HGN_BeamPath *saved_paths = tracker->paths;
+    uint32_t saved_width = tracker->beam_width;
+    
     memset(tracker, 0, sizeof(*tracker));
+    
+    tracker->paths = saved_paths;
+    tracker->beam_width = saved_width;
 }
 
 /* ================================================================

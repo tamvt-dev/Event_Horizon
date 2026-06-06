@@ -254,7 +254,8 @@ int main(int argc, char *argv[])
     /* Initialize beam search */
     EH_HGN_BeamTracker tracker;
     uint32_t start_token = q_tokens[0];
-    eh_hgn_beam_init(&tracker, &dag, &start_token, 1);
+    EH_HGN_BeamPath paths_buf[8];
+    eh_hgn_beam_init(&tracker, &dag, &start_token, 1, paths_buf, 8);
     
     printf("│\n│ Beam initialized with token: %u\n", start_token);
     printf("│ Active paths: %u\n", tracker.active_paths);

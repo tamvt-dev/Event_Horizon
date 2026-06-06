@@ -117,6 +117,7 @@ static void print_beam(const EH_HGN_BeamPath *p, const char *label) {
  * ================================================================ */
 int main(void) {
     printf("=== EH_HGN_BeamSearch Logic Tests ===\n");
+    eh_beam_temperature = 0.8f; /* Match assertion expectation of 0.8f */
 
     const char* BIN_FILE = "/tmp/beam_test.bin";
     build_beam_test_binary(BIN_FILE);
@@ -138,7 +139,8 @@ int main(void) {
     /* ── T3: Beam tracker init ──────────────────────────────── */
     EH_HGN_BeamTracker tracker;
     uint32_t prompt[1] = {0};   /* "The" */
-    eh_hgn_beam_init(&tracker, &dag, prompt, 1);
+    EH_HGN_BeamPath paths_buf[8];
+    eh_hgn_beam_init(&tracker, &dag, prompt, 1, paths_buf, 8);
 
     assert(tracker.active_paths     == 1);
     assert(tracker.paths[0].tokens[0] == 0);
@@ -202,7 +204,8 @@ int main(void) {
     printf("\n  --- T6: Multi-beam parent tracking regression test ---\n");
 
     EH_HGN_BeamTracker tracker2;
-    eh_hgn_beam_init(&tracker2, &dag, prompt, 1);
+    EH_HGN_BeamPath paths_buf2[8];
+    eh_hgn_beam_init(&tracker2, &dag, prompt, 1, paths_buf2, 8);
 
     /* Step 1: both "cat"(1) and "dog"(2) should appear as separate beams */
     eh_hgn_beam_step(&tracker2, &dag);

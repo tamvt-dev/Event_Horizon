@@ -25,8 +25,8 @@ extern "C" {
  * EHDAG Binary Format Constants
  * ---------------------------------------------------------------- */
 
-#define EH_HGN_IO_MAGIC      0x48474E44   /* 'HGND' */
-#define EH_HGN_IO_VERSION    1            /* Format version */
+#define EH_HGN_IO_MAGIC      0x4548474E   /* 'EHGN' */
+#define EH_HGN_IO_VERSION    2            /* Format version */
 
 /* ----------------------------------------------------------------
  * File Format Header (32 bytes, matches EH_HGN_DagFileHeader)

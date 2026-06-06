@@ -40,6 +40,7 @@ typedef struct {
     float perturb_scale;        /* Default: 0.088 */
     
     /* Beam search config */
+    uint32_t beam_width;        /* Beam search width (default: 8) */
     uint32_t max_steps;         /* Max generation steps (0=unlimited) */
     bool     enable_collapse;   /* Enable/disable collapse gating     */
     bool     enable_mutants;    /* Enable/disable mutant nodes        */
@@ -164,6 +165,7 @@ static inline EH_HGN_EngineConfig eh_hgn_default_config(void)
         .collapse_thresh  = EH_HGN_COLLAPSE_THRESH,   /* 0.92  */
         .entropy_thresh   = EH_HGN_ENTROPY_THRESH,    /* 1.80  */
         .perturb_scale    = EH_HGN_PERTURB_SCALE,     /* 0.088 */
+        .beam_width       = 8,                        /* default beam width */
         .max_steps        = 0,                        /* unlimited */
         .enable_collapse  = true,
         .enable_mutants   = true,

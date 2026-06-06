@@ -8,7 +8,7 @@
 #include <assert.h>
 #include <math.h>
 
-#include "hgn/eh_adaptive.h"
+#include "hgn/legacy/eh_adaptive.h"
 #include "hgn/eh_beam_search.h"
 
 /* Test framework */

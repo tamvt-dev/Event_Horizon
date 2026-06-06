@@ -165,6 +165,21 @@ void eh_arena_reset(EH_Arena *arena) {
     /* alloc_count remains unchanged to track total allocations across sessions */
 }
 
+size_t eh_arena_get_checkpoint(const EH_Arena *arena) {
+    return arena ? arena->used : 0;
+}
+
+void eh_arena_rewind(EH_Arena *arena, size_t checkpoint) {
+    if (!arena || checkpoint > arena->used) return;
+    
+    size_t bytes_to_clear = arena->used - checkpoint;
+    if (bytes_to_clear > 0) {
+        memset(arena->base + checkpoint, 0, bytes_to_clear);
+    }
+    
+    arena->used = checkpoint;
+}
+
 /* =================================================================
  * PART 5: STATS AND DESTRUCTION
  * ================================================================= */

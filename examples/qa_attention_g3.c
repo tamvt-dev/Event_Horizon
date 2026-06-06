@@ -362,18 +362,76 @@ static void run_qa_test_with_params(const TestCase *test,
     
     /* Fallback strategies if no pair found */
     if (start_pair_id == UINT32_MAX) {
-        if (question_tokens.count >= 2) {
-            /* Fallback 1: Use last pair even if not in training */
-            printf("     [DEBUG] No valid trained pair found, using last 2 tokens as fallback\n");
-            start_pair_id = question_tokens.ids[question_tokens.count - 1];
+        /* Fallback: Embedding-based nearest pair search
+         * Instead of random fallback, find the pair in graph that is most
+         * semantically similar to the question embedding.
+         * This handles OOV queries gracefully without needing more training data.
+         */
+        printf("     [DEBUG] No valid trained pair found, searching nearest pair by embedding...\n");
+        
+        float best_similarity = -999.0f;
+        uint32_t best_pair_id = 0;
+        int candidates_checked = 0;
+        
+        /* Scan all pairs in graph to find most similar */
+        for (uint32_t pair_id = 0; pair_id < dag->vocab_size; pair_id++) {
+            /* Skip pairs without outgoing edges (sink nodes) */
+            if (eh_hgn_dag_fanout(dag, pair_id) == 0) continue;
+            
+            const float *pair_vec = eh_hgn_dag_node_vec(dag, pair_id);
+            if (!pair_vec) continue;
+            
+            candidates_checked++;
+            
+            /* Compute cosine similarity with question embedding */
+            float similarity = 0.0f;
+            for (int i = 0; i < EH_HGN_EMBED_DIM; i++) {
+                similarity += question_embedding[i] * pair_vec[i];
+            }
+            
+            if (similarity > best_similarity) {
+                best_similarity = similarity;
+                best_pair_id = pair_id;
+            }
+        }
+        
+        if (best_similarity > 0.1f) {  /* Reasonable threshold */
+            start_pair_id = best_pair_id;
+            
+            /* Try to decode pair for debug output */
+            if (best_pair_id < g_pair_count) {
+                uint32_t tok_a = g_pair_map[best_pair_id].token_a;
+                uint32_t tok_b = g_pair_map[best_pair_id].token_b;
+                if (tok_a < g_vocab.size && tok_b < g_vocab.size) {
+                    printf("     [DEBUG] Found nearest pair: (%s,%s) → pair_id=%u, similarity=%.3f (checked %d pairs)\n",
+                           g_vocab.words[tok_a], g_vocab.words[tok_b],
+                           best_pair_id, best_similarity, candidates_checked);
+                } else {
+                    printf("     [DEBUG] Found nearest pair: pair_id=%u, similarity=%.3f (checked %d pairs)\n",
+                           best_pair_id, best_similarity, candidates_checked);
+                }
+            } else {
+                printf("     [DEBUG] Found nearest pair: pair_id=%u, similarity=%.3f (checked %d pairs)\n",
+                       best_pair_id, best_similarity, candidates_checked);
+            }
         } else {
-            /* Fallback 2: Single token */
-            start_pair_id = question_tokens.ids[0];
-            printf("     [DEBUG] Only 1 token, using as-is: %u\n", start_pair_id);
+            /* Final fallback: use pair with highest fanout (most common) */
+            uint32_t max_fanout = 0;
+            for (uint32_t pair_id = 0; pair_id < dag->vocab_size; pair_id++) {
+                uint32_t fanout = eh_hgn_dag_fanout(dag, pair_id);
+                if (fanout > max_fanout) {
+                    max_fanout = fanout;
+                    best_pair_id = pair_id;
+                }
+            }
+            start_pair_id = best_pair_id;
+            printf("     [DEBUG] Low similarity (%.3f), using most common pair: pair_id=%u, fanout=%u\n",
+                   best_similarity, best_pair_id, max_fanout);
         }
     }
     
-    eh_hgn_beam_init(&tracker, dag, &start_pair_id, 1);
+    EH_HGN_BeamPath paths_buf[8];
+    eh_hgn_beam_init(&tracker, dag, &start_pair_id, 1, paths_buf, 8);
     
     /* Apply tuning parameters */
     eh_beam_attention_mix = params->attention_mix;

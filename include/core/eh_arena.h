@@ -85,6 +85,17 @@ EH_DAGNode *eh_arena_alloc_node(EH_Arena *arena,
 void eh_arena_reset(EH_Arena *arena);
 
 /*
+ * Get the current allocation offset as a checkpoint.
+ */
+size_t eh_arena_get_checkpoint(const EH_Arena *arena);
+
+/*
+ * Rewind the arena allocation offset back to a previous checkpoint.
+ * Clears memory allocated after the checkpoint to prevent stale references.
+ */
+void eh_arena_rewind(EH_Arena *arena, size_t checkpoint);
+
+/*
  * Print Arena usage statistics (used for debug/benchmarking).
  */
 void eh_arena_stats(const EH_Arena *arena);

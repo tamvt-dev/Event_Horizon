@@ -51,8 +51,8 @@ _Static_assert(EH_HGN_EMBED_DIM == EH_SCORE_DIM,
  * [padding đến 32-byte boundary                        ]
  * [EH_HGN_EdgeWeight × total_edges — align-32         ]
  * ---------------------------------------------------------------- */
-#define EH_HGN_DAG_MAGIC    0x48474E44u   /* "HGND" little-endian  */
-#define EH_HGN_DAG_VERSION  1u
+#define EH_HGN_DAG_MAGIC    0x4548474Eu   /* "EHGN" little-endian  */
+#define EH_HGN_DAG_VERSION  2u
 
 /* ----------------------------------------------------------------
  * Data structures

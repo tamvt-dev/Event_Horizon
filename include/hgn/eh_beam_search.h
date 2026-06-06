@@ -49,7 +49,8 @@ typedef struct {
  * Beam Tracker: quản lý tất cả beams đang active
  * ---------------------------------------------------------------- */
 typedef struct {
-    EH_HGN_BeamPath paths[EH_BEAM_WIDTH];  /* Active beams (ke ca finished)  */
+    EH_HGN_BeamPath *paths;                 /* Active beams (dynamically allocated)  */
+    uint32_t        beam_width;             /* Cấu hình beam width tại runtime       */
     uint32_t        active_paths;           /* Số beams hiện tại             */
     const EH_HGN_BaseDag *dag;              /* Reference to DAG              */
 } EH_HGN_BeamTracker;
@@ -112,7 +113,9 @@ int eh_beam_load_query_embeddings(const char *path);
 void eh_hgn_beam_init(EH_HGN_BeamTracker    *tracker,
                       const EH_HGN_BaseDag   *dag,
                       const uint32_t         *prompt,
-                      uint32_t                prompt_len);
+                      uint32_t                prompt_len,
+                      EH_HGN_BeamPath        *paths_buffer,
+                      uint32_t                beam_width);
 
 /* Thực hiện 1 bước autoregressive expansion
  * - Beams đã is_finished=true được giữ nguyên (không expand)

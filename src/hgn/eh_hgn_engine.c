@@ -39,15 +39,25 @@ int eh_hgn_session_init(
         return -1;
     }
 
-    /* Layer 3: Beam tracker */
-    eh_hgn_beam_init(&session->beam_tracker, dag, prompt, prompt_len);
-
     /* Config: use defaults nếu NULL */
     if (config) {
         session->config = *config;
     } else {
         session->config = eh_hgn_default_config();
     }
+    if (session->config.beam_width == 0) {
+        session->config.beam_width = 8;
+    }
+
+    /* Allocate paths buffer from arena */
+    EH_HGN_BeamPath *paths_buf = eh_arena_alloc(arena, session->config.beam_width * sizeof(EH_HGN_BeamPath));
+    if (!paths_buf) {
+        fprintf(stderr, "[eh_hgn_engine] Failed to allocate beam paths buffer from arena\n");
+        return -1;
+    }
+
+    /* Layer 3: Beam tracker */
+    eh_hgn_beam_init(&session->beam_tracker, dag, prompt, prompt_len, paths_buf, session->config.beam_width);
 
     /* Apply custom thresholds vào collapse context */
     session->collapse_ctx.collapse_thresh = session->config.collapse_thresh;
@@ -75,7 +85,8 @@ void eh_hgn_session_reset(
     eh_hgn_collapse_ctx_reset(&session->collapse_ctx);
 
     /* Reset beam tracker với prompt mới */
-    eh_hgn_beam_init(&session->beam_tracker, session->dag, prompt, prompt_len);
+    eh_hgn_beam_init(&session->beam_tracker, session->dag, prompt, prompt_len,
+                     session->beam_tracker.paths, session->beam_tracker.beam_width);
 
     /* Reset session state */
     session->step_count  = 0;
@@ -144,9 +155,9 @@ uint32_t eh_hgn_session_step(EH_HGN_InferenceSession *session)
     /* --- Step 4: Mutant spawning (nếu enabled và entropy cao) --- */
     if (session->config.enable_mutants && active_beams > 0) {
         /* Thu thập scores của tất cả beams hiện tại */
-        float scores[EH_BEAM_WIDTH];
+        float scores[session->beam_tracker.beam_width];
         uint32_t beam_count = 0;
-        for (uint32_t i = 0; i < EH_BEAM_WIDTH && i < session->beam_tracker.active_paths; i++) {
+        for (uint32_t i = 0; i < session->beam_tracker.beam_width && i < session->beam_tracker.active_paths; i++) {
             scores[beam_count++] = session->beam_tracker.paths[i].score;
         }
 
@@ -244,7 +255,7 @@ void eh_hgn_session_dump_beams(const EH_HGN_InferenceSession *session)
     }
 
     fprintf(stderr, "\n=== Current Beam States ===\n");
-    for (uint32_t i = 0; i < session->beam_tracker.active_paths && i < EH_BEAM_WIDTH; i++) {
+    for (uint32_t i = 0; i < session->beam_tracker.active_paths && i < session->beam_tracker.beam_width; i++) {
         const EH_HGN_BeamPath *beam = &session->beam_tracker.paths[i];
         fprintf(stderr, "  Beam %u: score=%.3f len=%u finished=%s\n",
                 i, beam->score, beam->seq_len, beam->is_finished ? "YES" : "NO");
