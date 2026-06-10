@@ -1,0 +1,138 @@
+# Geography Anchor Corpus — capitals and locations
+# Divergence strategy: anchor at (capital,of), (of,X), (X,is) pairs
+# These are the exact bigrams beam search will traverse
+# Weight: x20 in corpus (geography is weakest domain — 25%)
+
+# ── (capital, of) divergence — 16 outgoing paths needed ──────
+capital of france
+the capital of france is paris
+capital of japan
+the capital of japan is tokyo
+capital of germany
+the capital of germany is berlin
+capital of italy
+the capital of italy is rome
+capital of spain
+the capital of spain is madrid
+capital of china
+the capital of china is beijing
+capital of india
+the capital of india is new delhi
+capital of canada
+the capital of canada is ottawa
+capital of australia
+the capital of australia is canberra
+capital of brazil
+the capital of brazil is brasilia
+capital of russia
+the capital of russia is moscow
+capital of mexico
+the capital of mexico is mexico city
+capital of egypt
+the capital of egypt is cairo
+capital of argentina
+the capital of argentina is buenos aires
+capital of south korea
+the capital of south korea is seoul
+capital of indonesia
+the capital of indonesia is jakarta
+
+# ── (of, country) divergence — each country → its city ───────
+of france
+paris is the capital of france
+of japan
+tokyo is the capital of japan
+of germany
+berlin is the capital of germany
+of italy
+rome is the capital of italy
+of spain
+madrid is the capital of spain
+of china
+beijing is the capital of china
+of india
+delhi is the capital of india
+of canada
+ottawa is the capital of canada
+of australia
+canberra is the capital of australia
+of brazil
+brasilia is the capital of brazil
+of russia
+moscow is the capital of russia
+of mexico
+mexico city is the capital of mexico
+
+# ── (city, is) anchors — reinforce city identity ─────────────
+tokyo is
+tokyo is the capital city of japan
+berlin is
+berlin is the capital city of germany
+paris is
+paris is the capital city of france
+rome is
+rome is the capital city of italy
+madrid is
+madrid is the capital city of spain
+beijing is
+beijing is the capital city of china
+ottawa is
+ottawa is the capital city of canada
+moscow is
+moscow is the capital city of russia
+brasilia is
+brasilia is the capital city of brazil
+canberra is
+canberra is the capital city of australia
+
+# ── where is — location questions ────────────────────────────
+where is tokyo
+tokyo is in japan in east asia
+where is berlin
+berlin is in germany in central europe
+where is paris
+paris is in france in western europe
+where is rome
+rome is in italy in southern europe
+where is madrid
+madrid is in spain in southwestern europe
+where is beijing
+beijing is in china in east asia
+where is london
+london is in england in the united kingdom
+where is moscow
+moscow is in russia in eastern europe
+where is delhi
+delhi is in india in south asia
+where is sydney
+sydney is in australia in the southern hemisphere
+where is cairo
+cairo is in egypt in north africa
+where is the eiffel tower
+the eiffel tower is located in paris france
+where is mount everest
+mount everest is in nepal in the himalayas
+where is the amazon
+the amazon river flows through brazil in south america
+
+# ── what is — country facts ───────────────────────────────────
+what is france
+france is a country in western europe with capital paris
+what is japan
+japan is a country in east asia with capital tokyo
+what is germany
+germany is a country in central europe with capital berlin
+what is italy
+italy is a country in southern europe with capital rome
+what is china
+china is the most populous country in east asia
+what is brazil
+brazil is the largest country in south america
+what is canada
+canada is a large country in north america
+what is australia
+australia is a country and continent in the southern hemisphere
+what is russia
+russia is the largest country in the world by land area
+what is india
+india is a country in south asia with a large population

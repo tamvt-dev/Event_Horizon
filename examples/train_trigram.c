@@ -37,7 +37,7 @@
 #include <ctype.h>
 #include <math.h>
 
-#define MAX_BASE_VOCAB      2000   /* Base token vocabulary */
+#define MAX_BASE_VOCAB      4000   /* Base token vocabulary */
 #define MAX_PAIR_VOCAB      50000  /* Max (token_i, token_j) pairs */
 #define MAX_TOKEN_LEN       32
 #define MAX_LINE_LEN        256
@@ -435,6 +435,7 @@ int main(int argc, char **argv)
      * But wait! dst must also be a pair ID. So we need to map:
      * Edge: pair(A,B) → pair(B,C) when we see (A,B,C)
      */
+    uint32_t edge_count = 0;
     /* First pass: compute fanout per source pair for normalization */
     uint32_t *pair_fanout = calloc(g_pair_vocab.size, sizeof(uint32_t));
     if (!pair_fanout) {

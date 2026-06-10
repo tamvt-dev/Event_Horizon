@@ -172,7 +172,7 @@ def main():
             accurate_count += 1
             results_by_domain[domain]["accurate"] += 1
             
-        status_str = f"Coherent: {'✅' if is_coherent else '❌'} | Relevant: {'✅' if is_relevant else '❌'} | Accurate: {'✅' if is_accurate else '❌'}"
+        status_str = f"Coherent: {'OK' if is_coherent else 'FAIL'} | Relevant: {'OK' if is_relevant else 'FAIL'} | Accurate: {'OK' if is_accurate else 'FAIL'}"
         print(f"[{idx+1:2d}] Q: {q}")
         print(f"     A: {answer if answer else '[No Answer]'}")
         print(f"     {status_str}\n")

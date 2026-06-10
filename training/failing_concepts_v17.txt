@@ -1,0 +1,121 @@
+## FAILING CONCEPTS v17 — for next qa_output batch
+## Format: concept | current wrong output | what it should say
+## Priority: HIGH = blocks keyword match, MED = partial match only
+
+## ═══ SCIENCE (NEW super-path: "attractive force between objects") ═══
+## gravity answer now bleeds into ALL science concepts
+
+gravity         | "term gravity refer to as a quantum"       | force attracting objects with mass
+photosynthesis  | "attractive force between objects"         | plants convert sunlight into food
+evolution       | "attractive force between objects"         | gradual change of species
+dna             | "term gravity refer to as a quantum"       | molecule carrying genetic information
+electricity     | "attractive force between objects"         | flow of electric charge
+cell            | "atom through nuclear fusion"              | basic unit of living organisms
+molecule        | "disturbance that transfers energy"        | group of atoms bonded together
+energy          | "energy emitted in dna molecule"          | capacity to do work or cause change
+black hole      | "disturbance that transfers energy"        | region where gravity traps light
+star            | "disturbance that transfers energy"        | massive ball of gas producing light
+virus           | "disturbance that transfers energy"        | microscopic agent infecting cells
+solar system    | "attractive force between objects"         | sun and everything orbiting it
+water           | "disturbance that transfers energy"        | compound of hydrogen and oxygen
+oxygen          | "disturbance that transfers energy"        | gas essential for breathing
+entropy         | "disturbance that transfers energy"        | measure of disorder in system
+democracy       | "disturbance that transfers energy"        | system where citizens elect leaders
+nuclear energy  | "energy emitted in dna molecule"          | released by splitting atomic nuclei
+
+## ═══ TECH (super-path: "database is an array") ═══
+## Array/database paths dominating after is-hub
+
+python          | "database is an array"                     | programming language for software
+javascript      | "database is operating system"             | scripting language for web pages
+html            | "internet is database is api"              | markup language for web pages
+algorithm       | "database database is array"               | step-by-step problem solving procedure
+machine learning| "computer is operating system"             | system that learns from data
+compiler        | "database is operating system"             | translates source code to machine code
+encryption      | "internet is database is array"            | converts data into secure format
+git             | "computer or program converts code"        | version control system for code
+neural network  | "database is operating system"             | model inspired by brain neurons
+deep learning   | "database is operating system"             | multilayer networks learning patterns
+version control | "database is operating system"             | tracks changes to code over time
+variable        | "computer program managing hardware"       | named storage holding a value
+class           | "database database is array"               | blueprint for creating objects
+debugging       | "internet is database is array"            | finding and fixing code errors
+firewall        | "database is array"                        | blocks unauthorized network access
+blockchain      | "database is array"                        | distributed ledger of transactions
+stack           | "memory memory is ram installed"           | last-in first-out data structure
+queue           | "computer program managing hardware"       | first-in first-out data structure
+bandwidth       | "internet is computer is array"            | maximum data transfer rate
+latency         | "internet is database is array"            | delay in data transmission
+api             | "array is ordered collection"              | interface for programs to communicate
+server          | "database is array"                        | provides services to client computers
+network         | "database is array"                        | connects computers to share data
+internet        | "database is array"                        | global network connecting computers
+pixel           | "internet is database is array"            | smallest element of a digital display
+binary          | "internet is computer or program"          | base-two number system
+cpu             | "internet is computer or program"          | central processing unit
+ram             | "internet is database is array"            | random access memory for programs
+cache           | "fast memory stores data in software"      | fast storage for frequently used data
+
+## ═══ PEOPLE (super-path: "prolific inventor known") ═══
+## Shakespeare/inventor path bleeding into all people
+
+einstein        | "prolific inventor known"                  | physicist who developed relativity
+shakespeare     | "prolific inventor known"                  | english playwright who wrote hamlet
+napoleon        | "prolific inventor known"                  | french military leader and emperor
+darwin          | "eiffel tower is located"                  | naturalist who developed evolution
+curie           | "prolific inventor known"                  | scientist who discovered radium
+mandela         | "decentralized tamper-proof digital ledger"| first black president south africa
+lincoln         | "greatest writer"                          | sixteenth president abolished slavery
+caesar          | "prolific inventor known"                  | roman general and statesman
+cleopatra       | "prolific inventor known"                  | last ruler of ancient egypt
+turing          | "greatest writer in english"               | mathematician who founded computer science
+gandhi          | (partial inventor bleed)                   | led nonviolent independence movement
+renaissance     | "theoretical physicist mathematician"      | cultural revival in fifteenth century europe
+
+## ═══ GEOGRAPHY (remaining gaps) ═══
+
+italy capital   | "language spoken in france"                | capital of italy is rome
+egypt capital   | "language spoken in france"                | capital of egypt is cairo
+greece capital  | "language spoken in france"                | capital of greece is athens
+canada capital  | "decentralized distributed ledger"         | capital of canada is ottawa
+brazil capital  | "capital of spain is madrid"               | capital of brazil is brasilia
+where is paris  | "india in south asia"                      | paris is in france
+largest country | "capital of mexico is mexico city"         | russia is largest country
+longest river   | "capital of russia is moscow"              | nile is longest river
+highest mountain| "erupts lava"                              | mount everest is highest mountain
+
+## ═══ PARAPHRASE patterns still failing ═══
+
+what does X mean → last token = "mean" → hits wrong path
+what does dna stand for → "relativity and formation of water"
+what does a server do → "hardware tool manages networks"
+define gravity → gets gravity path but wrong continuation
+define democracy → "high-level interpreted programming language" (python bleed!)
+
+## ═══ OOD (no coverage — skip for now) ═══
+jazz, origami, yoga, chess, meditation, cryptocurrency,
+drone, caffeine, marathon, telescope, symphony, neuron, genome
+
+## ═══ PRIORITY for next qa_output batch ═══
+## Generate 5 paraphrase questions + 1 answer per concept below
+## Focus on answer VARIETY — different words each time
+
+# BATCH 2 — Science fix (17 concepts)
+gravity, photosynthesis, evolution, dna, electricity,
+cell, molecule, energy, black hole, star, virus,
+solar system, water, oxygen, entropy, nuclear energy, atom
+
+# BATCH 3 — Tech fix (20 concepts)  
+javascript, html, algorithm, machine learning, compiler,
+neural network, deep learning, version control, variable,
+class, debugging, firewall, blockchain, stack, queue,
+bandwidth, latency, api, server, network
+
+# BATCH 4 — People fix (12 concepts)
+einstein, shakespeare, napoleon, darwin, curie, mandela,
+lincoln, caesar, cleopatra, turing, gandhi, renaissance
+
+# BATCH 5 — Geography + paraphrase (10 concepts)
+italy, egypt, greece, canada, brazil,
+where is paris, largest country, longest river,
+"what does X mean" pattern, "what does X stand for" pattern

@@ -1,0 +1,551 @@
+# Definition Anchor Corpus — EH-G3 targeted training
+# Format: prose, one sentence per line
+# Each concept: question line + answer line
+# Answer length: 5-8 words (optimized for max_steps=6)
+# Total: ~500 anchor pairs across 8 domains
+
+# ── TECHNOLOGY & COMPUTING ──────────────────────────────────────
+what is a computer
+a computer is an electronic machine that processes data
+what is a database
+a database is an organized collection of stored data
+what is python
+python is a programming language for software development
+what is javascript
+javascript is a language used for web programming
+what is html
+html is a language for creating web pages
+what is css
+css is a language for styling web pages
+what is an algorithm
+an algorithm is a step by step problem solving procedure
+what is a program
+a program is a set of instructions for a computer
+what is software
+software is programs and code that run on computers
+what is hardware
+hardware is physical components that make up a computer
+what is a server
+a server provides services and data to other computers
+what is a network
+a network connects computers to share information
+what is the internet
+the internet is a global network connecting computers worldwide
+what is a website
+a website is a collection of pages on the internet
+what is an app
+an app is a software application for mobile devices
+what is a browser
+a browser is software used to access the internet
+what is a database query
+a query retrieves specific data from a database
+what is an api
+an api allows programs to communicate with each other
+what is machine learning
+machine learning is a system that learns from data
+what is artificial intelligence
+artificial intelligence simulates human thinking in computers
+what is a neural network
+a neural network is a model inspired by the human brain
+what is deep learning
+deep learning uses multilayer neural networks to learn patterns
+what is a compiler
+a compiler translates source code into executable machine code
+what is an operating system
+an operating system manages computer hardware and software resources
+what is linux
+linux is an open source operating system kernel
+what is encryption
+encryption converts data into a secure unreadable format
+what is a variable
+a variable stores a value in a computer program
+what is a function
+a function is a reusable block of code
+what is an array
+an array is an ordered collection of elements
+what is a loop
+a loop repeats a block of code multiple times
+what is a class
+a class is a blueprint for creating objects in code
+what is an object
+an object is an instance of a class in programming
+what is recursion
+recursion is when a function calls itself repeatedly
+what is debugging
+debugging is finding and fixing errors in code
+what is version control
+version control tracks changes to code over time
+what is git
+git is a distributed version control system for code
+what is cloud computing
+cloud computing delivers services over the internet remotely
+what is a cpu
+a cpu is the central processing unit of a computer
+what is ram
+ram is temporary memory used by running programs
+what is a gpu
+a gpu processes graphics and parallel computing tasks
+what is a byte
+a byte is eight bits of digital information
+what is binary
+binary is a number system using only zeros and ones
+what is a pixel
+a pixel is the smallest unit of a digital image
+what is bandwidth
+bandwidth is the maximum data transfer rate of a network
+what is latency
+latency is the delay in data transmission across a network
+what is a cache
+a cache stores frequently accessed data for faster retrieval
+what is a firewall
+a firewall blocks unauthorized access to a computer network
+what is a bug
+a bug is an error or flaw in computer software
+what is open source
+open source software has publicly available source code
+what is a blockchain
+a blockchain is a distributed ledger of digital transactions
+what is a hash
+a hash maps data to a fixed length digest value
+what is a stack
+a stack is a last in first out data structure
+what is a queue
+a queue is a first in first out data structure
+what is a tree data structure
+a tree organizes data in a hierarchical parent child structure
+what is a graph data structure
+a graph consists of nodes connected by edges
+what is sorting
+sorting arranges data elements in a specific order
+what is binary search
+binary search finds an element by dividing the search space
+what is a pointer
+a pointer stores the memory address of another variable
+
+# ── GEOGRAPHY ───────────────────────────────────────────────────
+what is the capital of france
+paris is the capital of france
+what is the capital of germany
+berlin is the capital of germany
+what is the capital of japan
+tokyo is the capital of japan
+what is the capital of italy
+rome is the capital of italy
+what is the capital of spain
+madrid is the capital of spain
+what is the capital of china
+beijing is the capital of china
+what is the capital of india
+new delhi is the capital of india
+what is the capital of canada
+ottawa is the capital of canada
+what is the capital of australia
+canberra is the capital of australia
+what is the capital of brazil
+brasilia is the capital of brazil
+what is the capital of russia
+moscow is the capital of russia
+what is the capital of the usa
+washington dc is the capital of the united states
+what is the capital of mexico
+mexico city is the capital of mexico
+what is the capital of argentina
+buenos aires is the capital of argentina
+what is the capital of egypt
+cairo is the capital of egypt
+what is the capital of south africa
+pretoria is the capital of south africa
+what is the capital of nigeria
+abuja is the capital of nigeria
+what is the capital of kenya
+nairobi is the capital of kenya
+what is the capital of saudi arabia
+riyadh is the capital of saudi arabia
+what is the capital of turkey
+ankara is the capital of turkey
+what is the capital of poland
+warsaw is the capital of poland
+what is the capital of netherlands
+amsterdam is the capital of netherlands
+what is the capital of sweden
+stockholm is the capital of sweden
+what is the capital of norway
+oslo is the capital of norway
+what is the capital of denmark
+copenhagen is the capital of denmark
+what is the capital of greece
+athens is the capital of greece
+what is the capital of portugal
+lisbon is the capital of portugal
+what is the capital of south korea
+seoul is the capital of south korea
+what is the capital of indonesia
+jakarta is the capital of indonesia
+what is paris
+paris is the capital city of france
+what is london
+london is the capital city of the united kingdom
+what is tokyo
+tokyo is the capital city of japan
+what is beijing
+beijing is the capital city of china
+what is rome
+rome is the capital city of italy
+what is berlin
+berlin is the capital city of germany
+where is the eiffel tower
+the eiffel tower is located in paris france
+where is mount everest
+mount everest is located in the himalayas in nepal
+where is the amazon river
+the amazon river flows through south america
+where is the sahara desert
+the sahara desert is located in north africa
+what is the largest country
+russia is the largest country by land area
+what is the smallest country
+vatican city is the smallest country in the world
+what is the longest river
+the nile is the longest river in the world
+what is the highest mountain
+mount everest is the highest mountain in the world
+what is the largest ocean
+the pacific ocean is the largest ocean in the world
+what is the largest continent
+asia is the largest continent in the world
+
+# ── SCIENCE ─────────────────────────────────────────────────────
+what is gravity
+gravity is a force that attracts objects toward each other
+what is photosynthesis
+photosynthesis is how plants convert sunlight into food
+what is evolution
+evolution is the gradual change of species over generations
+what is dna
+dna is the molecule that carries genetic information
+what is a cell
+a cell is the basic unit of all living organisms
+what is an atom
+an atom is the smallest unit of a chemical element
+what is a molecule
+a molecule is a group of atoms bonded together
+what is electricity
+electricity is the flow of electric charge through a conductor
+what is magnetism
+magnetism is the force exerted by magnets on other objects
+what is energy
+energy is the capacity to do work or cause change
+what is temperature
+temperature measures the average kinetic energy of particles
+what is pressure
+pressure is the force applied per unit of surface area
+what is velocity
+velocity is speed in a specific direction
+what is acceleration
+acceleration is the rate of change of velocity
+what is mass
+mass is the amount of matter in an object
+what is density
+density is mass per unit volume of a substance
+what is a wave
+a wave transfers energy through a medium without moving matter
+what is light
+light is electromagnetic radiation visible to the human eye
+what is sound
+sound is a vibration that travels as a wave through matter
+what is oxygen
+oxygen is a gas essential for breathing and combustion
+what is hydrogen
+hydrogen is the lightest and most abundant element in the universe
+what is carbon
+carbon is the element that forms the basis of all life
+what is water
+water is a compound of hydrogen and oxygen essential for life
+what is fire
+fire is the rapid oxidation of a material releasing heat and light
+what is radiation
+radiation is the emission of energy as electromagnetic waves
+what is a virus
+a virus is a microscopic agent that infects living cells
+what is a bacteria
+bacteria are single celled microorganisms found everywhere
+what is photon
+a photon is a particle of light carrying electromagnetic energy
+what is a black hole
+a black hole is a region where gravity prevents light from escaping
+what is a star
+a star is a massive ball of gas producing light by nuclear fusion
+what is a planet
+a planet is a body that orbits a star in space
+what is the solar system
+the solar system is the sun and everything that orbits it
+what is the moon
+the moon is earth's natural satellite orbiting our planet
+what is the sun
+the sun is a star at the center of our solar system
+what is an element
+an element is a pure substance made of one type of atom
+what is a compound
+a compound is a substance made of two or more elements bonded
+what is a mixture
+a mixture combines substances without chemical bonding
+what is acid
+an acid is a substance that releases hydrogen ions in water
+what is a base
+a base is a substance that accepts hydrogen ions in solution
+what is ph
+ph measures the acidity or alkalinity of a solution
+what is oxidation
+oxidation is the loss of electrons in a chemical reaction
+what is a neutron
+a neutron is a subatomic particle with no electric charge
+what is a proton
+a proton is a positively charged subatomic particle
+what is an electron
+an electron is a negatively charged subatomic particle
+what is nuclear energy
+nuclear energy is released by splitting or fusing atomic nuclei
+what is entropy
+entropy is a measure of disorder or randomness in a system
+
+# ── MATHEMATICS ─────────────────────────────────────────────────
+what is pi
+pi is the ratio of a circle circumference to its diameter
+what is infinity
+infinity is a concept representing a quantity without limit
+what is a prime number
+a prime number is divisible only by one and itself
+what is a fraction
+a fraction represents a part of a whole number
+what is a percentage
+a percentage is a number expressed as a fraction of one hundred
+what is an equation
+an equation shows two mathematical expressions are equal
+what is algebra
+algebra uses symbols to represent unknown quantities in equations
+what is geometry
+geometry is the study of shapes sizes and positions
+what is calculus
+calculus studies rates of change and accumulation of quantities
+what is statistics
+statistics is the science of collecting and analyzing data
+what is probability
+probability measures the likelihood of an event occurring
+what is a function in math
+a mathematical function maps inputs to outputs
+what is a matrix
+a matrix is a rectangular array of numbers arranged in rows and columns
+what is a vector
+a vector is a quantity with both magnitude and direction
+what is the pythagorean theorem
+the pythagorean theorem relates the sides of a right triangle
+what is a square root
+a square root is a number that multiplied by itself gives the original
+what is an integer
+an integer is a whole number positive negative or zero
+what is a decimal
+a decimal represents a fraction using powers of ten
+what is a logarithm
+a logarithm is the inverse operation of exponentiation
+
+# ── HISTORY & PEOPLE ────────────────────────────────────────────
+who is albert einstein
+albert einstein was a physicist who developed the theory of relativity
+who is isaac newton
+isaac newton discovered the laws of motion and gravity
+who is charles darwin
+charles darwin developed the theory of natural selection
+who is marie curie
+marie curie was a scientist who discovered radium and polonium
+who is alan turing
+alan turing was a mathematician who founded computer science
+who is shakespeare
+shakespeare was an english playwright who wrote hamlet and othello
+who is napoleon
+napoleon was a french military leader and emperor of france
+who is cleopatra
+cleopatra was the last ruler of ancient egypt
+who is julius caesar
+julius caesar was a roman general and statesman
+who is abraham lincoln
+abraham lincoln was the sixteenth president of the united states
+who is mahatma gandhi
+mahatma gandhi led nonviolent resistance against british rule in india
+who is nelson mandela
+nelson mandela was the first black president of south africa
+who is thomas edison
+thomas edison invented the lightbulb and many other devices
+who is alexander the great
+alexander the great conquered much of the ancient world
+what is world war one
+world war one was a global conflict from nineteen fourteen to nineteen eighteen
+what is world war two
+world war two was a global conflict from nineteen thirty nine to nineteen forty five
+what is the renaissance
+the renaissance was a cultural revival in europe in the fifteenth century
+what is the industrial revolution
+the industrial revolution transformed manufacturing from the eighteenth century
+what is democracy
+democracy is a system where citizens vote to choose their leaders
+what is communism
+communism is a political system where the state owns all property
+what is capitalism
+capitalism is an economic system based on private ownership and free markets
+
+# ── NATURE & BIOLOGY ────────────────────────────────────────────
+what is a mammal
+a mammal is a warm blooded animal that feeds young with milk
+what is a reptile
+a reptile is a cold blooded vertebrate with scales
+what is a bird
+a bird is a warm blooded animal with feathers and wings
+what is a fish
+a fish is a cold blooded vertebrate that lives in water
+what is an insect
+an insect is a small arthropod with six legs and three body segments
+what is a dog
+a dog is a domesticated mammal kept as a loyal pet
+what is a cat
+a cat is a small domesticated mammal known for purring
+what is an elephant
+an elephant is the largest land animal with a long trunk
+what is a tree
+a tree is a tall plant with a wooden trunk branches and leaves
+what is a flower
+a flower is the reproductive structure of a flowering plant
+what is photosynthesis
+plants use photosynthesis to make food from sunlight and carbon dioxide
+what is a forest
+a forest is a large area densely covered with trees and vegetation
+what is an ocean
+an ocean is a vast body of saltwater covering most of the earth
+what is a mountain
+a mountain is a large natural elevation of earth above surrounding land
+what is a river
+a river is a large natural stream of flowing fresh water
+what is a desert
+a desert is a dry region with very little rainfall and sparse vegetation
+what is a volcano
+a volcano is an opening in earth through which lava erupts
+what is an earthquake
+an earthquake is shaking of the ground caused by tectonic activity
+what is climate
+climate is the long term pattern of weather in an area
+what is weather
+weather is the short term state of the atmosphere at a location
+what is rain
+rain is water droplets that fall from clouds to the ground
+what is snow
+snow is frozen water crystals that fall from clouds
+what is a hurricane
+a hurricane is a large rotating tropical storm with strong winds
+
+# ── EVERYDAY CONCEPTS ───────────────────────────────────────────
+what is money
+money is a medium of exchange used to buy goods and services
+what is a bank
+a bank is an institution that holds and lends money
+what is education
+education is the process of learning and acquiring knowledge
+what is a school
+a school is a place where students go to learn
+what is a hospital
+a hospital is a facility where sick people receive medical treatment
+what is medicine
+medicine is the science of diagnosing and treating illness
+what is a law
+a law is a rule enforced by a government or authority
+what is a government
+a government is the system that rules and manages a country
+what is an economy
+an economy is the system of production and trade in a region
+what is trade
+trade is the exchange of goods and services between parties
+what is a language
+a language is a system of communication using words and grammar
+what is music
+music is organized sound that creates rhythm melody and harmony
+what is art
+art is creative expression through visual or performing media
+what is sport
+sport is a competitive physical activity following set rules
+what is food
+food is any substance consumed to provide nutritional support
+what is sleep
+sleep is a natural state of rest that restores the body and mind
+what is health
+health is a state of physical and mental wellbeing
+what is time
+time is the progression of events from past to present to future
+what is a map
+a map is a visual representation of an area or territory
+what is a book
+a book is a written or printed work bound together
+what is a library
+a library is a place where books and resources are stored
+what is a museum
+a museum is a place that preserves and displays cultural artifacts
+what is religion
+religion is a set of beliefs about the nature and purpose of life
+what is philosophy
+philosophy is the study of fundamental questions about existence
+what is psychology
+psychology is the scientific study of the mind and behavior
+what is economics
+economics studies the production distribution and consumption of goods
+what is sociology
+sociology is the study of human society and social behavior
+
+# ── LANGUAGE & GRAMMAR ──────────────────────────────────────────
+what is a noun
+a noun is a word that names a person place or thing
+what is a verb
+a verb is a word that describes an action or state
+what is an adjective
+an adjective is a word that describes a noun
+what is an adverb
+an adverb is a word that modifies a verb adjective or adverb
+what is a sentence
+a sentence is a group of words expressing a complete thought
+what is a paragraph
+a paragraph is a group of sentences about one main idea
+what is grammar
+grammar is the set of rules for structuring sentences in a language
+what is a synonym
+a synonym is a word with the same or similar meaning to another
+what is an antonym
+an antonym is a word with the opposite meaning of another
+what is a definition
+a definition explains the meaning of a word or concept
+what is punctuation
+punctuation uses marks to clarify meaning and structure in writing
+what is a metaphor
+a metaphor compares two things without using like or as
+what is a simile
+a simile compares two things using the words like or as
+
+# ── FOOD & COOKING ──────────────────────────────────────────────
+what is bread
+bread is baked food made from flour water and yeast
+what is coffee
+coffee is a drink made from roasted ground coffee beans
+what is tea
+tea is a drink made by steeping tea leaves in hot water
+what is pasta
+pasta is an italian food made from wheat flour and water
+what is rice
+rice is a cereal grain that is a staple food worldwide
+what is protein
+protein is a nutrient essential for building and repairing tissue
+what is a calorie
+a calorie is a unit of energy provided by food
+what is nutrition
+nutrition is the process of obtaining food necessary for health
+how do you make bread
+mix flour water yeast and salt then bake in oven
+how do you make coffee
+boil water pour over ground coffee beans and filter
+how do you boil water
+heat water in a pot until it reaches one hundred degrees celsius
+how do you make tea
+pour boiling water over tea leaves and steep for several minutes

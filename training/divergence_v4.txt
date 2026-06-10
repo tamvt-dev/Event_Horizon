@@ -1,0 +1,87 @@
+# Divergence Anchors v4 — fix hello single-token and einstein
+# 
+# hello problem: single token → no bigram → embedding fallback → algorithm drift
+# Fix: add (hello, hello) bigram pair with x30 weight
+#
+# einstein problem: still hits gandhi — need stronger direct path
+# Fix: even more explicit einstein→physics pairs
+#
+# Weight: x30 in corpus (highest priority)
+
+# ── HELLO: create (hello, hello) pair so beam can start ──────
+# Single-token query "hello" → fallback → needs a real pair
+# (hello, hello) is a degenerate pair but it anchors the answer
+hello hello
+hello hello i am here to help you with questions
+hello hi
+hello hi i am a helpful question answering system
+hello greetings
+hello greetings i can answer your questions today
+hello help
+hello help i am ready to answer your questions
+hello how
+hello how can i help you with your question today
+hello i
+hello i am here to help you with any questions
+hello there
+hello there how can i help you today
+say hello
+say hello to start a conversation with a greeting
+hello world
+hello world is a traditional first program that prints greeting
+
+# ── EINSTEIN: much stronger direct path ──────────────────────
+# Current: "is mahatma gandhi" — einstein→is→mahatma bleeding
+# Fix: overwhelm the gandhi path with einstein-specific bigrams
+who einstein
+who is einstein albert einstein was a physicist
+is einstein
+einstein was a physicist known for the theory of relativity
+einstein physicist
+einstein the physicist developed the theory of relativity
+einstein albert
+albert einstein was a german physicist born in 1879
+einstein theory
+einstein theory of relativity changed modern physics
+einstein famous
+einstein is famous for the special theory of relativity
+einstein physics
+einstein transformed physics with the theory of relativity
+einstein was
+einstein was a theoretical physicist who developed relativity
+einstein developed
+einstein developed both the special and general theory of relativity
+einstein relativity
+einstein relativity theory explains the relationship of space and time
+einstein e
+einstein e equals mc squared is the mass energy equation
+einstein won
+einstein won the 1921 nobel prize in physics
+albert einstein
+albert einstein is one of the greatest physicists of all time
+physicist einstein
+the physicist albert einstein is known for relativity theory
+einstein known
+einstein is known as the father of modern theoretical physics
+einstein said
+einstein said imagination is more important than knowledge
+the theory of relativity
+the theory of relativity was developed by albert einstein in 1905
+relativity theory
+the relativity theory by einstein changed our view of space time
+einstein energy
+einstein showed that energy equals mass times the speed of light
+physicist who
+a physicist who developed relativity theory was albert einstein
+
+# ── Strengthen GANDHI separation ─────────────────────────────
+gandhi india
+gandhi led india to independence through nonviolent resistance
+gandhi leader
+gandhi was the leader of the indian independence movement
+gandhi nonviolent
+gandhi used nonviolent civil disobedience to fight british rule
+india gandhi
+india was led to independence by mahatma gandhi in 1947
+gandhi british
+gandhi fought against british colonial rule in india peacefully

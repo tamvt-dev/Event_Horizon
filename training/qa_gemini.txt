@@ -1,0 +1,18 @@
+# conf=9.50 model=gemini-2.5-flash-lite
+what does whale mean
+large marine mammal
+# conf=9.50 model=gemini-2.5-flash
+where is time
+time is a dimension in which events occur
+# conf=9.80 model=gemini-2.5-flash
+who is geometric series
+a series with a constant ratio between successive terms
+# conf=9.00 model=gemini-2.5-flash-lite
+what is a philosopher
+a person who studies philosophy
+# conf=8.00 model=gemini-2.5-flash-lite
+define tundra
+treeless polar desert with permafrost
+# conf=9.80 model=gemini-2.5-flash
+what does differential equation mean
+an equation relating a function to its derivatives

@@ -1,0 +1,354 @@
+# Targeted Q&A Corpus for EH-G3
+# Format: one sentence per line (prose, pairs alternating Q then A)
+# Goal: fix failing patterns from test results
+# Patterns: what is a [noun], capital of [country], who is [person], what is [tech]
+
+# ── what is a [noun] → short definition ─────────────────────────────────────
+what is a computer
+device that processes information and runs programs
+what is a computer
+electronic machine that stores and processes data
+what is a database
+system that stores and retrieves organized data
+what is a database
+collection of structured data for computer programs
+what is a tree
+plant with trunk branches and leaves
+what is a tree
+large plant that grows wood and leaves
+what is a server
+computer that provides services to other computers
+what is a server
+machine that handles requests from clients
+what is a network
+system connecting computers to share data
+what is a network
+group of devices linked to communicate
+what is a cache
+fast memory that stores recently used data
+what is a cache
+temporary storage for quick data access
+what is a function
+block of code that performs a task
+what is a function
+reusable piece of code with a name
+what is an array
+ordered collection of elements in memory
+what is an array
+list of items stored at consecutive memory locations
+what is a variable
+named storage location that holds a value
+what is a variable
+named container for storing data in a program
+what is a loop
+code that repeats a block multiple times
+what is a loop
+control structure that executes repeatedly
+what is a thread
+unit of execution within a process
+what is a thread
+lightweight process that shares memory
+what is a compiler
+program that translates code to machine instructions
+what is a compiler
+tool that converts source code to binary
+what is an algorithm
+step by step procedure to solve a problem
+what is an algorithm
+set of instructions for solving a problem
+what is a protocol
+set of rules for communication between systems
+what is a protocol
+agreed standard for data exchange over a network
+what is a stack
+data structure where last in is first out
+what is a stack
+memory region for function calls and local variables
+what is a queue
+data structure where first in is first out
+what is a queue
+ordered list where items are added at one end
+what is a graph
+data structure with nodes connected by edges
+what is a graph
+set of vertices linked by edges
+what is a binary
+number system using only zeros and ones
+what is a byte
+unit of data equal to eight bits
+what is a bit
+smallest unit of data zero or one
+what is a pixel
+smallest element of a digital image
+what is encryption
+process of encoding data to keep it secure
+what is encryption
+converting data to unreadable form without a key
+what is a framework
+collection of tools and libraries for development
+what is an api
+interface for programs to communicate with each other
+what is an api
+set of rules for software components to interact
+what is a bug
+error in code that causes unexpected behavior
+what is debugging
+process of finding and fixing errors in code
+what is recursion
+function that calls itself to solve a problem
+what is inheritance
+mechanism where a class acquires properties of another
+what is abstraction
+hiding complexity and showing only essential features
+what is polymorphism
+ability of objects to take multiple forms
+what is a pointer
+variable that stores the memory address of another
+what is memory
+component that stores data for the processor
+what is memory
+temporary storage used by running programs
+what is bandwidth
+amount of data transmitted per unit of time
+what is latency
+time delay between request and response
+what is a kernel
+core of an operating system
+what is a kernel
+program that manages hardware resources
+what is a process
+running instance of a program
+what is a process
+program in execution with its own memory
+what is an interrupt
+signal that pauses cpu to handle an event
+what is a mutex
+lock that allows only one thread at a time
+what is a deadlock
+state where threads wait for each other forever
+what is virtualization
+creating virtual versions of hardware or software
+what is a container
+isolated environment for running applications
+what is a container
+lightweight unit that packages code and dependencies
+what is a microservice
+small independent service that does one task
+what is machine learning
+system that improves from data and experience
+what is machine learning
+training computers to learn patterns from data
+what is a neural network
+model inspired by the human brain structure
+what is a tensor
+multi dimensional array used in machine learning
+
+# ── capital of [country] → [city] ───────────────────────────────────────────
+what is the capital of france
+paris is the capital of france
+capital of france
+paris
+what is the capital of germany
+berlin is the capital of germany
+capital of germany
+berlin
+what is the capital of japan
+tokyo is the capital of japan
+capital of japan
+tokyo
+what is the capital of china
+beijing is the capital of china
+capital of china
+beijing
+what is the capital of italy
+rome is the capital of italy
+capital of italy
+rome
+what is the capital of spain
+madrid is the capital of spain
+capital of spain
+madrid
+what is the capital of brazil
+brasilia is the capital of brazil
+capital of brazil
+brasilia
+what is the capital of india
+new delhi is the capital of india
+capital of india
+new delhi
+what is the capital of australia
+canberra is the capital of australia
+capital of australia
+canberra
+what is the capital of canada
+ottawa is the capital of canada
+capital of canada
+ottawa
+what is the capital of russia
+moscow is the capital of russia
+capital of russia
+moscow
+what is the capital of usa
+washington is the capital of the usa
+capital of usa
+washington
+what is the capital of egypt
+cairo is the capital of egypt
+capital of egypt
+cairo
+what is the capital of mexico
+mexico city is the capital of mexico
+capital of mexico
+mexico city
+what is the capital of argentina
+buenos aires is the capital of argentina
+capital of argentina
+buenos aires
+
+# ── who is [person] → [role/fact] ──────────────────────────────────────────
+who is alan turing
+turing was mathematician who invented computing
+who is alan turing
+computer scientist who cracked enigma in world war two
+who is ada lovelace
+lovelace was first computer programmer in history
+who is ada lovelace
+mathematician who wrote the first algorithm
+who is einstein
+einstein was physicist who discovered theory of relativity
+who is newton
+newton discovered gravity and laws of motion
+who is darwin
+darwin developed theory of evolution by natural selection
+who is shakespeare
+shakespeare was english playwright and poet
+who is napoleon
+napoleon was french military leader and emperor
+who is cleopatra
+cleopatra was queen of ancient egypt
+who is marie curie
+curie was scientist who discovered radioactivity
+
+# ── what is [programming language] ──────────────────────────────────────────
+what is python
+python is a programming language for scripting and data science
+what is python
+high level language known for simple readable syntax
+what is javascript
+javascript is language used for web browser programming
+what is javascript
+scripting language that runs in web browsers
+what is java
+java is object oriented programming language
+what is java
+general purpose language that runs on a virtual machine
+what is c
+c is low level systems programming language
+what is c
+language used to write operating systems and drivers
+what is rust
+rust is systems language focused on safety and speed
+what is rust
+language that prevents memory errors at compile time
+what is html
+html is markup language for creating web pages
+what is css
+css is language for styling and designing web pages
+what is sql
+sql is language for querying and managing databases
+what is sql
+structured query language for relational databases
+what is bash
+bash is command line scripting language for unix systems
+what is go
+go is compiled language designed by google for simplicity
+what is kotlin
+kotlin is modern language for android development
+
+# ── science and nature ───────────────────────────────────────────────────────
+what is gravity
+force that pulls objects toward each other
+what is gravity
+attraction between masses in the universe
+what is photosynthesis
+process plants use sunlight to make food
+what is photosynthesis
+plants convert light and carbon dioxide to energy
+what is evolution
+gradual change in species over generations
+what is evolution
+process of natural selection shaping living things
+what is dna
+molecule that carries genetic information
+what is dna
+double helix that encodes biological instructions
+what is electricity
+flow of electrons through a conductor
+what is electricity
+form of energy from moving electric charges
+what is an atom
+smallest unit of a chemical element
+what is a molecule
+two or more atoms bonded together
+what is energy
+capacity to do work or cause change
+what is a wave
+disturbance that transfers energy through a medium
+what is a cell
+basic unit of life in all living organisms
+what is a gene
+segment of dna that encodes a protein
+what is a virus
+tiny agent that infects and replicates in cells
+what is a bacterium
+single celled microorganism found everywhere
+what is photon
+particle of light with no mass
+what is a quark
+fundamental particle that makes up protons and neutrons
+what is a black hole
+region of space where gravity is so strong nothing escapes
+what is the moon
+natural satellite that orbits the earth
+what is the sun
+star at the center of the solar system
+what is a planet
+body that orbits a star in a solar system
+what is water
+compound of hydrogen and oxygen essential for life
+what is oxygen
+element essential for breathing and combustion
+what is carbon
+element that forms the basis of all life
+
+# ── everyday and conversational ─────────────────────────────────────────────
+what is your name
+my name is assistant
+how are you
+i am doing well thank you
+hello
+hello how can i help you today
+hi there
+hi how can i assist you
+what can you do
+i can answer questions and provide information
+can you help me
+yes i am here to help you
+what time is it
+i do not have access to the current time
+what day is it
+i do not have access to the current date
+who are you
+i am an ai assistant designed to answer questions
+thank you
+you are welcome glad i could help
+goodbye
+goodbye have a great day
+what is love
+love is a deep feeling of affection and care
+what is happiness
+happiness is a state of joy and well being
+what is knowledge
+knowledge is understanding gained through learning
+what is wisdom
+wisdom is the ability to use knowledge well

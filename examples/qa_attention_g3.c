@@ -59,10 +59,27 @@ static TestCase test_cases[] = {
     { "how are you", "i am fine", "baseline" },
     { "hello", "hello", "baseline" },
     
-    /* ---- Domain-specific (should improve with domain corpus) ---- */
+    /* ---- Geography ---- */
     { "what is the capital of france", "paris", "geography" },
-    { "who is the author", "author", "literary" },
-    { "what is python", "programming language", "technical" },
+    { "what is the capital of japan",  "tokyo", "geography" },
+    { "what is the capital of germany","berlin", "geography" },
+    { "where is paris",                "paris",  "geography" },
+
+    /* ---- Technical ---- */
+    { "what is python",           "programming language", "technical" },
+    { "what is an algorithm",     "procedure",            "technical" },
+    { "what is a network",        "connect",              "technical" },
+    { "what is machine learning", "learning",             "technical" },
+
+    /* ---- Science ---- */
+    { "what is gravity",        "force",    "science" },
+    { "what is photosynthesis", "plants",   "science" },
+    { "what is dna",            "genetic",  "science" },
+
+    /* ---- People ---- */
+    { "who is the author",   "author",  "literary" },
+    { "who is einstein",     "physics", "people"   },
+    { "who is alan turing",  "computer","people"   },
 };
 
 #define NUM_TEST_CASES (sizeof(test_cases) / sizeof(test_cases[0]))

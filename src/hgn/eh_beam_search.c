@@ -75,7 +75,7 @@ static int compare_candidates(const void *a, const void *b) {
  * ---------------------------------------------------------------- */
 static float dot_product_128(const float *a, const float *b) {
     float sum = 0.0f;
-    for (int i = 0; i < EH_HGN_EMBED_DIM; i++) {
+    for (uint32_t i = 0; i < EH_HGN_EMBED_DIM; i++) {
         sum += a[i] * b[i];
     }
     return sum;
@@ -179,7 +179,7 @@ static void compute_context_vector(const EH_HGN_BeamPath *beam,
                                    float *context_out)
 {
     /* Clear output */
-    for (int i = 0; i < EH_HGN_EMBED_DIM; i++) {
+    for (uint32_t i = 0; i < EH_HGN_EMBED_DIM; i++) {
         context_out[i] = 0.0f;
     }
     
@@ -196,7 +196,7 @@ static void compute_context_vector(const EH_HGN_BeamPath *beam,
         const float *token_vec = eh_hgn_dag_node_vec(dag, token_id);
         
         if (token_vec) {
-            for (int i = 0; i < EH_HGN_EMBED_DIM; i++) {
+            for (uint32_t i = 0; i < EH_HGN_EMBED_DIM; i++) {
                 context_out[i] += token_vec[i];
             }
         }
@@ -204,7 +204,7 @@ static void compute_context_vector(const EH_HGN_BeamPath *beam,
     
     /* Average (divide by window size) */
     float scale = 1.0f / (float)window;
-    for (int i = 0; i < EH_HGN_EMBED_DIM; i++) {
+    for (uint32_t i = 0; i < EH_HGN_EMBED_DIM; i++) {
         context_out[i] *= scale;
     }
 }
@@ -241,6 +241,25 @@ void eh_hgn_beam_init(EH_HGN_BeamTracker    *tracker,
     /* If hub penalty enabled, initialize from DAG header info */
     if (eh_beam_use_hub_penalty) {
         init_hub_penalty(dag);
+    }
+
+    /* Compute mean-pooled context vector from prompt tokens (Option A) */
+    memset(tracker->context_vec, 0, sizeof(tracker->context_vec));
+    uint32_t valid_count = 0;
+    for (uint32_t i = 0; i < prompt_len; i++) {
+        const float *vec = eh_hgn_dag_node_vec(dag, prompt[i]);
+        if (vec) {
+            for (int d = 0; d < EH_HGN_EMBED_DIM; d++) {
+                tracker->context_vec[d] += vec[d];
+            }
+            valid_count++;
+        }
+    }
+    if (valid_count > 0) {
+        float scale = 1.0f / (float)valid_count;
+        for (int d = 0; d < EH_HGN_EMBED_DIM; d++) {
+            tracker->context_vec[d] *= scale;
+        }
     }
 
     /* Initialize first beam with prompt */
@@ -294,9 +313,8 @@ uint32_t eh_hgn_beam_step(EH_HGN_BeamTracker *tracker,
 
         if (beam->seq_len >= EH_BEAM_MAX_LEN) continue;
 
-        /* Compute rich context from recent tokens (not just last one) */
-        float context_vec[EH_HGN_EMBED_DIM];
-        compute_context_vector(beam, dag, context_vec);
+        /* Option A: Use stable pre-computed prompt context vector */
+        const float *context_vec = tracker->context_vec;
 
         uint32_t last_token = beam->tokens[beam->seq_len - 1];
         uint32_t fanout = eh_hgn_dag_fanout(dag, last_token);
@@ -333,7 +351,18 @@ uint32_t eh_hgn_beam_step(EH_HGN_BeamTracker *tracker,
             float weighted_prior = edge->prior * 0.5f;
             float weighted_ctx = ctx_score * 3.0f;
             float hub_penalty_score = compute_hub_penalty(dag, edge->dst);
-            float base_score   = beam->score + weighted_prior + weighted_ctx - hub_penalty_score;
+            
+            float domain_guidance = 0.0f;
+            if (tracker->node_domains && tracker->target_domain != 0) {
+                uint8_t cand_domain = tracker->node_domains[edge->dst];
+                if (cand_domain == tracker->target_domain) {
+                    domain_guidance = 20.0f;   /* Strong pull toward correct domain */
+                } else if (cand_domain != 0) {
+                    domain_guidance = -30.0f;  /* Strong push away from wrong domains */
+                }
+            }
+
+            float base_score   = beam->score + weighted_prior + weighted_ctx + domain_guidance - hub_penalty_score;
 
             /* Apply temperature scaling */
             float temp_score = apply_temperature(base_score);
@@ -414,11 +443,18 @@ void eh_hgn_beam_reset(EH_HGN_BeamTracker *tracker)
     if (!tracker) return;
     EH_HGN_BeamPath *saved_paths = tracker->paths;
     uint32_t saved_width = tracker->beam_width;
+    const uint8_t *saved_node_domains = tracker->node_domains;
+    uint32_t saved_target_domain = tracker->target_domain;
+    float saved_ctx[EH_HGN_EMBED_DIM];
+    memcpy(saved_ctx, tracker->context_vec, sizeof(saved_ctx));
     
     memset(tracker, 0, sizeof(*tracker));
     
     tracker->paths = saved_paths;
     tracker->beam_width = saved_width;
+    tracker->node_domains = saved_node_domains;
+    tracker->target_domain = saved_target_domain;
+    memcpy(tracker->context_vec, saved_ctx, sizeof(saved_ctx));
 }
 
 /* ================================================================

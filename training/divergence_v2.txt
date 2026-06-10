@@ -1,0 +1,128 @@
+# Divergence Anchors v2 — increase fanout at critical (a,X) pairs
+# Focus: pairs with fanout=2 need more outgoing paths to their correct answer
+# Each concept gets 3-4 different continuations so beam has rich paths
+# Weight: x15 in corpus
+
+# ── (a, database) — needs fanout > 2 ──────────────────────────
+a database is
+a database is an organized collection of structured information
+a database stores
+a database stores and retrieves data for computer applications
+a database organizes
+a database organizes information into tables rows and columns
+database management
+database management systems control storage and retrieval of data
+relational database
+a relational database organizes data into related tables
+database query
+a database query retrieves specific records from stored data
+
+# ── (a, tree) — gravity bleeding fix ─────────────────────────
+a tree is
+a tree is a tall plant with a woody trunk and branches
+a tree has
+a tree has roots trunk branches and leaves for growth
+a tree grows
+a tree grows from a seed and can live for many years
+trees are
+trees are plants that provide oxygen shade and wood
+a tree produces
+a tree produces oxygen through the process of photosynthesis
+
+# ── (python, is) — photosynthesis bleeding fix ───────────────
+python is
+python is a programming language for software development
+python was
+python was created by guido van rossum in nineteen ninety one
+python uses
+python uses simple readable syntax for writing programs
+python runs
+python runs on multiple operating systems including linux and windows
+python is used
+python is used for web development data science and automation
+
+# ── (a, computer) — strengthen existing good path ────────────
+a computer is
+a computer is an electronic machine that processes data
+a computer uses
+a computer uses a processor memory and storage to function
+a computer runs
+a computer runs programs and processes information electronically
+a computer stores
+a computer stores data in memory and on disk drives
+computers are
+computers are machines that execute instructions to process information
+
+# ── (of, france) — paris fix ─────────────────────────────────
+of france
+the capital of france is paris
+france is
+france is a country in western europe with capital paris
+paris is
+paris is the capital and largest city of france
+the capital
+the capital of france is the city of paris
+france the
+france the country has paris as its capital city
+
+# ── (a, virus) — fix biology drift ───────────────────────────
+a virus is
+a virus is a microscopic infectious agent that replicates in cells
+a virus infects
+a virus infects living cells and uses them to reproduce
+viruses are
+viruses are tiny pathogens smaller than bacteria
+
+# ── (a, star) — astronomy ─────────────────────────────────────
+a star is
+a star is a massive ball of gas that produces light by nuclear fusion
+a star produces
+a star produces energy through nuclear fusion in its core
+stars are
+stars are massive luminous balls of plasma held together by gravity
+
+# ── (electricity, is) ─────────────────────────────────────────
+electricity is
+electricity is the flow of electric charge through a conductor
+electrical energy
+electrical energy is produced by the movement of electrons
+electric current
+electric current is the rate of flow of electric charge
+
+# ── (gravity, is) ─────────────────────────────────────────────
+gravity is
+gravity is a force that attracts objects with mass toward each other
+gravitational force
+gravitational force pulls objects toward the center of the earth
+gravity pulls
+gravity pulls objects downward toward the surface of the earth
+
+# ── (a, tree) — increase fanout, break gravity drift ─────────
+a tree has
+a tree has roots trunk branches and leaves for support
+a tree is
+a tree is a woody plant that grows tall over many years
+a tree provides
+a tree provides oxygen shade wood and habitat for animals
+a tree grows
+a tree grows from a seed planted in soil with sunlight
+trees grow
+trees grow slowly and can live for hundreds of years
+tree roots
+tree roots anchor the plant and absorb water from soil
+a tree needs
+a tree needs sunlight water and nutrients to grow tall
+tree leaves
+tree leaves convert sunlight into food through photosynthesis
+
+# ── (what, is) follow-up — python specific ───────────────────
+is python
+python is a high level programming language
+python programming
+python programming is used for web development and data science
+python language
+python language was designed for readability and simplicity
+python code
+python code is easy to read and write for beginners
+python script
+python script is a file containing python programming instructions

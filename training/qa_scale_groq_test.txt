@@ -1,0 +1,18 @@
+# conf=8.50 model=llama-3.3-70b-versatile
+what is book
+written or printed literary work
+# conf=8.50 model=llama-3.1-8b-instant
+what is isotope
+atoms of the same element with different masses
+# conf=8.50 model=llama-3.3-70b-versatile
+where is world war one
+europe and middle east
+# conf=8.50 model=llama-3.1-8b-instant
+who is compound
+christopher walken american actor and dancer
+# conf=8.50 model=llama-3.1-8b-instant
+what does complex number mean
+number with real and imaginary parts combined
+# conf=8.00 model=llama-3.3-70b-versatile
+how does roman empire work
+roman empire was governed by emperors

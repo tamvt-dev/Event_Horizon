@@ -55,6 +55,120 @@ static Vocabulary g_vocab = {0};
 static PairMap g_pair_map = {0};
 
 /* ----------------------------------------------------------------
+ * Option B — Level 2: Concept Cluster Classifier
+ *
+ * Maps token strings to DomainIDs, then classifies:
+ *   - The prompt question     → target_domain
+ *   - Every pair in the DAG  → node_domains[pair_id]
+ *
+ * Domain ID 0 = neutral/unknown (no guidance applied)
+ * ---------------------------------------------------------------- */
+#define DOMAIN_UNKNOWN      0u
+#define DOMAIN_IDENTITY     1u
+#define DOMAIN_GREETINGS    2u
+#define DOMAIN_CAPABILITIES 3u
+#define DOMAIN_MATH         4u
+#define DOMAIN_SCIENCE      5u
+#define DOMAIN_TECHNOLOGY   6u
+#define DOMAIN_GEOGRAPHY    7u
+#define DOMAIN_ANIMALS      8u
+#define DOMAIN_PHILOSOPHY   9u
+#define DOMAIN_FUN         10u
+#define DOMAIN_COUNT       11u
+
+/* Keyword lists — NULL-terminated, domain index == DOMAIN_* */
+static const char *g_domain_kw[DOMAIN_COUNT][20] = {
+    /* 0 UNKNOWN */      {NULL},
+    /* 1 IDENTITY */     {"assistant","ai","model","name","called","bot","myself",NULL},
+    /* 2 GREETINGS */    {"hello","hi","hey","fine","good","morning","greet",NULL},
+    /* 3 CAPABILITIES */ {"help","tasks","write","calculate","can","speak","jokes",NULL},
+    /* 4 MATH */         {"plus","minus","times","divided","equal","four","seven",
+                          "twenty","pi","five","two","ten","sum","number",NULL},
+    /* 5 SCIENCE */      {"star","sun","earth","planet","water","liquid","oxygen",
+                          "atom","molecule","energy","electrons","gravity","dna",
+                          "genetic","photosynthesis","atmosphere","force",NULL},
+    /* 6 TECHNOLOGY */   {"python","programming","language","internet","network",
+                          "database","html","css","javascript","cpu","ram",
+                          "memory","software","hardware","computer",NULL},
+    /* 7 GEOGRAPHY */    {"paris","france","capital","city","tokyo","japan",
+                          "washington","everest","mountain","amazon","river",
+                          "sahara","desert","pacific","ocean","russia",NULL},
+    /* 8 ANIMALS */      {"dog","cat","whale","mammal","fish","shark","lion",
+                          "tiger","elephant","dolphin","bird","penguin",NULL},
+    /* 9 PHILOSOPHY */   {"love","happiness","emotion","mind","joy","purpose",
+                          "meaning","life","exist",NULL},
+    /* 10 FUN */         {"joke","funny","laugh","chicken","road",NULL},
+};
+
+/* Classify a single token string → best matching domain */
+static uint32_t classify_token(const char *word) {
+    for (uint32_t dom = 1; dom < DOMAIN_COUNT; dom++) {
+        for (uint32_t k = 0; g_domain_kw[dom][k] != NULL; k++) {
+            if (strcmp(word, g_domain_kw[dom][k]) == 0)
+                return dom;
+        }
+    }
+    return DOMAIN_UNKNOWN;
+}
+
+/*
+ * Classify question tokens[] → target_domain.
+ * Count keyword hits per domain, return winner (ties: lower domain ID).
+ */
+static uint32_t classify_question(const uint32_t *tokens, uint32_t n_tokens) {
+    uint32_t hits[DOMAIN_COUNT] = {0};
+    for (uint32_t i = 0; i < n_tokens; i++) {
+        if (tokens[i] >= g_vocab.size) continue;
+        uint32_t dom = classify_token(g_vocab.tokens[tokens[i]]);
+        if (dom != DOMAIN_UNKNOWN) hits[dom]++;
+    }
+    uint32_t best_dom = DOMAIN_UNKNOWN;
+    uint32_t best_cnt = 0;
+    for (uint32_t d = 1; d < DOMAIN_COUNT; d++) {
+        if (hits[d] > best_cnt) { best_cnt = hits[d]; best_dom = d; }
+    }
+    return best_dom;
+}
+
+/*
+ * Build node_domains[dag_vocab_size] by classifying each pair node:
+ *   - Lookup token_a and token_b strings for pair_id
+ *   - Check both tokens against domain keyword lists
+ *   - Assign the non-UNKNOWN domain found (token_b preferred as content word)
+ */
+static void build_node_domains(const EH_HGN_BaseDag *dag,
+                                uint8_t *node_domains)
+{
+    for (uint32_t pid = 0; pid < dag->vocab_size; pid++) {
+        node_domains[pid] = (uint8_t)DOMAIN_UNKNOWN;
+        if (pid >= g_pair_map.size) continue;
+
+        uint32_t ta = g_pair_map.pairs[pid].token_a;
+        uint32_t tb = g_pair_map.pairs[pid].token_b;
+
+        uint32_t dom = DOMAIN_UNKNOWN;
+
+        /* Prefer content word (token_b) for domain signal */
+        if (tb < g_vocab.size)
+            dom = classify_token(g_vocab.tokens[tb]);
+        if (dom == DOMAIN_UNKNOWN && ta < g_vocab.size)
+            dom = classify_token(g_vocab.tokens[ta]);
+
+        node_domains[pid] = (uint8_t)dom;
+    }
+}
+
+/* Domain name for logging */
+static const char *domain_name(uint32_t dom) {
+    static const char *names[DOMAIN_COUNT] = {
+        "unknown","identity","greetings","capabilities",
+        "math","science","technology","geography",
+        "animals","philosophy","fun"
+    };
+    return (dom < DOMAIN_COUNT) ? names[dom] : "?";
+}
+
+/* ----------------------------------------------------------------
  * Load Vocabulary
  * ---------------------------------------------------------------- */
 static int vocab_load(const char *path)
@@ -261,8 +375,20 @@ static int ask_mode(const char *model_path, const char *vocab_path,
         eh_arena_destroy(arena);
         return 1;
     }
-    
-    printf("Answer:   ");
+
+    /* ── Option B: Hierarchical Graph domain guidance ──────────────
+     * 1. Classify question → target_domain (Level 2 concept cluster)
+     * 2. Build node_domains[pair_id] for entire DAG (Level 1→Level 2 map)
+     * 3. Wire into beam tracker — domain-guided scoring activates
+     *    automatically in eh_hgn_beam_step.
+     */
+    static uint8_t s_node_domains[50000];  /* max pairs in model */
+    uint32_t target_domain = classify_question(tokens, n_tokens);
+    build_node_domains(&dag, s_node_domains);
+    session.beam_tracker.node_domains = s_node_domains;
+    session.beam_tracker.target_domain = target_domain;
+    printf("Domain:   %s (id=%u)\n", domain_name(target_domain), target_domain);
+
     
     /* Track how many tokens we have printed (start with prompt length) */
     uint32_t printed_len = n_pairs;

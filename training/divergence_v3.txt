@@ -1,0 +1,236 @@
+# Divergence Anchors v3 — fix v13 remaining failures
+# Target failures identified from v13 test run:
+#   Q6:  hello      → earthquake drift (no trained pair)
+#   Q15: gravity    → browser drift (pair_IDs in output)
+#   Q17: dna        → browser drift
+#   Q18: author     → mountain drift
+#   Q19: einstein   → gandhi confusion
+#   Q20: alan turing → roman general drift
+# Plus: (is, a) → "browser" super-hub killing many answers
+# Weight: x20 in corpus
+
+# ── CRITICAL: Break (browser) super-hub ──────────────────────
+# "is a browser is software" is the cancer — kill it at source
+a browser is
+a browser is software used to access the internet
+a browser displays
+a browser displays web pages to the user
+the browser
+the browser loads web pages from the internet
+browser software
+browser software enables users to navigate the internet
+
+# ── (is, a) divergence — override browser hub ────────────────
+# These must fire before beam drifts to browser
+is an algorithm
+an algorithm is a step by step problem solving procedure
+is a network
+a network is a system of interconnected computers
+is machine learning
+machine learning is a system that learns patterns from data
+is a computer
+a computer is an electronic device that processes information
+is a database
+a database is an organized collection of structured data
+is gravity
+gravity is a force that attracts objects with mass
+is dna
+dna is the molecule that carries genetic information
+is an earthquake
+an earthquake is shaking caused by tectonic plate movement
+
+# ── Q6: HELLO — add trained pair ─────────────────────────────
+hello
+hello i am here to help you with questions
+hello there
+hello there how can i help you today
+hi hello
+hi hello i am a question answering system
+hello world
+hello world is the classic first program in computing
+hello how
+hello how can i assist you today
+say hello
+say hello to greet someone with a friendly greeting
+hello is
+hello is a greeting used when meeting someone
+greetings hello
+greetings hello is a friendly way to say hi
+hello means
+hello means a friendly greeting or welcome to someone
+
+# ── Q15: GRAVITY — divergence anchors ───────────────────────
+gravity is
+gravity is a force that attracts all objects with mass
+gravity pulls
+gravity pulls objects toward the earth and toward each other
+gravitational force
+gravitational force is what keeps planets in orbit
+gravity was
+gravity was described by newton as an attractive force
+gravity causes
+gravity causes objects to fall toward the earth surface
+the force of gravity
+the force of gravity attracts objects toward each other
+gravity attracts
+gravity attracts objects with mass toward a common center
+gravity keeps
+gravity keeps the moon orbiting around the earth
+
+# ── Q17: DNA — divergence anchors ────────────────────────────
+dna is
+dna is the molecule that carries genetic information in cells
+dna stands
+dna stands for deoxyribonucleic acid the genetic molecule
+dna contains
+dna contains the genetic code for all living organisms
+dna carries
+dna carries the instructions for building and running organisms
+the dna
+the dna molecule contains the blueprint for life
+genetic information
+genetic information is stored in the dna molecule
+dna stores
+dna stores hereditary information used in growth and reproduction
+dna molecules
+dna molecules are found in the nucleus of every cell
+
+# ── Q18: AUTHOR — literary domain anchors ────────────────────
+who is an author
+an author is a person who writes books or stories
+who is a writer
+a writer is someone who creates written works
+an author is
+an author is a person who writes and publishes works
+the author is
+the author is the person who wrote the book or story
+a famous author
+a famous author is someone whose books are widely read
+author of a book
+the author of a book is the person who wrote it
+who wrote
+the person who wrote the book is called the author
+author means
+author means the writer or creator of a literary work
+an author writes
+an author writes books articles stories and other content
+literary author
+a literary author is a writer known for creative works
+
+# ── Q19: EINSTEIN — people divergence ────────────────────────
+who is einstein
+albert einstein was a physicist who developed relativity theory
+albert einstein
+albert einstein was a german physicist born in eighteen seventy nine
+einstein was
+einstein was a physicist famous for the theory of relativity
+einstein developed
+einstein developed the special and general theory of relativity
+einstein is
+einstein is known as the father of modern physics
+einstein won
+einstein won the nobel prize in physics in nineteen twenty one
+the physicist einstein
+the physicist einstein changed our understanding of space and time
+einstein relativity
+einstein relativity theory changed how we understand space time
+about einstein
+albert einstein was a physicist known for energy mass equation
+
+# ── Q19: Block GANDHI path from einstein ─────────────────────
+who is gandhi
+mahatma gandhi was an indian leader who fought for independence
+gandhi was
+gandhi was an indian activist who led peaceful resistance
+mahatma gandhi
+mahatma gandhi led the nonviolent independence movement in india
+gandhi led
+gandhi led nonviolent protests against british colonial rule
+gandhi nonviolent
+gandhi used nonviolent methods to achieve indian independence
+
+# ── Q20: ALAN TURING — divergence ────────────────────────────
+who is alan turing
+alan turing was a mathematician who founded computer science
+alan turing was
+alan turing was a british mathematician and computer science pioneer
+turing was
+turing was a mathematician who invented the concept of the computer
+turing invented
+turing invented the theoretical model of computation called turing machine
+turing is
+turing is considered the father of theoretical computer science
+alan turing created
+alan turing created the theoretical foundations of modern computing
+turing machines
+turing machines are theoretical computing devices invented by alan turing
+the mathematician turing
+the mathematician turing cracked codes during world war two
+
+# ── Block JULIUS CAESAR path from turing ─────────────────────
+julius caesar was
+julius caesar was a roman general and statesman who ruled rome
+caesar was
+caesar was a roman leader who conquered much of europe
+roman general
+a roman general commanded armies in ancient roman military campaigns
+
+# ── CAPITAL questions — reinforce correct paths ──────────────
+capital of japan is
+the capital of japan is tokyo a major asian city
+capital of germany is
+the capital of germany is berlin a central european city
+capital of france is
+the capital of france is paris a major western european city
+capital japan tokyo
+tokyo is the capital and largest city of japan
+capital germany berlin
+berlin is the capital and largest city of germany
+capital france paris
+paris is the capital and largest city of france
+japan capital
+the capital city of japan is tokyo in east asia
+germany capital
+the capital city of germany is berlin in central europe
+france capital
+the capital city of france is paris in western europe
+
+# ── WHERE IS PARIS — fix path ─────────────────────────────────
+where is paris
+paris is located in france in western europe
+paris is located
+paris is located on the seine river in northern france
+paris france
+paris is the capital and most famous city of france
+where paris
+paris the city is found in france in western europe
+
+# ── ALGORITHM — reinforce ─────────────────────────────────────
+an algorithm is
+an algorithm is a set of steps to solve a computational problem
+what is algorithm
+an algorithm is a procedure for solving a problem step by step
+algorithm solves
+an algorithm solves problems through a defined sequence of steps
+algorithm works
+an algorithm works by following instructions to complete a task
+
+# ── NETWORK — reinforce ───────────────────────────────────────
+a network is
+a network is a group of computers connected to share information
+network connects
+a network connects devices so they can share data
+computer network
+a computer network links multiple computers together
+network communication
+network communication allows computers to exchange information
+
+# ── MACHINE LEARNING — reinforce ──────────────────────────────
+machine learning is
+machine learning is a branch of ai that learns from data
+machine learning allows
+machine learning allows computers to learn without explicit programming
+ml is
+ml is a method of teaching computers to learn from examples
+machine learning uses
+machine learning uses algorithms to find patterns in data

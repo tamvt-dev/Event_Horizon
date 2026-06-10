@@ -1,0 +1,102 @@
+# Auto-generated lightweight dataset (linux_kernel -> Q&A style)
+# Format: "Q: ..." newline "A: ..."
+# Notes:
+# 1) This dataset is intentionally small and generic.
+# 2) It is designed to be used with examples/eh_g3_trainer.py.
+# 3) Questions are templated and answers are short token-friendly phrases.
+#
+# Sources (informational only): linux_kernel/Documentation/*
+
+Q: what is a kernel
+A: a kernel
+Q: what is linux
+A: linux
+Q: what is documentation in the kernel project
+A: documentation
+Q: what is a subsystem in the kernel
+A: a subsystem
+Q: what is a configuration file in the kernel
+A: configuration
+Q: what is kconfig
+A: kconfig
+Q: what is an api
+A: an api
+Q: what is an interface in software
+A: an interface
+Q: what is a build system
+A: a build system
+Q: what is the purpose of a makefile
+A: makefile
+Q: what is a patch
+A: a patch
+Q: what is a bug report
+A: a bug report
+Q: what is a regression
+A: a regression
+Q: what is performance
+A: performance
+Q: what is memory management
+A: memory management
+Q: what is synchronization
+A: synchronization
+Q: what is locking
+A: locking
+Q: what is a scheduler
+A: a scheduler
+Q: what is rcu
+A: rcu
+Q: what is debugging
+A: debugging
+Q: what is testing
+A: testing
+Q: what is a subsystem api document
+A: a subsystem api document
+Q: what is coding style
+A: coding style
+Q: what is a coding guide
+A: a coding guide
+
+# Scheduling
+Q: what does the scheduler do
+A: scheduling
+Q: how does scheduling work
+A: scheduling
+
+# Memory barriers / correctness
+Q: what are memory barriers
+A: memory barriers
+Q: why use memory barriers
+A: correctness
+
+# Security
+Q: what is security in the kernel
+A: security
+Q: what is a threat model
+A: a threat model
+
+# Performance tuning
+Q: how do we improve performance
+A: performance tuning
+Q: what is latency
+A: latency
+
+# Networking / interfaces
+Q: what is a protocol
+A: a protocol
+Q: what is a network
+A: a network
+Q: what is a socket
+A: a socket
+
+# Linux-specific terms
+Q: what is a syscall
+A: a syscall
+Q: what is a module
+A: a module
+Q: what is sysfs
+A: sysfs
+Q: what is debugfs
+A: debugfs
+
+# End
+

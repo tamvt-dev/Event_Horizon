@@ -1,0 +1,682 @@
+# Divergence Anchors v5 — full adversarial test coverage
+# Fixes: (database,database) hub, (server,provides) hub
+# Plus: missing tech, people, geography anchors for 160-question eval
+# Weight: x25 in corpus
+
+# ══ BREAK NEW SUPER-HUBS ══════════════════════════════════════
+
+# Kill (database, database) hub
+a database stores
+a database stores and retrieves records for applications
+a database organizes
+a database organizes data into structured tables and rows
+database systems
+database systems manage large collections of organized data
+relational databases
+relational databases store data in linked tables with keys
+database records
+database records hold individual entries in a structured table
+
+# Kill (server, provides) hub — too many things → "a server provides"
+a server hosts
+a server hosts websites and applications for clients online
+a server processes
+a server processes requests from client computers over network
+a server stores
+a server stores files and data for network users
+web server
+a web server delivers web pages to browsers on request
+file server
+a file server stores and shares files across a network
+
+# ══ TECH: missing 27 concepts ═════════════════════════════════
+
+# git
+git is
+git is a version control system for tracking code changes
+git tracks
+git tracks changes to files and enables collaboration
+git was
+git was created by linus torvalds for linux development
+git commit
+a git commit saves a snapshot of code changes
+
+# javascript
+javascript is
+javascript is a scripting language for interactive web pages
+javascript runs
+javascript runs in the browser to make pages interactive
+javascript enables
+javascript enables dynamic content and user interactions
+
+# html
+html is
+html is the standard markup language for web pages
+html defines
+html defines the structure and content of web documents
+html stands
+html stands for hypertext markup language for web pages
+
+# css
+css is
+css is a stylesheet language for formatting web pages
+css controls
+css controls the visual appearance of html elements
+css styles
+css styles the layout colors and fonts of web pages
+
+# variable
+a variable is
+a variable is a named container that holds a data value
+a variable stores
+a variable stores information that can change in a program
+variables hold
+variables hold values like numbers strings or objects
+
+# loop
+a loop is
+a loop is a programming construct that repeats code execution
+a loop repeats
+a loop repeats a block of code until a condition is met
+loops iterate
+loops iterate over collections or repeat operations automatically
+
+# function
+a function is
+a function is a named block of code that performs a task
+a function takes
+a function takes inputs and returns an output value
+functions are
+functions are reusable pieces of code called by name
+
+# array
+an array is
+an array is an ordered collection of elements in memory
+an array stores
+an array stores multiple values in a single variable
+arrays hold
+arrays hold sequences of elements accessed by index position
+
+# class
+a class is
+a class is a blueprint for creating objects in programming
+a class defines
+a class defines properties and methods for its objects
+classes are
+classes are templates used to create objects in code
+
+# cpu
+a cpu is
+a cpu is the central processing unit that executes instructions
+the cpu executes
+the cpu executes program instructions and performs calculations
+cpu stands
+cpu stands for central processing unit the main processor
+
+# ram
+ram is
+ram is random access memory used for temporary data storage
+ram stores
+ram stores data being actively used by running programs
+ram is
+ram is the working memory that programs use while running
+
+# pixel
+a pixel is
+a pixel is the smallest element of a digital display
+pixels make
+pixels make up images on screens and digital photographs
+a pixel represents
+a pixel represents a single point of color in an image
+
+# binary
+binary is
+binary is the base two number system using zeros and ones
+binary uses
+binary uses only the digits zero and one for all data
+binary code
+binary code represents data using sequences of zeros and ones
+
+# bandwidth
+bandwidth is
+bandwidth is the maximum amount of data a network can transfer
+bandwidth measures
+bandwidth measures the capacity of a network connection
+high bandwidth
+high bandwidth allows faster data transmission over networks
+
+# latency
+latency is
+latency is the time delay in sending data across a network
+low latency
+low latency means faster response time in network communication
+latency measures
+latency measures how long data takes to travel a distance
+
+# api
+an api is
+an api is an interface that lets programs communicate together
+api stands
+api stands for application programming interface for software
+an api provides
+an api provides a set of rules for software interaction
+
+# blockchain
+a blockchain is
+a blockchain is a distributed ledger that records transactions
+blockchain technology
+blockchain technology stores data in linked encrypted blocks
+blockchains are
+blockchains are decentralized records of digital transactions
+
+# stack
+a stack is
+a stack is a data structure with last in first out order
+a stack uses
+a stack uses push and pop operations to manage data
+stack structure
+a stack structure adds and removes elements from the top
+
+# queue
+a queue is
+a queue is a data structure with first in first out order
+a queue processes
+a queue processes items in the order they were added
+queue structure
+a queue structure adds to the back and removes from front
+
+# cloud computing
+cloud computing is
+cloud computing is delivering services over the internet remotely
+the cloud provides
+the cloud provides on demand computing resources and storage
+cloud services
+cloud services include storage computing and software online
+
+# open source
+open source is
+open source software is freely available for anyone to use
+open source code
+open source code is publicly available and can be modified
+open source means
+open source means the source code is freely shared online
+
+# recursion
+recursion is
+recursion is when a function calls itself to solve a problem
+recursive functions
+recursive functions call themselves with smaller inputs
+recursion works
+recursion works by breaking problems into smaller similar cases
+
+# debugging
+debugging is
+debugging is the process of finding and fixing code errors
+a debugger
+a debugger is a tool used to find errors in programs
+debugging involves
+debugging involves identifying testing and fixing software bugs
+
+# version control
+version control is
+version control is a system that tracks changes to code files
+version control allows
+version control allows teams to collaborate on code changes
+version control systems
+version control systems record history of all file changes
+
+# compiler
+a compiler is
+a compiler is a program that converts source code to machine code
+compilers translate
+compilers translate high level code into executable programs
+a compiler converts
+a compiler converts human readable code to binary instructions
+
+# operating system
+an operating system is
+an operating system is software managing hardware and programs
+the operating system
+the operating system controls memory processes and devices
+operating systems
+operating systems include linux windows and macos for computers
+
+# encryption
+encryption is
+encryption is converting data into a coded unreadable format
+encrypted data
+encrypted data requires a key to decode and read securely
+encryption protects
+encryption protects data by converting it to ciphertext
+
+# neural network
+a neural network is
+a neural network is a computing model inspired by brain neurons
+neural networks learn
+neural networks learn patterns from training data examples
+a neural network processes
+a neural network processes inputs through layers to produce outputs
+
+# artificial intelligence
+artificial intelligence is
+artificial intelligence is the simulation of human reasoning by machines
+ai systems
+ai systems learn from data to perform intelligent tasks
+artificial intelligence enables
+artificial intelligence enables computers to reason and decide
+
+# deep learning
+deep learning is
+deep learning is a subset of machine learning using deep networks
+deep learning uses
+deep learning uses many layers to learn complex patterns
+deep learning models
+deep learning models learn representations from raw data
+
+# machine learning
+machine learning is
+machine learning is a field of ai where computers learn from data
+machine learning algorithms
+machine learning algorithms find patterns in training data
+machine learning enables
+machine learning enables predictions from historical examples
+
+# ══ PEOPLE: missing anchors ═══════════════════════════════════
+
+# shakespeare
+who is shakespeare
+shakespeare was an english playwright famous for hamlet and othello
+shakespeare was
+shakespeare was a writer who lived in sixteenth century england
+shakespeare wrote
+shakespeare wrote thirty seven plays including hamlet and macbeth
+shakespeare is
+shakespeare is considered the greatest writer in english literature
+the playwright shakespeare
+the playwright shakespeare created romeo and juliet and othello
+
+# napoleon
+who is napoleon
+napoleon was a french emperor and military commander
+napoleon was
+napoleon was a french general who conquered much of europe
+napoleon led
+napoleon led the french army to many victories in europe
+napoleon is
+napoleon is known as one of the greatest military strategists
+
+# charles darwin
+darwin was
+darwin was a naturalist who proposed the theory of evolution
+darwin developed
+darwin developed natural selection as the mechanism of evolution
+charles darwin
+charles darwin published on the origin of species in 1859
+darwin is
+darwin is known for discovering how species change over time
+
+# marie curie
+curie was
+curie was a physicist who discovered radioactive elements
+marie curie
+marie curie was the first woman to win the nobel prize
+curie discovered
+curie discovered radium and polonium through radioactivity research
+marie curie is
+marie curie is known for groundbreaking work in radioactivity
+
+# thomas edison
+edison was
+edison was an inventor who created the phonograph and lightbulb
+thomas edison
+thomas edison held over a thousand patents for his inventions
+edison invented
+edison invented practical electric lighting for everyday use
+edison is
+edison is known as one of the greatest inventors in history
+
+# abraham lincoln
+lincoln was
+lincoln was the sixteenth president who abolished slavery
+abraham lincoln
+abraham lincoln led the united states through the civil war
+lincoln is
+lincoln is known for freeing enslaved people in america
+lincoln freed
+lincoln freed enslaved people with the emancipation proclamation
+
+# nelson mandela
+mandela was
+mandela was a south african leader who ended apartheid
+nelson mandela
+nelson mandela spent twenty seven years in prison for resistance
+mandela became
+mandela became the first democratically elected president of south africa
+mandela is
+mandela is a symbol of peaceful struggle against racial injustice
+
+# julius caesar
+caesar was
+caesar was a roman general who conquered gaul and ruled rome
+julius caesar
+julius caesar was assassinated by roman senators in 44 bc
+caesar is
+caesar is known for his military campaigns and political reforms
+
+# cleopatra
+cleopatra was
+cleopatra was the last pharaoh of ancient egypt
+cleopatra ruled
+cleopatra ruled egypt and formed alliances with roman leaders
+cleopatra is
+cleopatra is known for her intelligence and political leadership
+
+# democracy, communism, capitalism
+democracy is
+democracy is a government system where citizens choose their leaders
+democratic systems
+democratic systems hold regular elections to represent the people
+communism is
+communism is a political system where the state controls production
+communist systems
+communist systems aim for collective ownership of resources
+capitalism is
+capitalism is an economic system based on private ownership
+capitalist economies
+capitalist economies use free markets to determine prices
+
+# world war two
+world war two was
+world war two was a global conflict lasting from 1939 to 1945
+the second world war
+the second world war involved most of the worlds nations
+ww2 was
+ww2 was the deadliest conflict in human history killing millions
+
+# renaissance
+the renaissance was
+the renaissance was a cultural rebirth of art science and learning
+renaissance period
+the renaissance period brought advances in art and human knowledge
+the renaissance began
+the renaissance began in italy in the fourteenth century
+
+# ══ GEOGRAPHY: missing capitals ══════════════════════════════
+
+# italy
+of italy is
+the capital of italy is rome
+rome is
+rome is the capital city of italy in southern europe
+italy capital
+the capital city of italy is rome a historic city
+
+# spain
+of spain is
+the capital of spain is madrid
+madrid is
+madrid is the capital city of spain in southwestern europe
+spain capital
+the capital city of spain is madrid a large european city
+
+# china
+of china is
+the capital of china is beijing
+beijing is
+beijing is the capital city of china in east asia
+china capital
+the capital city of china is beijing in northern china
+
+# russia
+of russia is
+the capital of russia is moscow
+moscow is
+moscow is the capital city of russia in eastern europe
+russia capital
+the capital city of russia is moscow the largest city
+
+# brazil
+of brazil is
+the capital of brazil is brasilia
+brasilia is
+brasilia is the capital city of brazil in south america
+brazil capital
+the capital city of brazil is brasilia not rio de janeiro
+
+# canada
+of canada is
+the capital of canada is ottawa
+ottawa is
+ottawa is the capital city of canada in eastern ontario
+canada capital
+the capital city of canada is ottawa not toronto
+
+# australia
+of australia is
+the capital of australia is canberra
+canberra is
+canberra is the capital city of australia not sydney
+australia capital
+the capital city of australia is canberra in the territory
+
+# south korea
+of south korea is
+the capital of south korea is seoul
+seoul is
+seoul is the capital city of south korea in east asia
+south korea capital
+the capital city of south korea is seoul a major city
+
+# turkey
+of turkey is
+the capital of turkey is ankara
+ankara is
+ankara is the capital city of turkey not istanbul
+turkey capital
+the capital city of turkey is ankara in central turkey
+
+# poland
+of poland is
+the capital of poland is warsaw
+warsaw is
+warsaw is the capital city of poland in central europe
+poland capital
+the capital city of poland is warsaw on the vistula river
+
+# sweden
+of sweden is
+the capital of sweden is stockholm
+stockholm is
+stockholm is the capital city of sweden in scandinavia
+sweden capital
+the capital city of sweden is stockholm a nordic city
+
+# greece
+of greece is
+the capital of greece is athens
+athens is
+athens is the capital city of greece in southern europe
+greece capital
+the capital city of greece is athens birthplace of democracy
+
+# portugal
+of portugal is
+the capital of portugal is lisbon
+lisbon is
+lisbon is the capital city of portugal in western europe
+portugal capital
+the capital city of portugal is lisbon on the tagus river
+
+# egypt, india, mexico, argentina
+of egypt is
+the capital of egypt is cairo
+cairo is
+cairo is the capital city of egypt in north africa
+of india is
+the capital of india is new delhi
+new delhi is
+new delhi is the capital city of india in south asia
+of mexico is
+the capital of mexico is mexico city
+mexico city is
+mexico city is the capital and largest city of mexico
+of argentina is
+the capital of argentina is buenos aires
+buenos aires is
+buenos aires is the capital city of argentina in south america
+
+# ══ SCIENCE: missing concepts ════════════════════════════════
+
+# evolution
+evolution is
+evolution is the process of species changing over many generations
+evolution works
+evolution works through natural selection and genetic variation
+darwin evolution
+darwin showed evolution occurs through survival of the fittest
+
+# electricity
+electricity is
+electricity is the flow of electrons through a conductor
+electric power
+electric power is generated and transmitted through wires
+electrical current
+electrical current is the movement of electric charge through wire
+
+# cell biology
+a cell is
+a cell is the basic building block of all living organisms
+cells are
+cells are the smallest units that can carry out life functions
+living cells
+living cells contain dna and carry out metabolic processes
+
+# molecule
+a molecule is
+a molecule is two or more atoms bonded together chemically
+molecules form
+molecules form when atoms share or transfer electrons
+a water molecule
+a water molecule consists of two hydrogen and one oxygen atom
+
+# energy
+energy is
+energy is the ability to do work or cause physical change
+energy comes
+energy comes in forms like heat light and kinetic energy
+energy cannot
+energy cannot be created or destroyed only transformed
+
+# black hole
+a black hole is
+a black hole is a region where gravity is so strong light cannot escape
+black holes form
+black holes form when massive stars collapse under gravity
+a black hole has
+a black hole has such strong gravity that nothing escapes
+
+# star
+a star is
+a star is a massive sphere of gas undergoing nuclear fusion
+stars produce
+stars produce energy by fusing hydrogen into helium in cores
+our sun
+our sun is a medium sized star at the center of solar system
+
+# radiation
+radiation is
+radiation is energy traveling as waves or subatomic particles
+radiation comes
+radiation comes from radioactive materials and nuclear reactions
+types of radiation
+types of radiation include alpha beta gamma and x rays
+
+# virus biology
+a virus is
+a virus is a tiny infectious agent that replicates inside cells
+viruses cause
+viruses cause diseases like flu cold and covid in living hosts
+a virus needs
+a virus needs a host cell to reproduce and spread infection
+
+# nuclear energy
+nuclear energy is
+nuclear energy is power released from atomic nuclei reactions
+nuclear power
+nuclear power plants generate electricity from fission reactions
+nuclear fission
+nuclear fission splits uranium atoms to release large energy amounts
+
+# solar system
+the solar system is
+the solar system is the sun and all objects orbiting around it
+our solar system
+our solar system has eight planets orbiting the sun
+the solar system contains
+the solar system contains planets moons asteroids and comets
+
+# water
+water is
+water is a molecule made of two hydrogen and one oxygen atoms
+water covers
+water covers about seventy percent of the earths surface
+water is essential
+water is essential for all known forms of life on earth
+
+# entropy
+entropy is
+entropy is a measure of disorder and randomness in a system
+entropy increases
+entropy increases naturally in closed systems over time
+high entropy
+high entropy means a system is in a more disordered state
+
+# pi
+pi is
+pi is the ratio of a circles circumference to its diameter
+pi equals
+pi equals approximately three point one four one five nine
+pi is used
+pi is used in calculations involving circles and spheres
+
+# ══ GEO: largest/longest facts ═══════════════════════════════
+
+# largest country
+russia is
+russia is the largest country in the world by total land area
+the largest country
+the largest country by area is russia spanning two continents
+russia the largest
+russia the largest country covers eleven time zones worldwide
+
+# longest river
+the nile is
+the nile is considered the longest river in the world
+nile river
+the nile river flows through northeastern africa to the sea
+longest river
+the longest river in the world is the nile in africa
+
+# highest mountain
+mount everest is
+mount everest is the highest mountain above sea level on earth
+everest is
+everest is located on the border of nepal and tibet
+the highest mountain
+the highest mountain in the world is mount everest in nepal
+
+# largest ocean
+the pacific is
+the pacific is the largest and deepest ocean on earth
+pacific ocean
+the pacific ocean covers more than thirty percent of earth
+the largest ocean
+the largest ocean on earth is the pacific ocean by area
+
+# largest continent
+asia is
+asia is the largest continent covering about thirty percent of land
+the largest continent
+the largest continent by area and population is asia
+asia is the
+asia is the biggest continent containing china india and russia

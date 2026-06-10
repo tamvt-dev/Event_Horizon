@@ -1,0 +1,21 @@
+# conf=8.00 model=llama-3.3-70b-versatile
+where is docker
+docker is on linux systems
+# conf=6.00 model=gemini-2.5-flash-lite
+define world war one
+a global war originating in europe that lasted from 28 july 1914 to 11 november
+# conf=8.50 model=llama-3.1-8b-instant
+how does density work
+mass per unit volume of a substance
+# conf=8.50 model=llama-3.3-70b-versatile
+where is inflation
+everywhere in the economy
+# conf=8.50 model=llama-3.1-8b-instant
+define psychologist
+professional who studies human behavior and mental processes
+# conf=8.00 model=llama-3.3-70b-versatile
+who is memory
+ram and rom store data
+# conf=10.00 model=gemini-3.1-flash-lite-preview
+what does food chain mean
+a sequence of organisms transferring energy through feeding

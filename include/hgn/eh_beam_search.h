@@ -53,6 +53,9 @@ typedef struct {
     uint32_t        beam_width;             /* Cấu hình beam width tại runtime       */
     uint32_t        active_paths;           /* Số beams hiện tại             */
     const EH_HGN_BaseDag *dag;              /* Reference to DAG              */
+    float           context_vec[EH_HGN_EMBED_DIM]; /* Pre-computed stable context vector */
+    const uint8_t   *node_domains;          /* Mapping of node (pair) ID to DomainID */
+    uint32_t        target_domain;          /* Target DomainID for guiding search */
 } EH_HGN_BeamTracker;
 
 /* ----------------------------------------------------------------

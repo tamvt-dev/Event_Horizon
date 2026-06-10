@@ -1,0 +1,155 @@
+# Divergence Anchor Corpus — EH-G3 super-hub fix
+# These anchor at the DIVERGENCE POINT after (is, a) / (is, an)
+# so each concept gets its own beam path instead of sharing (is,a) hub.
+#
+# Pattern: "a X is" / "X is" — forces pair (a,computer), (a,database) etc.
+# Weight: repeat x10 in corpus (vs x5 for general anchors)
+# This overrides the super-hub prior effect on (is,a) node.
+
+# ── TECHNOLOGY — divergence at (a, X) ──────────────────────────
+a computer is
+a computer is an electronic machine that processes data
+a database is
+a database is an organized collection of structured information
+a server is
+a server is a computer that provides services to clients
+a program is
+a program is a set of instructions for a computer to execute
+a network is
+a network is a system connecting computers to share data
+an algorithm is
+an algorithm is a step by step procedure for solving a problem
+an api is
+an api is an interface for programs to communicate with each other
+a compiler is
+a compiler is a tool that translates source code to machine code
+a function is
+a function is a reusable block of code that performs a task
+a variable is
+a variable is a named storage location that holds a value
+a loop is
+a loop is a programming construct that repeats code execution
+an array is
+an array is an ordered collection of elements of the same type
+a class is
+a class is a blueprint for creating objects in programming
+a thread is
+a thread is a unit of execution within a computer process
+a cache is
+a cache is fast memory that stores frequently accessed data
+a bug is
+a bug is an error or unexpected behavior in software code
+a firewall is
+a firewall is a system that controls incoming and outgoing network traffic
+a hash is
+a hash maps input data to a compact digest value
+a stack is
+a stack is a last in first out data structure in programming
+a queue is
+a queue is a first in first out data structure in computing
+
+# ── TECHNOLOGY — divergence at (X, is) ────────────────────────
+python is
+python is a programming language for software development
+javascript is
+javascript is a scripting language for web development
+html is
+html is the markup language used for creating web pages
+css is
+css is a language for styling and formatting web pages
+linux is
+linux is an open source operating system based on unix
+git is
+git is a distributed version control system for tracking code changes
+encryption is
+encryption is a method of converting data into a secure format
+
+# ── SCIENCE — divergence at (a, X) / (X, is) ──────────────────
+gravity is
+gravity is a force that attracts objects with mass toward each other
+photosynthesis is
+photosynthesis is how plants convert sunlight and carbon dioxide into food
+evolution is
+evolution is the gradual change of species over many generations
+electricity is
+electricity is the flow of electric charge through a conductor
+a molecule is
+a molecule is a group of atoms bonded together chemically
+an atom is
+an atom is the smallest unit of a chemical element
+a cell is
+a cell is the basic structural unit of all living organisms
+a virus is
+a virus is a microscopic agent that infects and replicates in cells
+radiation is
+radiation is energy emitted as waves or particles through space
+magnetism is
+magnetism is the force that attracts or repels magnetic materials
+
+# ── GEOGRAPHY — divergence at (of, X) / (X, is) ──────────────
+paris is
+paris is the capital city of france
+tokyo is
+tokyo is the capital city of japan
+berlin is
+berlin is the capital city of germany
+rome is
+rome is the capital city of italy
+london is
+london is the capital city of the united kingdom
+beijing is
+beijing is the capital city of china
+moscow is
+moscow is the capital city of russia
+madrid is
+madrid is the capital city of spain
+ottawa is
+ottawa is the capital city of canada
+canberra is
+canberra is the capital city of australia
+brasilia is
+brasilia is the capital city of brazil
+
+# ── NATURE — divergence at (a, X) ─────────────────────────────
+a mammal is
+a mammal is a warm blooded animal that feeds young with milk
+a reptile is
+a reptile is a cold blooded vertebrate animal covered with scales
+a tree is
+a tree is a tall plant with a woody trunk branches and leaves
+a flower is
+a flower is the reproductive structure of a flowering plant
+a river is
+a river is a large natural stream of fresh water flowing to the sea
+a volcano is
+a volcano is an opening in the earth that erupts lava and gases
+an earthquake is
+an earthquake is shaking of the ground caused by tectonic plate movement
+a desert is
+a desert is a dry region that receives very little annual rainfall
+an ocean is
+an ocean is a vast body of saltwater that covers most of the earth
+
+# ── PEOPLE — divergence at (X, is) ───────────────────────────
+einstein is
+einstein was a physicist who developed the theory of relativity
+newton is
+newton was a mathematician who discovered the laws of motion
+darwin is
+darwin was a naturalist who developed the theory of evolution
+turing is
+turing was a mathematician who founded the field of computer science
+shakespeare is
+shakespeare was an english playwright who wrote many famous plays
+
+# ── EVERYDAY — divergence at (X, is) ─────────────────────────
+democracy is
+democracy is a system of government where citizens elect their leaders
+capitalism is
+capitalism is an economic system based on private ownership and free markets
+education is
+education is the process of acquiring knowledge skills and values
+medicine is
+medicine is the science of diagnosing and treating human illness
+music is
+music is organized sound that creates rhythm melody and harmony
